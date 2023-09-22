@@ -38,7 +38,9 @@ namespace Sora.Managers
         private void Awake()
         {
             if (_instance != null && _instance != this)
-                Destroy(this);
+                Destroy(gameObject);
+            else
+                _instance = this as T;
         }
 
         private void OnDestroy()

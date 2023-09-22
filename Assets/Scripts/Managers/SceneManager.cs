@@ -21,6 +21,7 @@ namespace Sora.Managers
         
         [Header("Loading Bar")]
         [SerializeField] private GameObject loadingScreen;
+        [SerializeField] private TMPro.TMP_Text loadingText;
         [SerializeField] private UnityEngine.UI.Image loadingBar;
 
         private void OnEnable()
@@ -39,7 +40,7 @@ namespace Sora.Managers
             StartCoroutine(LoadSceneAsync(sceneIndex));
         }
 
-        private IEnumerator LoadSceneAsync(int sceneIndex)
+        public IEnumerator LoadSceneAsync(int sceneIndex)
         {
             AsyncOperation loadingOperation;
 
@@ -54,6 +55,37 @@ namespace Sora.Managers
 
                 yield return null;
             }
+        }
+
+        public void LoadLeaderboardScene(int sceneIndex)
+        {
+            StartCoroutine(LoadLeaderboardSceneAsync(sceneIndex));
+        }
+
+        private IEnumerator LoadLeaderboardSceneAsync(int sceneIndex)
+        {
+            AsyncOperation loadingOperation;
+
+            loadingScreen.SetActive(true);
+            loadingBar.fillAmount = 0.0f;
+            bool _success = LeaderboardManager.instance.StartLootlockerGuestSession();
+            
+            loadingOperation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex);
+
+            while (!loadingOperation.isDone && _success)
+            {
+                float barProgress = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+
+                loadingBar.fillAmount = barProgress;
+
+                if (_success)
+                    loadingText.text = "Loading leaderboards...";
+                else
+                    loadingText.text = "Connecting to Lootlocker...";
+
+                yield return null;
+            }
+
         }
     }
 }
