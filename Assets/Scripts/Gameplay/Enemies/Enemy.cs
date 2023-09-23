@@ -16,10 +16,12 @@ namespace Sora.Game
     {
         MOUSE,
         SPIDER,
+        TORTOISE,
         PIGEON,
         SNAKE,
         HEDGEHOG,
-        HUMAN
+        HUMAN,
+        COUNT
     }
 
     public enum EEnemyLevel
@@ -53,8 +55,9 @@ namespace Sora.Game
         private float maxHealthPoints;
 
         private Vector3 dir;
-        public int waypointListIndex;
+        private int waypointListIndex;
         private int waypointIndex;
+        public int entryPoint;
 
         private void OnValidate()
         {
@@ -65,13 +68,32 @@ namespace Sora.Game
         {
             healthBar.fillAmount = 1.0f;
 
+            switch(entryPoint)
+            {
+                case 0:
+                    {
+                        waypointListIndex = Random.Range(0, 3);
+                    }
+                    break;
+                case 1:
+                    {
+                        waypointListIndex = Random.Range(3, 5);                    
+                    }
+                    break;
+                case 2:
+                    {
+                        waypointListIndex = Random.Range(5, 8);
+                    }
+                    break;
+            }
+
+            waypointIndex = 0;
             transform.position = waypointArray[waypointListIndex][waypointIndex];
-            waypointIndex = 1;
+            waypointIndex++;
         }
 
         private void Update()
         {
-            Debug.Log(waypointArray[waypointListIndex][waypointIndex]);
             dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
             transform.Translate(moveSpeed * Time.deltaTime * dir.normalized, Space.World);
 
