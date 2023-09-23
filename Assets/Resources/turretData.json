@@ -1,0 +1,42 @@
+{
+  "Turrets": [
+    {
+      "Name": "Turret",
+      "Level":0,
+      "Upgrade":0,
+      "DefaultDamage":1,
+      "DefaultAttackRate":1,
+      "DefaultAreaOfImpact":1,
+      "Damage": [
+        [1,2,3,4,5],
+        [1,2,3,4,5],
+        [1,2,3,4,5]
+      ],
+      "AttackRate": [
+        [1,2,3,4,5],
+        [1,2,3,4,5],
+        [1,2,3,4,5]
+      ],
+      "AreaOfImpact": [
+        [1,2,3,4,5],
+        [1,2,3,4,5],
+        [1,2,3,4,5]
+      ],
+      "Sprite": [
+        "Test",
+        "Test",
+        "Test"
+      ],
+      "UpgradeCost": [
+        [1,2,3,4,5],
+        [1,2,3,4,5],
+        [1,2,3,4,5]
+      ],
+      "SellRate": [
+        40,
+        42,
+        43
+      ]
+    }
+  ]
+}
