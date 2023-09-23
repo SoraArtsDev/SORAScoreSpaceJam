@@ -134,7 +134,7 @@ namespace Sora.Game
             if (healthPoints <= 0)
             {
                 DisableObject();
-                Managers.ScoreManager.instance.AddTreats(treatsDropped);
+                Managers.InventoryManager.instance.AddTreats(treatsDropped);
             }
         }
 

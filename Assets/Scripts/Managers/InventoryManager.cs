@@ -10,17 +10,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine.UI;
+using TMPro;
+
 namespace Sora.Managers
 {
     /// You may delete all of the stuff inside here. 
     /// Just remember to stick to the formating
     public class InventoryManager : Singleton<InventoryManager>
     {
+        public IntVariable playerTreats;
+
+        [Header("UI Variables")]
         [SerializeField] private Button[] catButtons;
+        [SerializeField] private TMP_Text treatsText;
 
         public void OnButtonClick(int index, int cost)
         {
-            if (ScoreManager.instance.playerTreats.value > cost)
+            if (playerTreats.value > cost)
             {
                 for (int i = 0; i < catButtons.Length; ++i)
                 {
@@ -29,11 +36,25 @@ namespace Sora.Managers
                         catButtons[i].interactable = false;
                     }
                 }
+            }            
+        }
 
-
+        public bool SpendTreats(int amount)
+        {
+            if (playerTreats.value >= amount)
+            {
+                playerTreats.value -= amount;
+                treatsText.text = playerTreats.value.ToString();
+                return true;
             }
 
-            
-        }    
+            return false;
+        }
+
+        public void AddTreats(int amount)
+        {
+            playerTreats.value += amount;
+            treatsText.text = playerTreats.value.ToString();
+        }
     }
 }
