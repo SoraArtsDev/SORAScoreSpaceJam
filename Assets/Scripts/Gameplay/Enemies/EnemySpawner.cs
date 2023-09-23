@@ -26,13 +26,18 @@ namespace Sora.Game
         public PooledObject[] allEnemies;
         private Dictionary<EEnemyType, PooledObject> poolData = new Dictionary<EEnemyType, PooledObject>();
 
+        private void OnEnable()
+        {
+            InstantiateInitialEnemyPool();
+        }
+
         public void InstantiateInitialEnemyPool()
         {
             for(int i = 0; i < allEnemies.Length; ++i)
             {
                 allEnemies[i].pool = new GameObject[allEnemies[i].prefabCount];
                 
-                for (int j = 0; j < allEnemies[i].prefabCount; ++i)
+                for (int j = 0; j < allEnemies[i].prefabCount; ++j)
                 {
                     allEnemies[i].pool[j] = Instantiate(allEnemies[i].prefab, transform.position, Quaternion.identity);
                     allEnemies[i].pool[j].SetActive(false);

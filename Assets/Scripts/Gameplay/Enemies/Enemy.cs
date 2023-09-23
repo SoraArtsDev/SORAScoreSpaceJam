@@ -64,7 +64,9 @@ namespace Sora.Game
         private void OnEnable()
         {
             healthBar.fillAmount = 1.0f;
-            waypointIndex = 0;
+
+            transform.position = waypointArray[waypointListIndex][waypointIndex];
+            waypointIndex = 1;
         }
 
         private void Update()
@@ -76,10 +78,9 @@ namespace Sora.Game
             if(Vector3.Distance(transform.position, waypointArray[waypointListIndex][waypointIndex]) < 0.01f)
             {
                 waypointIndex++;
-            }
-
-            if (waypointListIndex == waypointArray[waypointListIndex].array.Length)
-                DisableObject();
+                if (waypointIndex >= waypointArray[waypointListIndex].array.Length)
+                    DisableObject();
+            }            
         }
 
         public void TakeDamage(int damage)
