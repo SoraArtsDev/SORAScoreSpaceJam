@@ -21,7 +21,9 @@ namespace Sora.Game
         SNAKE,
         HEDGEHOG,
         HUMAN,
+        BEES,
         COUNT
+
     }
 
     public enum EEnemyLevel
