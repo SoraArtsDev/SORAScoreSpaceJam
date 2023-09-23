@@ -15,7 +15,7 @@ namespace Sora
     /// Just remember to stick to the formating
     public class TurretManager : MonoBehaviour
     {
-        public TextAsset turretFile;
+        private TextAsset turretFile;
         public Dictionary<string, TurretData> turrets;
         void Start()
         {
