@@ -65,7 +65,7 @@ namespace Sora.Managers
                 }
                 else
                 {
-                    Debug.Log("Lootlocker:: " + response.Error);
+                    Debug.Log("Lootlocker:: " + response.errorData);
                 }
             });
         }
@@ -91,7 +91,7 @@ namespace Sora.Managers
                 }
                 else
                 {
-                    Debug.Log("Lootlocker:: " + response.Error);
+                    Debug.Log("Lootlocker:: " + response.errorData);
                 }
             });
         }
