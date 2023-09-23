@@ -19,37 +19,64 @@ namespace Sora
 	public class PlayerController : MonoBehaviour
 	{
         Rigidbody rb;
-        bool wasClicked;
         NavMeshAgent agent;
 
+
+        bool moveClicked;
+        bool attackClicked;
+        bool isAttacking;
+        
         public PlayerData playerData;
 
 		void Start()
 		{
             rb = GetComponent<Rigidbody>();
             agent = GetComponent<NavMeshAgent>();
-            wasClicked = false;
+            moveClicked = false;
         }
 
 		void Update()
 		{
-            wasClicked = Input.GetMouseButtonDown((int)PlayerAction.E_Move);
+            moveClicked = Input.GetMouseButtonDown((int)PlayerAction.E_Move);
+            attackClicked = Input.GetMouseButtonDown((int)PlayerAction.E_Attack);
 
-            if(wasClicked)
+            if(moveClicked || attackClicked)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if(Physics.Raycast(ray,out hit))
                 {
                     agent.SetDestination(hit.point);
+                    isAttacking = attackClicked;
+                }
+            }
+
+            if(isAttacking && agent.isStopped)
+            {
+                var enemy = ChooseBestEnemyInTheArea();
+                if(enemy!=null)
+                {
+                    Debug.Log(enemy.name);
+                    isAttacking = false;
                 }
             }
 
         }
 
+        GameObject ChooseBestEnemyInTheArea()
+        {
+            RaycastHit hit;
+            Vector3 p1 = transform.position;
+            if (Physics.SphereCast(p1, 1, transform.forward, out hit, 2))
+            {
+                return hit.transform.gameObject;
+            }
+            return null;
+        }
+
         void FixedUpdate()
         {
-            if(wasClicked)
+            if(moveClicked)
             {
                 
             }
