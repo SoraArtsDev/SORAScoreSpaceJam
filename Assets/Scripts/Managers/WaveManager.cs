@@ -53,7 +53,7 @@ namespace Sora.Managers
                 //EEnemyType e = (EEnemyType)Random.Range(0, (int)EEnemyType.COUNT);
                 //wd.enemyCountbyType[i] = new KeyValuePair<Game.EEnemyType, int>(e, 10);
                 wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(EEnemyType.MOUSE, 10);
-                wd.entryPoint[i] = Random.Range(0, 2);
+                wd.entryPoint[i] = Random.Range(0, 3);
             }
             startWaveEvent.InvokeEvent(this, wd);
         }

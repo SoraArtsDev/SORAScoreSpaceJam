@@ -52,7 +52,7 @@ namespace Sora.Game
         public float healthPoints;
         public float armour;
         public bool isFlying;
-
+        public int treatsDropped;
 
         [Space]
         [SerializeField] private Image healthBar;
@@ -132,7 +132,10 @@ namespace Sora.Game
             healthBar.fillAmount = healthPoints / maxHealthPoints;
 
             if (healthPoints <= 0)
+            {
                 DisableObject();
+                Managers.InventoryManager.instance.AddTreats(treatsDropped);
+            }
         }
 
         private void DisableObject()
