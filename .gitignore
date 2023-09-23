@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/LootLockerSDK.meta
+Assets/LootLockerSDK/Resources.meta
+Assets/LootLockerSDK/Resources/Config.meta
+Assets/LootLockerSDK/Resources/Config/LootLockerConfig.asset
+Assets/LootLockerSDK/Resources/Config/LootLockerConfig.asset.meta
