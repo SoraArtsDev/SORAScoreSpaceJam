@@ -149,9 +149,9 @@ namespace Sora.Game
             transform.forward = _dir;
         }
 
-        public void OnAttacked()
+        public void OnAttacked(bool attack)
         {
-            attacking = true;
+            attacking = attack;
         }
 
         private void AttackThePlayer()
