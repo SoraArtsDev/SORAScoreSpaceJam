@@ -19,8 +19,9 @@ namespace Sora
     public class PlayerData : ScriptableObject
     {
         [Header("Movement")]
-        public float moveSpeed;
-        public float meeleRate;
+        public int moveSpeed;
+        public int meeleRate;
+        public int damage;
 
         private void OnValidate()
         {
