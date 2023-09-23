@@ -51,6 +51,8 @@ namespace Sora.Game
 
         [Space]
         [SerializeField] private Image healthBar;
+        [Space]
+        [Space]
         public ArrayClass[] waypointArray;
         private float maxHealthPoints;
 
@@ -89,6 +91,9 @@ namespace Sora.Game
 
             waypointIndex = 0;
             transform.position = waypointArray[waypointListIndex][waypointIndex];
+
+            Vector3 _dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
+            transform.forward = _dir;
             waypointIndex++;
         }
 
@@ -100,8 +105,11 @@ namespace Sora.Game
             if(Vector3.Distance(transform.position, waypointArray[waypointListIndex][waypointIndex]) < 0.01f)
             {
                 waypointIndex++;
+
                 if (waypointIndex >= waypointArray[waypointListIndex].array.Length)
                     DisableObject();
+
+                RotateTowardFacingDirection();
             }            
         }
 
@@ -114,11 +122,18 @@ namespace Sora.Game
                 DisableObject();
         }
 
-        public void DisableObject()
+        private void DisableObject()
         {
             healthPoints = maxHealthPoints;
             waypointIndex = 0;
             gameObject.SetActive(false);
+        }
+
+        private void RotateTowardFacingDirection()
+        {
+            Vector3 _dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
+
+            transform.forward = _dir;
         }
     }
 }
