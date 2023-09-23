@@ -5,9 +5,8 @@
 // This script is covered by a Non-Disclosure Agreement (NDA) and is Confidential.
 // Destroy the file immediately if you have not been explicitly granted access.
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Sora
 {
@@ -20,19 +19,33 @@ namespace Sora
 	public class PlayerController : MonoBehaviour
 	{
         Rigidbody rb;
+        bool wasClicked;
+        NavMeshAgent agent;
+
         public PlayerData playerData;
 
-        bool wasClicked;
 		void Start()
 		{
             rb = GetComponent<Rigidbody>();
+            agent = GetComponent<NavMeshAgent>();
             wasClicked = false;
         }
 
 		void Update()
 		{
             wasClicked = Input.GetMouseButtonDown((int)PlayerAction.E_Move);
-		}
+
+            if(wasClicked)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if(Physics.Raycast(ray,out hit))
+                {
+                    agent.SetDestination(hit.point);
+                }
+            }
+
+        }
 
         void FixedUpdate()
         {
