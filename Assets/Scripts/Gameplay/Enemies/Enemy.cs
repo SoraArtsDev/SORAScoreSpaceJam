@@ -48,6 +48,9 @@ namespace Sora.Game
         [Header("Enemy Stats")]
         public float moveSpeed;
         public float healthPoints;
+        public float armour;
+        public bool isFlying;
+
 
         [Space]
         [SerializeField] private Image healthBar;
@@ -55,6 +58,7 @@ namespace Sora.Game
         [Space]
         public ArrayClass[] waypointArray;
         private float maxHealthPoints;
+        public bool attacking;
 
         private Vector3 dir;
         private int waypointListIndex;
@@ -99,18 +103,25 @@ namespace Sora.Game
 
         private void Update()
         {
-            dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
-            transform.Translate(moveSpeed * Time.deltaTime * dir.normalized, Space.World);
-
-            if(Vector3.Distance(transform.position, waypointArray[waypointListIndex][waypointIndex]) < 0.01f)
+            if (!attacking)
             {
-                waypointIndex++;
+                dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
+                transform.Translate(moveSpeed * Time.deltaTime * dir.normalized, Space.World);
 
-                if (waypointIndex >= waypointArray[waypointListIndex].array.Length)
-                    DisableObject();
+                if (Vector3.Distance(transform.position, waypointArray[waypointListIndex][waypointIndex]) < 0.01f)
+                {
+                    waypointIndex++;
 
-                RotateTowardFacingDirection();
-            }            
+                    if (waypointIndex >= waypointArray[waypointListIndex].array.Length)
+                        DisableObject();
+
+                    RotateTowardFacingDirection();
+                }
+            }
+            else
+            {
+                AttackThePlayer();
+            }
         }
 
         public void TakeDamage(int damage)
@@ -134,6 +145,16 @@ namespace Sora.Game
             Vector3 _dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
 
             transform.forward = _dir;
+        }
+
+        public void OnAttacked()
+        {
+            attacking = true;
+        }
+
+        private void AttackThePlayer()
+        {
+
         }
     }
 }
