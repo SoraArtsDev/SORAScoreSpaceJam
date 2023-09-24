@@ -46,6 +46,7 @@ namespace Sora
             rb = GetComponent<Rigidbody>();
             agent = GetComponent<NavMeshAgent>();
             moveClicked = false;
+
         }
 
         void Update()

@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2630277619014096040}
   - component: {fileID: 1423819141904154732}
   - component: {fileID: 7886113285546010336}
+  - component: {fileID: 6771433649247709188}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -191,6 +192,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6771433649247709188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844224123442433879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071d2cf2e0643d04787f9246863f84ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4187134711577417539
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,13 +250,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cf451ab451af84d8fc26a2ce93f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePoint: {fileID: 9005282320168354032}
   range: 15
+  BulletPrefab: {fileID: 3650927174145506129, guid: db2c323976e7b9d4bb1289568d4af770, type: 3}
+  FireRate: 5
+  bUseLaser: 0
+  lineRenderer: {fileID: 0}
+  RotatePoint: {fileID: 9005282320168354032}
   TurretRotationSpeed: 10
   EnemyTag: Enemy
-  FireRate: 5
-  BulletPrefab: {fileID: 3650927174145506129, guid: db2c323976e7b9d4bb1289568d4af770, type: 3}
   FirePoint: {fileID: 4663746170165621741}
+  type: 0
 --- !u!1 &6034114701573170984
 GameObject:
   m_ObjectHideFlags: 0

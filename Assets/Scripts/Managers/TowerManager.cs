@@ -9,35 +9,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sora 
+namespace Sora.Managers
 {
-    /// You may delete all of the stuff inside here. 
-    /// Just remember to stick to the formating
-    public class TowerManager : MonoBehaviour
-    {
-        private TextAsset towerDataFile;
-        public Dictionary<string, TowersData> towersData;
-        void Start()
-        {
-            towerDataFile = Resources.Load<TextAsset>("towerData");
-            towersData = new Dictionary<string, TowersData>();
 
+        public class TowerManager : Singleton<TowerManager>
+        {
+        private TextAsset towerDataFile;
+        public Dictionary<TowerType, TowerData> towersData;
+        private bool isCreated;
+
+        void OnEnable()
+        {
+            isCreated = false;
             ReadTowerData();
-  
         }
 
-        void ReadTowerData()
+        public void ReadTowerData()
         {
+            if (isCreated)
+                return;
+
+            isCreated = true;
+            towerDataFile = Resources.Load<TextAsset>("towerData");
+            towersData = new Dictionary<TowerType, TowerData>();
+
+            ReadTowerData();
             Towers data = JsonUtility.FromJson<Towers>(towerDataFile.text);
             for(int i = 0; i < data.towers.Length; ++i)
             {
                 ApplyUpgrades(ref data.towers[i]);
-                towersData[data.towers[i].name] = data.towers[i];
+                towersData[data.towers[i].type] = data.towers[i];
             }
         }
 
 
-        void ApplyUpgrades(ref TowersData data)
+        public void ApplyUpgrades(ref TowerData data)
         {
             data.upgradeCost = data.costUpgrades[data.level].data[data.upgradeLevel];
             data.damage = data.damageUpgrades[data.level].data[data.upgradeLevel];
@@ -53,6 +59,11 @@ namespace Sora
                 data.upgradeLevel = 0;
                 data.level++;
             }
+        }
+
+        public TowerData GetTowerData(TowerType type)
+        {
+            return towersData[type];
         }
     }
 }

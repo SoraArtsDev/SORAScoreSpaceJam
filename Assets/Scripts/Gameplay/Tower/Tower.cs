@@ -17,7 +17,7 @@ namespace Sora
         private float FireCountdown = 0.0f;
 
         [Header("Use Laser")]
-        public bool bUseLaser = false;
+        private bool bUseLaser = false;
         public LineRenderer lineRenderer;
 
         [Header("Setup Fields")]
@@ -26,10 +26,14 @@ namespace Sora
         public string EnemyTag = "Enemy";
 
         public Transform FirePoint;
-
+        public TowerType type;
+        public TowerData data;
         // Start is called before the first frame update
         void Start()
         {
+            bUseLaser = type == TowerType.E_Lazer;
+            data = Managers.TowerManager.instance.GetTowerData(type);
+            transform.parent.GetComponent<Sora.TowerUIInfo>().SetTower(transform.gameObject); ;
             InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
             //FirePoint = gameObject.transform.GetChild(0).transform.GetChild(1).transform;
         }
