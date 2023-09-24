@@ -13,7 +13,7 @@ namespace Sora
 {
     public class TowerUIInfo : MonoBehaviour
     {
-        private Tower tower;
+        public Tower tower;
         public void SetTower(GameObject obj)
         {
             tower = obj.GetComponent<Tower>();
