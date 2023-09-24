@@ -1,4 +1,4 @@
-// Developed by Pluto
+// Developed by SORA
 //
 // Copyright(c) Sora Arts 2023-2024
 //
@@ -62,6 +62,8 @@ namespace Sora.Game
         private float maxHealthPoints;
         public bool attacking;
 
+        private float initialMovespeed;
+        private Utility.DelayedMethod resetMovespeed;
         private Vector3 dir;
         private int waypointListIndex;
         private int waypointIndex;
@@ -69,14 +71,15 @@ namespace Sora.Game
 
         private void OnValidate()
         {
-            maxHealthPoints = healthPoints;            
+            maxHealthPoints = healthPoints;
         }
 
         private void OnEnable()
         {
             healthBar.fillAmount = 1.0f;
+            initialMovespeed = moveSpeed;
 
-            switch(entryPoint)
+            switch (entryPoint)
             {
                 case 0:
                     {
@@ -85,7 +88,7 @@ namespace Sora.Game
                     break;
                 case 1:
                     {
-                        waypointListIndex = Random.Range(3, 5);                    
+                        waypointListIndex = Random.Range(3, 5);
                     }
                     break;
                 case 2:
@@ -134,7 +137,7 @@ namespace Sora.Game
             if (healthPoints <= 0)
             {
                 DisableObject();
-                Managers.InventoryManager.instance.AddTreats(treatsDropped);
+                //Managers.InventoryManager.instance.AddTreats(treatsDropped);
             }
         }
 
@@ -160,6 +163,15 @@ namespace Sora.Game
         private void AttackThePlayer()
         {
 
+        }
+
+        public void AffectMovementSpeed(float speedModifier, float duration)
+        {
+            if (resetMovespeed != null)
+                Utility.SoraClock.instance.StopDelayedMethod(resetMovespeed);
+
+            moveSpeed *= speedModifier;
+            Utility.SoraClock.instance.ExecuteWithDelay(this, () => { moveSpeed = initialMovespeed; }, duration);
         }
     }
 }
