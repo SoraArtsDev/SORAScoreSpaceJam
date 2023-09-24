@@ -1,4 +1,4 @@
-// Developed by SORA
+// Developed by Sora
 //
 // Copyright(c) Sora Arts 2023-2024
 //
@@ -33,18 +33,6 @@ namespace Sora.Game
         LEVEL3
     }
 
-    [System.Serializable]
-    public class ArrayClass
-    {
-        public Vector3[] array;
-
-        public Vector3 this[int key]
-        {
-            get => array[key];
-            set => array[key] = value;
-        }
-    }
-
     public class Enemy : MonoBehaviour
     {
         [Header("Enemy Stats")]
@@ -57,10 +45,9 @@ namespace Sora.Game
         [Space]
         [SerializeField] private Image healthBar;
         [Space]
-        [Space]
-        public ArrayClass[] waypointArray;
         private float maxHealthPoints;
-        public bool attacking;
+        [HideInInspector] public bool attacking;
+
 
         private float initialMovespeed;
         private Utility.DelayedMethod resetMovespeed;
@@ -68,10 +55,11 @@ namespace Sora.Game
         private int waypointListIndex;
         private int waypointIndex;
         public int entryPoint;
+        private List<List<Vector3>> waypoints;
 
         private void OnValidate()
         {
-            maxHealthPoints = healthPoints;
+            maxHealthPoints = healthPoints;            
         }
 
         private void OnEnable()
@@ -79,7 +67,7 @@ namespace Sora.Game
             healthBar.fillAmount = 1.0f;
             initialMovespeed = moveSpeed;
 
-            switch (entryPoint)
+            switch(entryPoint)
             {
                 case 0:
                     {
@@ -88,20 +76,21 @@ namespace Sora.Game
                     break;
                 case 1:
                     {
-                        waypointListIndex = Random.Range(3, 5);
+                        waypointListIndex = Random.Range(3, 6);                    
                     }
                     break;
                 case 2:
                     {
-                        waypointListIndex = Random.Range(5, 8);
+                        waypointListIndex = Random.Range(6, 8);
                     }
                     break;
             }
-
+            Debug.Log(waypointListIndex);
+            waypoints = WaypointKeeper.instance.waypoints;
             waypointIndex = 0;
-            transform.position = waypointArray[waypointListIndex][waypointIndex];
+            transform.position =  waypoints[waypointListIndex][waypointIndex];
 
-            Vector3 _dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
+            Vector3 _dir =  waypoints[waypointListIndex][1] - waypoints[waypointListIndex][0];
             transform.forward = _dir;
             waypointIndex++;
         }
@@ -110,14 +99,14 @@ namespace Sora.Game
         {
             if (!attacking)
             {
-                dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
+                dir =  waypoints[waypointListIndex][waypointIndex] - transform.position;
                 transform.Translate(moveSpeed * Time.deltaTime * dir.normalized, Space.World);
 
-                if (Vector3.Distance(transform.position, waypointArray[waypointListIndex][waypointIndex]) < 0.01f)
+                if (Vector3.Distance(transform.position,  waypoints[waypointListIndex][waypointIndex]) < 0.01f)
                 {
                     waypointIndex++;
 
-                    if (waypointIndex >= waypointArray[waypointListIndex].array.Length)
+                    if (waypointIndex >=  waypoints[waypointListIndex].Count)
                         DisableObject();
 
                     RotateTowardFacingDirection();
@@ -137,7 +126,7 @@ namespace Sora.Game
             if (healthPoints <= 0)
             {
                 DisableObject();
-                //Managers.InventoryManager.instance.AddTreats(treatsDropped);
+                Managers.InventoryManager.instance.AddTreats(treatsDropped);
             }
         }
 
@@ -150,7 +139,7 @@ namespace Sora.Game
 
         private void RotateTowardFacingDirection()
         {
-            Vector3 _dir = waypointArray[waypointListIndex][waypointIndex] - transform.position;
+            Vector3 _dir =  waypoints[waypointListIndex][waypointIndex] - transform.position;
 
             transform.forward = _dir;
         }

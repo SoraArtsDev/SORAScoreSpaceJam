@@ -1,4 +1,4 @@
-// Developed by Pluto
+// Developed by Sora
 //
 // Copyright(c) Sora Arts 2023-2024
 //
@@ -22,18 +22,20 @@ namespace Sora.Managers
         public IntVariable playerTreats;
 
         [Header("UI Variables")]
-        [SerializeField] private Button[] catButtons;
+        [SerializeField] private Button[] towerButtons;
         [SerializeField] private TMP_Text treatsText;
+        [SerializeField] private Tower[] towerProperties;
+
 
         public void OnButtonClick(int index, int cost)
         {
             if (playerTreats.value > cost)
             {
-                for (int i = 0; i < catButtons.Length; ++i)
+                for (int i = 0; i < towerButtons.Length; ++i)
                 {
                     if (index != i)
                     {
-                        catButtons[i].interactable = false;
+                        towerButtons[i].interactable = false;
                     }
                 }
             }            

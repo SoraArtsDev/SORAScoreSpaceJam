@@ -13,7 +13,7 @@ namespace Sora
 {
     /// You may delete all of the stuff inside here. 
     /// Just remember to stick to the formating
-    public class #SCRIPTNAME# : MonoBehaviour
+    public class TowerProperties : MonoBehaviour
     {   
         // Example Variables for formatting purposes
         // This keeps the scripts readable, compact and the Editor's Inspector clean
@@ -26,12 +26,12 @@ namespace Sora
 
         void Start()
         {
-            #NOTRIM#
+            
         }
 
         void Update()
         {
-            #NOTRIM#
+            
         }
     }
 }
