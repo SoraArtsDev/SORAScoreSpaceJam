@@ -118,7 +118,7 @@ Transform:
   m_Children:
   - {fileID: 5208114474109319433}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &2630277619014096040
 MeshFilter:
@@ -237,12 +237,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cf451ab451af84d8fc26a2ce93f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePoint: {fileID: 9005282320168354032}
   range: 15
+  towerCost: 20
+  BulletPrefab: {fileID: 3650927174145506129, guid: db2c323976e7b9d4bb1289568d4af770, type: 3}
+  FireRate: 5
+  bUseLaser: 0
+  lineRenderer: {fileID: 0}
+  RotatePoint: {fileID: 9005282320168354032}
   TurretRotationSpeed: 10
   EnemyTag: Enemy
-  FireRate: 5
-  BulletPrefab: {fileID: 3650927174145506129, guid: db2c323976e7b9d4bb1289568d4af770, type: 3}
   FirePoint: {fileID: 4663746170165621741}
 --- !u!1 &6034114701573170984
 GameObject:

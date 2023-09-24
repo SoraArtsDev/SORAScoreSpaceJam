@@ -10,6 +10,7 @@ namespace Sora
 
         [Header("General")]
         public float range = 15.0f;
+        public int towerCost;
 
         [Header("Use Bullets")]
         public GameObject BulletPrefab;
