@@ -29,7 +29,7 @@ namespace Sora
             initValue = value;
         }
 
-        private void OnEnable()
+        private void OnDisable()
         {
             if (resetDefaultValue)
                 value = initValue;
