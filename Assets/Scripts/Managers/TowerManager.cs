@@ -50,7 +50,7 @@ namespace Sora.Managers
             data.attackRate = data.attackRateUpgrades[data.level].data[data.upgradeLevel];
             data.areaOfImpact = data.areaOfImpactUpgrades[data.level].data[data.upgradeLevel];
             data.buildCost += data.upgradeCost;
-            data.sellCost = (int)(data.sellRate[data.level] * data.buildCost);
+            data.sellCost = (int)(data.sellRate[data.level]*.01*data.buildCost);
             data.spriteName = data.sprite[data.level];
             data.upgradeLevel++;//we set to next upgrade because that's what we want to show and check against and then apply
             if(data.upgradeLevel>=5)

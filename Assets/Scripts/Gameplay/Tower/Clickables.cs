@@ -17,8 +17,6 @@ namespace Sora
     {
         public Button btn;
         public TMPro.TextMeshProUGUI txt;
-
- 
     }
    
     public class UpgradeUI
@@ -36,10 +34,9 @@ namespace Sora
             sell = new ButtonUI();
         }
 
-
         public void Check(int cost, int level)
         {
-           bool canUpgrade = cost <= Managers.InventoryManager.instance.playerTreats.value;
+            bool canUpgrade = cost <= 250;// Managers.InventoryManager.instance.playerTreats.value;
 
             if(level==0)
             {
@@ -80,15 +77,21 @@ namespace Sora
     public class Clickables : MonoBehaviour
     {
         private UnityEvent clickEvent;
+        private Button.ButtonClickedEvent sellButtonEvent;
+        private Button.ButtonClickedEvent upgradeButtonEvent;
         private UpgradeUI ui;
         private Transform upgradeUI;
         private TowerUIInfo towerUIInfo;
         private void Start()
         {
             clickEvent = new UnityEvent();
+            upgradeButtonEvent = new Button.ButtonClickedEvent();
+            sellButtonEvent = new Button.ButtonClickedEvent();
+
             ui = new UpgradeUI();
             clickEvent.AddListener(OnClick);
-
+            sellButtonEvent.AddListener(SellClicked);
+            upgradeButtonEvent.AddListener(UpgradeClicked);
             towerUIInfo = GetComponent<TowerUIInfo>();
             GeUIReference();
         }
@@ -121,21 +124,38 @@ namespace Sora
             upgradeUI = canvas.transform.Find("UpgradeUI");
             Transform lvl1 = upgradeUI.Find("Lvl1");
             ui.lvl1.btn = lvl1.Find("btn").GetComponent<Button>();
+            ui.lvl1.btn.onClick  = upgradeButtonEvent;
             ui.lvl1.txt = lvl1.Find("text").GetComponent< TMPro.TextMeshProUGUI>();
 
             Transform lvl2 = upgradeUI.transform.Find("Lvl2");
             ui.lvl2.btn = lvl2.Find("btn").GetComponent<Button>();
+            ui.lvl2.btn.onClick  = upgradeButtonEvent;
             ui.lvl2.txt = lvl2.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
 
             Transform lvl3 = upgradeUI.transform.Find("Lvl3");
             ui.lvl3.btn = lvl3.Find("btn").GetComponent<Button>();
+            ui.lvl3.btn.onClick  = upgradeButtonEvent;
             ui.lvl3.txt = lvl3.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
 
             Transform sell = upgradeUI.transform.Find("Sell");
             ui.sell.btn = sell.Find("btn").GetComponent<Button>();
+            ui.sell.btn.onClick  = sellButtonEvent;
             ui.sell.txt = sell.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
 
             upgradeUI.gameObject.SetActive(false);
+        }
+
+        void UpgradeClicked()
+        {
+            Debug.Log("Upgrading");
+            Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
+            OnClick();
+        }
+
+        void SellClicked()
+        {
+            Debug.Log("selling");
+            Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
         }
     }
 }
