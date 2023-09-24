@@ -27,6 +27,7 @@ namespace Sora.Game
         public float spawnInterval;
         public PooledObject[] allEnemies;
         private Dictionary<EEnemyType, PooledObject> poolData = new Dictionary<EEnemyType, PooledObject>();
+        private Dictionary<EEnemyType, int> poolIndices = new Dictionary<EEnemyType, int>();
 
         private void OnEnable()
         {
@@ -34,7 +35,7 @@ namespace Sora.Game
         }
 
         public void InstantiateInitialEnemyPool()
-        {
+        {            
             for(int i = 0; i < allEnemies.Length; ++i)
             {
                 allEnemies[i].pool = new GameObject[allEnemies[i].prefabCount];
@@ -45,6 +46,7 @@ namespace Sora.Game
                     allEnemies[i].pool[j].SetActive(false);
                 }
 
+                poolIndices.Add(allEnemies[i].enemyType, 0);
                 poolData.Add(allEnemies[i].enemyType, allEnemies[i]);
             }
         }
@@ -68,7 +70,8 @@ namespace Sora.Game
                 {
                     poolData[e].pool[j].GetComponent<Enemy>().entryPoint = wd.entryPoint[i];
 
-                    poolData[e].pool[j].SetActive(true);
+                    poolData[e].pool[poolIndices[e]].SetActive(true);
+                    poolIndices[e] = (poolIndices[e] + 1) % poolData[e].pool.Length;
                     yield return new WaitForSecondsRealtime(spawnInterval);
                 }
             }

@@ -1663,7 +1663,11 @@ MonoBehaviour:
     pool: []
   - prefab: {fileID: 7248529979964926842, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
     prefabCount: 30
-    enemyType: 8
+    enemyType: 7
+    pool: []
+  - prefab: {fileID: 9022357057696184950, guid: 63fd52c117fef0a42a207df22dde8870, type: 3}
+    prefabCount: 30
+    enemyType: 6
     pool: []
 --- !u!114 &335507876
 MonoBehaviour:

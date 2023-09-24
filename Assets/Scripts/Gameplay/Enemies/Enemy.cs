@@ -23,7 +23,6 @@ namespace Sora.Game
         HUMAN,
         BEES,
         COUNT
-
     }
 
     public enum EEnemyLevel
