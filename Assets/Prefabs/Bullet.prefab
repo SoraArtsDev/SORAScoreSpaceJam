@@ -97,3 +97,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fSpeed: 60
+  ImapctEffect: {fileID: 8638217704347433544, guid: 3380f90edd22c1c44a6c7f9202ecdca9, type: 3}
