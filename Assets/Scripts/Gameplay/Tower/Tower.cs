@@ -8,24 +8,30 @@ namespace Sora
     {
         private Transform target;
 
-        public Transform RotatePoint;
+        [Header("General")]
         public float range = 15.0f;
-        public float TurretRotationSpeed = 10.0f;
 
-        public string EnemyTag = "Enemy";
-
+        [Header("Use Bullets")]
+        public GameObject BulletPrefab;
         public float FireRate = 1.0f;
-
         private float FireCountdown = 0.0f;
 
-        public GameObject BulletPrefab;
+        [Header("Use Laser")]
+        public bool bUseLaser = false;
+        public LineRenderer lineRenderer;
+
+        [Header("Setup Fields")]
+        public Transform RotatePoint;
+        public float TurretRotationSpeed = 10.0f;
+        public string EnemyTag = "Enemy";
+
         public Transform FirePoint;
 
         // Start is called before the first frame update
         void Start()
         {
             InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
-            FirePoint = gameObject.transform.GetChild(0).transform.GetChild(1).transform;
+            //FirePoint = gameObject.transform.GetChild(0).transform.GetChild(1).transform;
         }
 
         void UpdateTarget()
@@ -56,20 +62,34 @@ namespace Sora
         void Update()
         {
             if (target == null)
-                return;
-
-            Vector3 direction = target.position - transform.position;
-            Quaternion lookRotatation = Quaternion.LookRotation(direction);
-            Vector3 rotation = Quaternion.Lerp(RotatePoint.rotation, lookRotatation, Time.deltaTime * TurretRotationSpeed).eulerAngles;
-            RotatePoint.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
-
-            if (FireCountdown <= 0.0f)
             {
-                Shoot();
-                FireCountdown = 1.0f / FireRate;
-            }
+                if (bUseLaser)
+                {
+                    if (lineRenderer.enabled)
+                    {
+                        lineRenderer.enabled = false;
+                    }
 
-            FireCountdown -= Time.deltaTime;
+                }
+                return;
+            }
+                
+            LockOnTarget();
+
+            if (bUseLaser)
+            {
+                Laser();
+            }
+            else
+            {
+                if (FireCountdown <= 0.0f)
+                {
+                    Shoot();
+                    FireCountdown = 1.0f / FireRate;
+                }
+
+                FireCountdown -= Time.deltaTime;
+            }
         }
 
         void OnDrawGizmosSelected()
@@ -87,6 +107,24 @@ namespace Sora
             {
                 bullet.Seek(target);
             }
+        }
+
+        void LockOnTarget()
+        {
+            Vector3 direction = target.position - transform.position;
+            Quaternion lookRotatation = Quaternion.LookRotation(direction);
+            Vector3 rotation = Quaternion.Lerp(RotatePoint.rotation, lookRotatation, Time.deltaTime * TurretRotationSpeed).eulerAngles;
+            RotatePoint.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
+        }
+
+        void Laser()
+        {
+            if (!lineRenderer.enabled)
+            {
+                lineRenderer.enabled = true;
+            }
+            lineRenderer.SetPosition(0, FirePoint.position);
+            lineRenderer.SetPosition(1, target.position);
         }
     }
 }
