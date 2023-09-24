@@ -50,10 +50,12 @@ namespace Sora.Managers
 
             for(int i = 0; i < wd.enemyTypes; ++i)
             {
-                //EEnemyType e = (EEnemyType)Random.Range(0, (int)EEnemyType.COUNT);
+                Random.InitState(System.DateTime.Now.Second);
+                EEnemyType e = (EEnemyType)Random.Range(0, (int)EEnemyType.COUNT);
                 //wd.enemyCountbyType[i] = new KeyValuePair<Game.EEnemyType, int>(e, 10);
-                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(EEnemyType.MOUSE, 10);
+                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(e, 10);
                 wd.entryPoint[i] = Random.Range(0, 3);
+                
             }
             startWaveEvent.InvokeEvent(this, wd);
         }
