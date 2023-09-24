@@ -37,7 +37,7 @@ namespace Sora
             transform.tag = "Towers";
             bUseLaser = type == TowerType.E_Lazer;
             data = Managers.TowerManager.instance.GetTowerData(type);
-            transform.parent.GetComponent<Sora.TowerUIInfo>().SetTower(transform.gameObject); ;
+            //transform.parent.GetComponent<Sora.TowerUIInfo>().SetTower(transform.gameObject); ;
             InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
             //FirePoint = gameObject.transform.GetChild(0).transform.GetChild(1).transform;
         }
