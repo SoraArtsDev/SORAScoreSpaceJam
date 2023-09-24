@@ -16,11 +16,12 @@ namespace Sora
         public Tower tower;
         public void SetTower(GameObject obj)
         {
-            tower = obj.GetComponent<Tower>();
+            //tower = obj.GetComponent<Tower>();
         }
 
         public TowerData GetData()
         {
+            tower = GetComponentInChildren<Tower>();
             return tower.data;
         }
     }
