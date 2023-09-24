@@ -18,8 +18,10 @@ namespace Sora.InputSystem
 		// Movement Events
 		public event UnityAction<Vector2> moveEvent;
 
+
 		// Interaction Events
-		public event UnityAction pickUpEvent;
+		public event UnityAction cancelTowerEvent;
+		[SerializeField] private BoolVariable selectingTower;
 
 		[Space]
 		[SerializeField] private BindingsContainer bindingsContainer;
@@ -38,11 +40,10 @@ namespace Sora.InputSystem
 				moveEvent.Invoke(context.ReadValue<Vector2>());
 		}
 
-		public void OnPickUp(InputAction.CallbackContext context)
+		public void OnCancelTower(InputAction.CallbackContext context)
         {
-			if (pickUpEvent != null)
-				pickUpEvent.Invoke();
-
+			if (selectingTower.value && cancelTowerEvent != null)
+				cancelTowerEvent.Invoke();
         }
 	}
 }

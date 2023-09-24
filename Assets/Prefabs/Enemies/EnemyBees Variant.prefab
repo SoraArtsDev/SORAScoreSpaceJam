@@ -13,6 +13,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4789357923032773492, guid: fe9286ec226788a47ba2ea118a7d6e9f, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789357923032773492, guid: fe9286ec226788a47ba2ea118a7d6e9f, type: 3}
       propertyPath: healthPoints
       value: 20
       objectReference: {fileID: 0}

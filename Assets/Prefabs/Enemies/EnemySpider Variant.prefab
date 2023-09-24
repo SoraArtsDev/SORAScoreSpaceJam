@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5011195725315055050, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
       propertyPath: moveSpeed
-      value: 7.5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5011195725315055050, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
       propertyPath: wayPoints
@@ -123,6 +123,18 @@ PrefabInstance:
     - target: {fileID: 5836217723178902680, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836217723178902680, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836217723178902680, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836217723178902680, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5836217723178902680, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
       propertyPath: m_LocalPosition.x

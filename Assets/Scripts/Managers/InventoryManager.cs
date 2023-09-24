@@ -24,7 +24,9 @@ namespace Sora.Managers
         [SerializeField] private Button[] towerButtons;
         [SerializeField] private TMP_Text treatsText;
         [SerializeField] private TowerUIInfo[] towerProperties;
-        [SerializeField] private Events.SoraEvent selectingTowerPosition;
+        [SerializeField] private Events.SoraEvent selectingTowerEvent;
+        [SerializeField] private BoolVariable selectingTower;
+        [SerializeField] private GameObject blockButtonsUI;
 
         private void OnEnable()
         {
@@ -35,7 +37,11 @@ namespace Sora.Managers
         public void OnButtonClick(int index)
         {
             GameObject tower = Instantiate(towerProperties[index].gameObject);
-            TowerData td = tower.GetComponent<TowerUIInfo>().GetData();
+            tower.transform.position = new Vector3(40, 12, 30);
+            TowerData td = towerProperties[index].GetData();
+            blockButtonsUI.SetActive(true);
+            selectingTower.value = true;
+
 
             if (playerTreats.value > td.buildCost)
             {
@@ -45,11 +51,25 @@ namespace Sora.Managers
                     {
                         towerButtons[i].interactable = false;
                     }
+                    else
+                        towerButtons[i].Select();
                 }
 
                 MapManager.instance.HighlightAvailblePlacementCells();
-                selectingTowerPosition.InvokeEvent();
-            }            
+                selectingTowerEvent.InvokeEvent(this, tower);
+            }
+        }
+
+        public void ResetInventoryAccess()
+        {
+            blockButtonsUI.SetActive(false);
+            selectingTower.value = false;
+
+
+            for (int i = 0; i < towerButtons.Length; ++i)
+            {
+                towerButtons[i].interactable = true;
+            }
         }
 
         public bool SpendTreats(int amount)

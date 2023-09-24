@@ -85,7 +85,7 @@ namespace Sora.Game
                     }
                     break;
             }
-            Debug.Log(waypointListIndex);
+            //Debug.Log(waypointListIndex);
             waypoints = WaypointKeeper.instance.waypoints;
             waypointIndex = 0;
             transform.position =  waypoints[waypointListIndex][waypointIndex];

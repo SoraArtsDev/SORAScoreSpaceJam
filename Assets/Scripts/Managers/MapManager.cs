@@ -21,15 +21,23 @@ namespace Sora.Managers
     public class MapManager : Singleton<MapManager>
     {
         public GameObject allCells;
-        public Transform[] highlightCells;
+        //public Transform[] highlightCells;
         public Dictionary<Vector3, GameObject> availableCells = new Dictionary<Vector3, GameObject>();
+
+        [SerializeField] private InputSystem.GameplayInputReader inputReader;
+        public GameObject currentTower;
 
         private void OnEnable()
         {
-            for(int i = 0; i < highlightCells.Length; ++i)
+            //highlightCells = new Transform[allCells.transform.childCount];            
+
+            for(int i = 0; i < allCells.transform.childCount; ++i)
             {
-                availableCells.Add(highlightCells[i].position, highlightCells[i].gameObject);
+                availableCells.Add(allCells.transform.GetChild(i).transform.position, allCells.transform.GetChild(i).gameObject);
+                //availableCells.Add(highlightCells[i].position, highlightCells[i].gameObject);
             }
+
+            inputReader.cancelTowerEvent += OnCancellingTowerSelection;
         }
 
         public void HighlightAvailblePlacementCells()
@@ -37,10 +45,33 @@ namespace Sora.Managers
             allCells.SetActive(true);
         }
 
-        public void UpdateAvailableCells(Transform cell)
+        public void DisableHighlights(Vector3 position)
         {
-            availableCells[cell.position].SetActive(false);
-            availableCells.Remove(cell.position);
+            allCells.SetActive(false);
+            UpdateAvailableCells(position);
+        }
+
+        public void DisableHighlights()
+        {
+            allCells.SetActive(false);
+        }
+
+        public void UpdateAvailableCells(Vector3 cell)
+        {
+            availableCells[cell].SetActive(false);
+        }
+
+        private void OnCancellingTowerSelection()
+        {
+            DisableHighlights();
+            Destroy(currentTower);
+            currentTower = null;
+            InventoryManager.instance.ResetInventoryAccess();
+        }
+
+        public void EnableMouseDetection(Component invoker, object data)
+        {
+            currentTower = (GameObject)data;
         }
     }
 }

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf9cd5cb584f7c47a9f15792ed999c0, type: 3}
-  m_Name: GameplayInputReader
+  m_Script: {fileID: 11500000, guid: c59996a9fd35b1748ba8177e9ea55b2b, type: 3}
+  m_Name: SO_SelectingTower
   m_EditorClassIdentifier: 
-  selectingTower: {fileID: 11400000, guid: 40c0d465eaaf3a446929ea6c03bbfecb, type: 2}
-  bindingsContainer: {fileID: 11400000, guid: fd82f63d00f14864a99907613ce41d9f, type: 2}
+  value: 0
+  resetDefaultValue: 0

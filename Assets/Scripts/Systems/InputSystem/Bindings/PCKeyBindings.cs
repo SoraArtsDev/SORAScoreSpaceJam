@@ -100,7 +100,7 @@ public partial class @PCKeyBindings: IInputActionCollection2, IDisposable
             ""id"": ""4bf54c76-ae0a-4974-9635-78adfc5c1500"",
             ""actions"": [
                 {
-                    ""name"": ""PickUp"",
+                    ""name"": ""CancelTower"",
                     ""type"": ""Button"",
                     ""id"": ""60a42922-c208-43f3-af77-9d03755adde5"",
                     ""expectedControlType"": ""Button"",
@@ -113,11 +113,22 @@ public partial class @PCKeyBindings: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9a994b34-91af-45cd-b7a0-757e604e5189"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PickUp"",
+                    ""action"": ""CancelTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3d68716-114e-4ffb-8c57-3f2e12798bf6"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""CancelTower"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -154,7 +165,7 @@ public partial class @PCKeyBindings: IInputActionCollection2, IDisposable
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         // Interactions
         m_Interactions = asset.FindActionMap("Interactions", throwIfNotFound: true);
-        m_Interactions_PickUp = m_Interactions.FindAction("PickUp", throwIfNotFound: true);
+        m_Interactions_CancelTower = m_Interactions.FindAction("CancelTower", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -262,12 +273,12 @@ public partial class @PCKeyBindings: IInputActionCollection2, IDisposable
     // Interactions
     private readonly InputActionMap m_Interactions;
     private List<IInteractionsActions> m_InteractionsActionsCallbackInterfaces = new List<IInteractionsActions>();
-    private readonly InputAction m_Interactions_PickUp;
+    private readonly InputAction m_Interactions_CancelTower;
     public struct InteractionsActions
     {
         private @PCKeyBindings m_Wrapper;
         public InteractionsActions(@PCKeyBindings wrapper) { m_Wrapper = wrapper; }
-        public InputAction @PickUp => m_Wrapper.m_Interactions_PickUp;
+        public InputAction @CancelTower => m_Wrapper.m_Interactions_CancelTower;
         public InputActionMap Get() { return m_Wrapper.m_Interactions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -277,16 +288,16 @@ public partial class @PCKeyBindings: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_InteractionsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_InteractionsActionsCallbackInterfaces.Add(instance);
-            @PickUp.started += instance.OnPickUp;
-            @PickUp.performed += instance.OnPickUp;
-            @PickUp.canceled += instance.OnPickUp;
+            @CancelTower.started += instance.OnCancelTower;
+            @CancelTower.performed += instance.OnCancelTower;
+            @CancelTower.canceled += instance.OnCancelTower;
         }
 
         private void UnregisterCallbacks(IInteractionsActions instance)
         {
-            @PickUp.started -= instance.OnPickUp;
-            @PickUp.performed -= instance.OnPickUp;
-            @PickUp.canceled -= instance.OnPickUp;
+            @CancelTower.started -= instance.OnCancelTower;
+            @CancelTower.performed -= instance.OnCancelTower;
+            @CancelTower.canceled -= instance.OnCancelTower;
         }
 
         public void RemoveCallbacks(IInteractionsActions instance)
@@ -328,6 +339,6 @@ public partial class @PCKeyBindings: IInputActionCollection2, IDisposable
     }
     public interface IInteractionsActions
     {
-        void OnPickUp(InputAction.CallbackContext context);
+        void OnCancelTower(InputAction.CallbackContext context);
     }
 }

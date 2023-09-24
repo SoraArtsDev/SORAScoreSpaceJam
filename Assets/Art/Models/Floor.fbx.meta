@@ -3,7 +3,62 @@ guid: 194c88ef64ce0b04fa728ec3fe469920
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enemy_Path
+    second: {fileID: 2100000, guid: 3790ccd3d1207ba418a4e818ce9c94be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enemy_Tile_Corners
+    second: {fileID: 2100000, guid: 5a24bcfee3b52224298a554b6099bf4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_Tile
+    second: {fileID: 2100000, guid: 1970b1d8eed86cf46bd4a8142c801ae7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_Tile_Corner
+    second: {fileID: 2100000, guid: b59affd6389627e45b9adc19953354cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_Tiles
+    second: {fileID: 2100000, guid: 0fda41e06f5e6424aa8eef3c73c9c864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Special_Tiles
+    second: {fileID: 2100000, guid: b7e1cd22c254d2d43ba6c99248556730, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Special_Tiles_Corners
+    second: {fileID: 2100000, guid: c962a32c2fd04874486083ec3a526833, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tiles_Corners
+    second: {fileID: 2100000, guid: a809bda8c587b8442aab5ec0d07973c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_Tiles
+    second: {fileID: 2100000, guid: 143ceff86aab552459c219bebaa14177, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_Tiles_Corner
+    second: {fileID: 2100000, guid: a47cda4c470f0184990ba1e7b27df7f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: d7a53995ba806844495f2a5956e72bce, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

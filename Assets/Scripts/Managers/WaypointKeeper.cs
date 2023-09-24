@@ -33,6 +33,7 @@ namespace Sora.Game
             DontDestroyOnLoad(this);
 
             InstantiateWaypointList();
+            EnemySpawner.instance.InstantiateInitialEnemyPool();
         }
 
         private void InstantiateWaypointList()

@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 5855427401993714315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 42, y: 2, z: 27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5008545262979615403}
@@ -157,15 +157,6 @@ MonoBehaviour:
   isFlying: 0
   treatsDropped: 0
   healthBar: {fileID: 4058715449498331017}
-  wayPointArray:
-  - {fileID: 2044437884028164420, guid: 27d163a44da18884f9015592e617b563, type: 3}
-  - {fileID: 7312453473291402213, guid: 2a0124123a832184682ea01c5adfe052, type: 3}
-  - {fileID: 6857927696012553672, guid: a2ecff3908a12ab43b25f080eba436fa, type: 3}
-  - {fileID: 1260885595810668491, guid: b315deb90208d074da08e6d7c0a8bb70, type: 3}
-  - {fileID: 8843903081495718229, guid: 7696e7a03d0cc4147a47318b84ad39d0, type: 3}
-  - {fileID: 556542596513852832, guid: b555c97e38afcc849a0c0253c480d177, type: 3}
-  - {fileID: 4622805490432881302, guid: c50e5bc5384858249a69c3eb42bc5816, type: 3}
-  - {fileID: 7121720701110338896, guid: da4bd879b99397f4e966fe425dff9734, type: 3}
   attacking: 0
   entryPoint: 0
 --- !u!1 &8117424497808131748

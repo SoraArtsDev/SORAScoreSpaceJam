@@ -8,22 +8,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sora.Managers;
 
 namespace Sora.Game
 {
     public class DetectClickOnCell : MonoBehaviour
     {
-        private bool cellDetectionEnabled;
-        private GameObject tower;
+        [SerializeField] private float positionYOffset;
+        [SerializeField] private bool isSuperCell;
 
         private void OnMouseDown()
         {
+            MapManager.instance.DisableHighlights(MapManager.instance.currentTower.transform.position);
             
+            if(isSuperCell)
+            {
+
+            }
+
+            MapManager.instance.currentTower = null;
+            InventoryManager.instance.ResetInventoryAccess();
+
         }
 
-        public void EnableMouseDetection(Component invoker, object data)
+        private void OnMouseOver()
         {
-            cellDetectionEnabled = true;
-        }        
+            MapManager.instance.currentTower.transform.position = new Vector3(transform.position.x, positionYOffset, transform.position.z);
+        }
     }
 }

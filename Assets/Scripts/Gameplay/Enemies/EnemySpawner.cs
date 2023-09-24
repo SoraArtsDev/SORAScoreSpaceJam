@@ -22,7 +22,7 @@ namespace Sora.Game
         [HideInInspector] public GameObject[] pool;
     }
 
-    public class EnemySpawner : MonoBehaviour
+    public class EnemySpawner : Managers.Singleton<EnemySpawner>
     {
         public float spawnInterval;
         public PooledObject[] allEnemies;
@@ -30,7 +30,7 @@ namespace Sora.Game
 
         private void OnEnable()
         {
-            InstantiateInitialEnemyPool();
+            //InstantiateInitialEnemyPool();
         }
 
         public void InstantiateInitialEnemyPool()
