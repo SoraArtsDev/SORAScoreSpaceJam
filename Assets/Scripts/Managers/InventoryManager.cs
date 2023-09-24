@@ -15,21 +15,29 @@ using TMPro;
 
 namespace Sora.Managers
 {
-    /// You may delete all of the stuff inside here. 
-    /// Just remember to stick to the formating
     public class InventoryManager : Singleton<InventoryManager>
     {
         public IntVariable playerTreats;
+        public int initialTreats;
 
         [Header("UI Variables")]
         [SerializeField] private Button[] towerButtons;
         [SerializeField] private TMP_Text treatsText;
-        [SerializeField] private Tower[] towerProperties;
+        [SerializeField] private TowerUIInfo[] towerProperties;
+        [SerializeField] private Events.SoraEvent selectingTowerPosition;
 
-
-        public void OnButtonClick(int index, int cost)
+        private void OnEnable()
         {
-            if (playerTreats.value > cost)
+            playerTreats.value = initialTreats;
+            treatsText.text = playerTreats.value.ToString();
+        }
+
+        public void OnButtonClick(int index)
+        {
+            GameObject tower = Instantiate(towerProperties[index].gameObject);
+            TowerData td = tower.GetComponent<TowerUIInfo>().GetData();
+
+            if (playerTreats.value > td.buildCost)
             {
                 for (int i = 0; i < towerButtons.Length; ++i)
                 {
@@ -38,6 +46,9 @@ namespace Sora.Managers
                         towerButtons[i].interactable = false;
                     }
                 }
+
+                MapManager.instance.HighlightAvailblePlacementCells();
+                selectingTowerPosition.InvokeEvent();
             }            
         }
 

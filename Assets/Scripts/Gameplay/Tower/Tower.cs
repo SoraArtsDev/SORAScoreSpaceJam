@@ -31,6 +31,7 @@ namespace Sora
         public TowerType type;
         public TowerData data;
         // Start is called before the first frame update
+        
         void Start()
         {
             transform.tag = "Towers";

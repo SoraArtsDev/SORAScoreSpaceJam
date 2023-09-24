@@ -377,6 +377,8 @@ GameObject:
   - component: {fileID: 58866844}
   - component: {fileID: 58866843}
   - component: {fileID: 58866842}
+  - component: {fileID: 58866846}
+  - component: {fileID: 58866845}
   m_Layer: 0
   m_Name: Cell_35
   m_TagString: Untagged
@@ -471,6 +473,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58866840}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &58866845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58866840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &58866846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58866840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &67978078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -871,6 +913,8 @@ GameObject:
   - component: {fileID: 93674229}
   - component: {fileID: 93674228}
   - component: {fileID: 93674227}
+  - component: {fileID: 93674231}
+  - component: {fileID: 93674230}
   m_Layer: 0
   m_Name: Cell_46
   m_TagString: Untagged
@@ -965,6 +1009,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93674225}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &93674230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93674225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &93674231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93674225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &95018044
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,19 +1074,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95018044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 508716894}
   - {fileID: 1138270445}
-  m_Father: {fileID: 2019497959}
+  m_Father: {fileID: 534487155}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -575, y: -300}
+  m_AnchoredPosition: {x: -575, y: 85}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &95018046
@@ -1321,6 +1405,8 @@ GameObject:
   - component: {fileID: 169114666}
   - component: {fileID: 169114665}
   - component: {fileID: 169114664}
+  - component: {fileID: 169114668}
+  - component: {fileID: 169114667}
   m_Layer: 0
   m_Name: Cell_18
   m_TagString: Untagged
@@ -1415,6 +1501,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169114662}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &169114667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169114662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &169114668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169114662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &207107628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1598,8 @@ GameObject:
   - component: {fileID: 232960406}
   - component: {fileID: 232960405}
   - component: {fileID: 232960404}
+  - component: {fileID: 232960408}
+  - component: {fileID: 232960407}
   m_Layer: 0
   m_Name: Cell_39
   m_TagString: Untagged
@@ -1566,6 +1694,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232960402}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &232960407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232960402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &232960408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232960402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &264267628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTreats: {fileID: 11400000, guid: c38dc858a41f03f41851da9659b36b02, type: 2}
+  initialTreats: 50
   towerButtons:
   - {fileID: 2089212901}
   - {fileID: 1207759697}
@@ -1697,7 +1866,8 @@ MonoBehaviour:
   - {fileID: 442016072}
   treatsText: {fileID: 508716895}
   towerProperties:
-  - {fileID: 0}
+  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
+  selectingTowerPosition: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
 --- !u!1001 &291372841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1904,6 +2074,8 @@ GameObject:
   - component: {fileID: 308048556}
   - component: {fileID: 308048555}
   - component: {fileID: 308048554}
+  - component: {fileID: 308048558}
+  - component: {fileID: 308048557}
   m_Layer: 0
   m_Name: Cell_29
   m_TagString: Untagged
@@ -1998,6 +2170,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308048552}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &308048557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308048552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &308048558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308048552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &315939251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2307,6 +2519,8 @@ GameObject:
   - component: {fileID: 354274987}
   - component: {fileID: 354274986}
   - component: {fileID: 354274985}
+  - component: {fileID: 354274989}
+  - component: {fileID: 354274988}
   m_Layer: 0
   m_Name: Cell_45
   m_TagString: Untagged
@@ -2401,6 +2615,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354274983}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &354274988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354274983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &354274989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354274983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &355523735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2667,8 @@ GameObject:
   - component: {fileID: 355523739}
   - component: {fileID: 355523738}
   - component: {fileID: 355523737}
+  - component: {fileID: 355523741}
+  - component: {fileID: 355523740}
   m_Layer: 0
   m_Name: Cell_33
   m_TagString: Untagged
@@ -2507,6 +2763,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355523735}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &355523740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355523735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &355523741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355523735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &372382383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3367,14 +3663,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273308662}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 273308664}
+        m_TargetAssemblyTypeName: Sora.Managers.InventoryManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3461,7 +3757,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a24a00bf2355c4f8e680d29f6a2506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementSpotHighlights: []
+  allCells: {fileID: 100587010}
+  highlightCells:
+  - {fileID: 2092699265}
+  - {fileID: 1117650028}
+  - {fileID: 790075872}
+  - {fileID: 2117047354}
+  - {fileID: 2143418029}
+  - {fileID: 1265411892}
+  - {fileID: 677998713}
+  - {fileID: 513010898}
+  - {fileID: 503509066}
+  - {fileID: 579672210}
+  - {fileID: 1578889960}
+  - {fileID: 668635685}
+  - {fileID: 1858423265}
+  - {fileID: 1103089261}
+  - {fileID: 1159640632}
+  - {fileID: 697050323}
+  - {fileID: 969065202}
+  - {fileID: 868739922}
+  - {fileID: 169114663}
+  - {fileID: 509087499}
+  - {fileID: 1833323461}
+  - {fileID: 2094222740}
+  - {fileID: 1239948715}
+  - {fileID: 772370609}
+  - {fileID: 720152091}
+  - {fileID: 1668893195}
+  - {fileID: 1368259302}
+  - {fileID: 1990120398}
+  - {fileID: 488340423}
+  - {fileID: 308048553}
+  - {fileID: 1502890380}
+  - {fileID: 2122669326}
+  - {fileID: 844003502}
+  - {fileID: 355523736}
+  - {fileID: 904158375}
+  - {fileID: 58866841}
+  - {fileID: 1821470942}
+  - {fileID: 536525566}
+  - {fileID: 1972995525}
+  - {fileID: 232960403}
+  - {fileID: 2080504715}
+  - {fileID: 1200775478}
+  - {fileID: 1489303067}
+  - {fileID: 1477932849}
+  - {fileID: 551170945}
+  - {fileID: 354274984}
+  - {fileID: 93674226}
+  - {fileID: 2077185559}
+  - {fileID: 1366570431}
 --- !u!1001 &475533636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3668,6 +4014,8 @@ GameObject:
   - component: {fileID: 488340426}
   - component: {fileID: 488340425}
   - component: {fileID: 488340424}
+  - component: {fileID: 488340428}
+  - component: {fileID: 488340427}
   m_Layer: 0
   m_Name: Cell_28
   m_TagString: Untagged
@@ -3762,6 +4110,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488340422}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &488340427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488340422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &488340428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488340422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &492099465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4162,6 +4550,8 @@ GameObject:
   - component: {fileID: 503509069}
   - component: {fileID: 503509068}
   - component: {fileID: 503509067}
+  - component: {fileID: 503509071}
+  - component: {fileID: 503509070}
   m_Layer: 0
   m_Name: Cell_8
   m_TagString: Untagged
@@ -4256,6 +4646,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503509065}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &503509070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503509065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &503509071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503509065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &508716893
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,6 +5027,8 @@ GameObject:
   - component: {fileID: 509087502}
   - component: {fileID: 509087501}
   - component: {fileID: 509087500}
+  - component: {fileID: 509087504}
+  - component: {fileID: 509087503}
   m_Layer: 0
   m_Name: Cell_19
   m_TagString: Untagged
@@ -4691,6 +5123,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509087498}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &509087503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509087498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &509087504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509087498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513010897
 GameObject:
   m_ObjectHideFlags: 0
@@ -4703,6 +5175,8 @@ GameObject:
   - component: {fileID: 513010901}
   - component: {fileID: 513010900}
   - component: {fileID: 513010899}
+  - component: {fileID: 513010903}
+  - component: {fileID: 513010902}
   m_Layer: 0
   m_Name: Cell_7
   m_TagString: Untagged
@@ -4797,6 +5271,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513010897}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &513010902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513010897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &513010903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513010897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &532931105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5019,13 +5533,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 95018045}
   - {fileID: 1928253315}
   m_Father: {fileID: 2019497959}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -400}
+  m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 1300, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &536525565
@@ -5040,6 +5555,8 @@ GameObject:
   - component: {fileID: 536525569}
   - component: {fileID: 536525568}
   - component: {fileID: 536525567}
+  - component: {fileID: 536525571}
+  - component: {fileID: 536525570}
   m_Layer: 0
   m_Name: Cell_37
   m_TagString: Untagged
@@ -5134,6 +5651,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536525565}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &536525570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536525565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &536525571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536525565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &551170944
 GameObject:
   m_ObjectHideFlags: 0
@@ -5146,6 +5703,8 @@ GameObject:
   - component: {fileID: 551170948}
   - component: {fileID: 551170947}
   - component: {fileID: 551170946}
+  - component: {fileID: 551170950}
+  - component: {fileID: 551170949}
   m_Layer: 0
   m_Name: Cell_44
   m_TagString: Untagged
@@ -5240,6 +5799,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551170944}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &551170949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551170944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &551170950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551170944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &558139018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5581,6 +6180,8 @@ GameObject:
   - component: {fileID: 579672213}
   - component: {fileID: 579672212}
   - component: {fileID: 579672211}
+  - component: {fileID: 579672215}
+  - component: {fileID: 579672214}
   m_Layer: 0
   m_Name: Cell_9
   m_TagString: Untagged
@@ -5675,6 +6276,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579672209}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &579672214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579672209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &579672215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579672209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &613719907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6151,6 +6792,8 @@ GameObject:
   - component: {fileID: 668635688}
   - component: {fileID: 668635687}
   - component: {fileID: 668635686}
+  - component: {fileID: 668635690}
+  - component: {fileID: 668635689}
   m_Layer: 0
   m_Name: Cell_11
   m_TagString: Untagged
@@ -6245,6 +6888,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668635684}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &668635689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668635684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &668635690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668635684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &677998712
 GameObject:
   m_ObjectHideFlags: 0
@@ -6257,6 +6940,8 @@ GameObject:
   - component: {fileID: 677998716}
   - component: {fileID: 677998715}
   - component: {fileID: 677998714}
+  - component: {fileID: 677998718}
+  - component: {fileID: 677998717}
   m_Layer: 0
   m_Name: Cell_6
   m_TagString: Untagged
@@ -6351,6 +7036,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677998712}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &677998717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677998712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &677998718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677998712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697050322
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,6 +7088,8 @@ GameObject:
   - component: {fileID: 697050326}
   - component: {fileID: 697050325}
   - component: {fileID: 697050324}
+  - component: {fileID: 697050328}
+  - component: {fileID: 697050327}
   m_Layer: 0
   m_Name: Cell_15
   m_TagString: Untagged
@@ -6457,6 +7184,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697050322}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &697050327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697050322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &697050328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697050322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &720152090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6469,6 +7236,8 @@ GameObject:
   - component: {fileID: 720152094}
   - component: {fileID: 720152093}
   - component: {fileID: 720152092}
+  - component: {fileID: 720152096}
+  - component: {fileID: 720152095}
   m_Layer: 0
   m_Name: Cell_24
   m_TagString: Untagged
@@ -6563,6 +7332,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720152090}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &720152095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720152090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &720152096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720152090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &732012331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7098,6 +7907,8 @@ GameObject:
   - component: {fileID: 772370612}
   - component: {fileID: 772370611}
   - component: {fileID: 772370610}
+  - component: {fileID: 772370614}
+  - component: {fileID: 772370613}
   m_Layer: 0
   m_Name: Cell_23
   m_TagString: Untagged
@@ -7192,6 +8003,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772370608}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &772370613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772370608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &772370614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772370608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &785562717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7398,6 +8249,8 @@ GameObject:
   - component: {fileID: 790075875}
   - component: {fileID: 790075874}
   - component: {fileID: 790075873}
+  - component: {fileID: 790075877}
+  - component: {fileID: 790075876}
   m_Layer: 0
   m_Name: Cell_2
   m_TagString: Untagged
@@ -7492,6 +8345,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790075871}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &790075876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790075871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &790075877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790075871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &844003501
 GameObject:
   m_ObjectHideFlags: 0
@@ -7504,6 +8397,8 @@ GameObject:
   - component: {fileID: 844003505}
   - component: {fileID: 844003504}
   - component: {fileID: 844003503}
+  - component: {fileID: 844003507}
+  - component: {fileID: 844003506}
   m_Layer: 0
   m_Name: Cell_32
   m_TagString: Untagged
@@ -7598,6 +8493,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844003501}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &844003506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844003501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &844003507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844003501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &852972933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 856201427149689394, guid: 09f63230e5f4d6442a3d2de36c26d2b8, type: 3}
@@ -7775,6 +8710,8 @@ GameObject:
   - component: {fileID: 868739925}
   - component: {fileID: 868739924}
   - component: {fileID: 868739923}
+  - component: {fileID: 868739927}
+  - component: {fileID: 868739926}
   m_Layer: 0
   m_Name: Cell_17
   m_TagString: Untagged
@@ -7869,6 +8806,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868739921}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &868739926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868739921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &868739927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868739921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &904158374
 GameObject:
   m_ObjectHideFlags: 0
@@ -7881,6 +8858,8 @@ GameObject:
   - component: {fileID: 904158378}
   - component: {fileID: 904158377}
   - component: {fileID: 904158376}
+  - component: {fileID: 904158380}
+  - component: {fileID: 904158379}
   m_Layer: 0
   m_Name: Cell_34
   m_TagString: Untagged
@@ -7975,6 +8954,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904158374}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &904158379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904158374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &904158380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904158374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &969065201
 GameObject:
   m_ObjectHideFlags: 0
@@ -7987,6 +9006,8 @@ GameObject:
   - component: {fileID: 969065205}
   - component: {fileID: 969065204}
   - component: {fileID: 969065203}
+  - component: {fileID: 969065207}
+  - component: {fileID: 969065206}
   m_Layer: 0
   m_Name: Cell_16
   m_TagString: Untagged
@@ -8081,6 +9102,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969065201}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &969065206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969065201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &969065207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969065201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1014715859
 GameObject:
   m_ObjectHideFlags: 0
@@ -8165,14 +9226,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273308662}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 273308664}
+        m_TargetAssemblyTypeName: Sora.Managers.InventoryManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9128,14 +10189,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101757507}
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalRotation: {x: 0.4694715, y: 0, z: 0, w: 0.8829476}
   m_LocalPosition: {x: 105, y: 110, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 56, y: 0, z: 0}
 --- !u!1 &1103089260
 GameObject:
   m_ObjectHideFlags: 0
@@ -9148,6 +10209,8 @@ GameObject:
   - component: {fileID: 1103089264}
   - component: {fileID: 1103089263}
   - component: {fileID: 1103089262}
+  - component: {fileID: 1103089266}
+  - component: {fileID: 1103089265}
   m_Layer: 0
   m_Name: Cell_13
   m_TagString: Untagged
@@ -9242,6 +10305,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103089260}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1103089265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103089260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1103089266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103089260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1117650027
 GameObject:
   m_ObjectHideFlags: 0
@@ -9254,6 +10357,8 @@ GameObject:
   - component: {fileID: 1117650031}
   - component: {fileID: 1117650030}
   - component: {fileID: 1117650029}
+  - component: {fileID: 1117650033}
+  - component: {fileID: 1117650032}
   m_Layer: 0
   m_Name: Cell_1
   m_TagString: Untagged
@@ -9348,6 +10453,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117650027}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1117650032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117650027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1117650033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117650027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1121468769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9840,6 +10985,8 @@ GameObject:
   - component: {fileID: 1159640635}
   - component: {fileID: 1159640634}
   - component: {fileID: 1159640633}
+  - component: {fileID: 1159640637}
+  - component: {fileID: 1159640636}
   m_Layer: 0
   m_Name: Cell_14
   m_TagString: Untagged
@@ -9934,6 +11081,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159640631}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1159640636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159640631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1159640637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159640631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1164833579
 GameObject:
   m_ObjectHideFlags: 0
@@ -10992,6 +12179,8 @@ GameObject:
   - component: {fileID: 1200775481}
   - component: {fileID: 1200775480}
   - component: {fileID: 1200775479}
+  - component: {fileID: 1200775483}
+  - component: {fileID: 1200775482}
   m_Layer: 0
   m_Name: Cell_41
   m_TagString: Untagged
@@ -11086,6 +12275,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200775477}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1200775482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200775477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1200775483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200775477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1207759695
 GameObject:
   m_ObjectHideFlags: 0
@@ -11170,14 +12399,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273308662}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 273308664}
+        m_TargetAssemblyTypeName: Sora.Managers.InventoryManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11232,6 +12461,8 @@ GameObject:
   - component: {fileID: 1239948718}
   - component: {fileID: 1239948717}
   - component: {fileID: 1239948716}
+  - component: {fileID: 1239948720}
+  - component: {fileID: 1239948719}
   m_Layer: 0
   m_Name: Cell_22
   m_TagString: Untagged
@@ -11326,6 +12557,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239948714}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1239948719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239948714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1239948720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239948714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1265411891
 GameObject:
   m_ObjectHideFlags: 0
@@ -11338,6 +12609,8 @@ GameObject:
   - component: {fileID: 1265411895}
   - component: {fileID: 1265411894}
   - component: {fileID: 1265411893}
+  - component: {fileID: 1265411897}
+  - component: {fileID: 1265411896}
   m_Layer: 0
   m_Name: Cell_5
   m_TagString: Untagged
@@ -11432,6 +12705,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265411891}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1265411896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265411891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1265411897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265411891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366570430
 GameObject:
   m_ObjectHideFlags: 0
@@ -11444,6 +12757,8 @@ GameObject:
   - component: {fileID: 1366570434}
   - component: {fileID: 1366570433}
   - component: {fileID: 1366570432}
+  - component: {fileID: 1366570436}
+  - component: {fileID: 1366570435}
   m_Layer: 0
   m_Name: Cell_48
   m_TagString: Untagged
@@ -11538,6 +12853,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366570430}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1366570435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366570430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1366570436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366570430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1368259301
 GameObject:
   m_ObjectHideFlags: 0
@@ -11550,6 +12905,8 @@ GameObject:
   - component: {fileID: 1368259305}
   - component: {fileID: 1368259304}
   - component: {fileID: 1368259303}
+  - component: {fileID: 1368259307}
+  - component: {fileID: 1368259306}
   m_Layer: 0
   m_Name: Cell_26
   m_TagString: Untagged
@@ -11644,6 +13001,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368259301}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1368259306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368259301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1368259307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368259301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1417085245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12306,6 +13703,8 @@ GameObject:
   - component: {fileID: 1477932852}
   - component: {fileID: 1477932851}
   - component: {fileID: 1477932850}
+  - component: {fileID: 1477932854}
+  - component: {fileID: 1477932853}
   m_Layer: 0
   m_Name: Cell_43
   m_TagString: Untagged
@@ -12400,6 +13799,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477932848}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1477932853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477932848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1477932854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477932848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1489303066
 GameObject:
   m_ObjectHideFlags: 0
@@ -12412,6 +13851,8 @@ GameObject:
   - component: {fileID: 1489303070}
   - component: {fileID: 1489303069}
   - component: {fileID: 1489303068}
+  - component: {fileID: 1489303072}
+  - component: {fileID: 1489303071}
   m_Layer: 0
   m_Name: Cell_42
   m_TagString: Untagged
@@ -12506,6 +13947,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489303066}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1489303071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489303066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1489303072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489303066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1494124436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12712,6 +14193,8 @@ GameObject:
   - component: {fileID: 1502890383}
   - component: {fileID: 1502890382}
   - component: {fileID: 1502890381}
+  - component: {fileID: 1502890385}
+  - component: {fileID: 1502890384}
   m_Layer: 0
   m_Name: Cell_30
   m_TagString: Untagged
@@ -12806,6 +14289,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502890379}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1502890384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502890379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1502890385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502890379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1522480906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 194c88ef64ce0b04fa728ec3fe469920, type: 3}
@@ -13017,6 +14540,8 @@ GameObject:
   - component: {fileID: 1578889963}
   - component: {fileID: 1578889962}
   - component: {fileID: 1578889961}
+  - component: {fileID: 1578889965}
+  - component: {fileID: 1578889964}
   m_Layer: 0
   m_Name: Cell_10
   m_TagString: Untagged
@@ -13111,6 +14636,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578889959}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1578889964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578889959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1578889965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578889959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1581941312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14128,6 +15693,8 @@ GameObject:
   - component: {fileID: 1668893198}
   - component: {fileID: 1668893197}
   - component: {fileID: 1668893196}
+  - component: {fileID: 1668893200}
+  - component: {fileID: 1668893199}
   m_Layer: 0
   m_Name: Cell_25
   m_TagString: Untagged
@@ -14222,6 +15789,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668893194}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1668893199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668893194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1668893200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668893194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1707879741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16115,6 +17722,8 @@ GameObject:
   - component: {fileID: 1821470945}
   - component: {fileID: 1821470944}
   - component: {fileID: 1821470943}
+  - component: {fileID: 1821470947}
+  - component: {fileID: 1821470946}
   m_Layer: 0
   m_Name: Cell_36
   m_TagString: Untagged
@@ -16209,6 +17818,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821470941}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1821470946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821470941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1821470947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821470941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1833323460
 GameObject:
   m_ObjectHideFlags: 0
@@ -16221,6 +17870,8 @@ GameObject:
   - component: {fileID: 1833323464}
   - component: {fileID: 1833323463}
   - component: {fileID: 1833323462}
+  - component: {fileID: 1833323466}
+  - component: {fileID: 1833323465}
   m_Layer: 0
   m_Name: Cell_20
   m_TagString: Untagged
@@ -16315,6 +17966,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833323460}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1833323465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833323460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1833323466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833323460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1856231563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16521,6 +18212,8 @@ GameObject:
   - component: {fileID: 1858423268}
   - component: {fileID: 1858423267}
   - component: {fileID: 1858423266}
+  - component: {fileID: 1858423270}
+  - component: {fileID: 1858423269}
   m_Layer: 0
   m_Name: Cell_12
   m_TagString: Untagged
@@ -16615,6 +18308,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858423264}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1858423269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858423264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1858423270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858423264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1928253314
 GameObject:
   m_ObjectHideFlags: 0
@@ -17005,6 +18738,8 @@ GameObject:
   - component: {fileID: 1972995528}
   - component: {fileID: 1972995527}
   - component: {fileID: 1972995526}
+  - component: {fileID: 1972995530}
+  - component: {fileID: 1972995529}
   m_Layer: 0
   m_Name: Cell_38
   m_TagString: Untagged
@@ -17099,6 +18834,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972995524}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1972995529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972995524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1972995530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972995524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1976438495
 GameObject:
   m_ObjectHideFlags: 0
@@ -17183,14 +18958,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273308662}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 273308664}
+        m_TargetAssemblyTypeName: Sora.Managers.InventoryManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17245,6 +19020,8 @@ GameObject:
   - component: {fileID: 1990120401}
   - component: {fileID: 1990120400}
   - component: {fileID: 1990120399}
+  - component: {fileID: 1990120403}
+  - component: {fileID: 1990120402}
   m_Layer: 0
   m_Name: Cell_27
   m_TagString: Untagged
@@ -17339,6 +19116,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990120397}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1990120402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990120397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1990120403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990120397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1992138271
 GameObject:
   m_ObjectHideFlags: 0
@@ -17423,14 +19240,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273308662}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 273308664}
+        m_TargetAssemblyTypeName: Sora.Managers.InventoryManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17764,7 +19581,6 @@ RectTransform:
   - {fileID: 1937856269}
   - {fileID: 768425766}
   - {fileID: 264267629}
-  - {fileID: 95018045}
   - {fileID: 534487155}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -17786,6 +19602,8 @@ GameObject:
   - component: {fileID: 2077185562}
   - component: {fileID: 2077185561}
   - component: {fileID: 2077185560}
+  - component: {fileID: 2077185564}
+  - component: {fileID: 2077185563}
   m_Layer: 0
   m_Name: Cell_47
   m_TagString: Untagged
@@ -17880,6 +19698,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077185558}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2077185563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077185558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2077185564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077185558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2080504714
 GameObject:
   m_ObjectHideFlags: 0
@@ -17892,6 +19750,8 @@ GameObject:
   - component: {fileID: 2080504718}
   - component: {fileID: 2080504717}
   - component: {fileID: 2080504716}
+  - component: {fileID: 2080504720}
+  - component: {fileID: 2080504719}
   m_Layer: 0
   m_Name: Cell_40
   m_TagString: Untagged
@@ -17986,6 +19846,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080504714}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2080504719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080504714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2080504720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080504714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2089212899
 GameObject:
   m_ObjectHideFlags: 0
@@ -18070,13 +19970,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273308662}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 273308664}
+        m_TargetAssemblyTypeName: Sora.Managers.InventoryManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18132,6 +20032,8 @@ GameObject:
   - component: {fileID: 2092699268}
   - component: {fileID: 2092699267}
   - component: {fileID: 2092699266}
+  - component: {fileID: 2092699270}
+  - component: {fileID: 2092699269}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Untagged
@@ -18226,6 +20128,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092699264}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2092699269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092699264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2092699270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092699264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2094222739
 GameObject:
   m_ObjectHideFlags: 0
@@ -18238,6 +20180,8 @@ GameObject:
   - component: {fileID: 2094222743}
   - component: {fileID: 2094222742}
   - component: {fileID: 2094222741}
+  - component: {fileID: 2094222745}
+  - component: {fileID: 2094222744}
   m_Layer: 0
   m_Name: Cell_21
   m_TagString: Untagged
@@ -18332,6 +20276,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094222739}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2094222744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094222739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2094222745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094222739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2117047353
 GameObject:
   m_ObjectHideFlags: 0
@@ -18344,6 +20328,8 @@ GameObject:
   - component: {fileID: 2117047357}
   - component: {fileID: 2117047356}
   - component: {fileID: 2117047355}
+  - component: {fileID: 2117047359}
+  - component: {fileID: 2117047358}
   m_Layer: 0
   m_Name: Cell_3
   m_TagString: Untagged
@@ -18438,6 +20424,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117047353}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2117047358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117047353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2117047359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117047353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2122669325
 GameObject:
   m_ObjectHideFlags: 0
@@ -18450,6 +20476,8 @@ GameObject:
   - component: {fileID: 2122669329}
   - component: {fileID: 2122669328}
   - component: {fileID: 2122669327}
+  - component: {fileID: 2122669331}
+  - component: {fileID: 2122669330}
   m_Layer: 0
   m_Name: Cell_31
   m_TagString: Untagged
@@ -18544,6 +20572,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122669325}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2122669330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122669325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2122669331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122669325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143418028
 GameObject:
   m_ObjectHideFlags: 0
@@ -18556,6 +20624,8 @@ GameObject:
   - component: {fileID: 2143418032}
   - component: {fileID: 2143418031}
   - component: {fileID: 2143418030}
+  - component: {fileID: 2143418034}
+  - component: {fileID: 2143418033}
   m_Layer: 0
   m_Name: Cell_4
   m_TagString: Untagged
@@ -18650,6 +20720,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143418028}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2143418033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143418028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360617425b468504e98ededc65535646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoraEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 58866846}
+        m_TargetAssemblyTypeName: Sora.Game.DetectClickOnCell, Assembly-CSharp
+        m_MethodName: EnableMouseDetection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2143418034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143418028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207f72f39e9588543af1a41a0b0bc1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8099034810582006299
 PrefabInstance:
   m_ObjectHideFlags: 0

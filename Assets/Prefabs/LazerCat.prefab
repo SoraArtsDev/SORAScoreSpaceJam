@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 4420546234698639466}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Towers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,23 +326,38 @@ MonoBehaviour:
   FirePoint: {fileID: 8200533877208573632}
   type: 1
   data:
-    name: 
-    spriteName: 
+    name: LazerCat
+    spriteName: Test
     level: 0
-    upgradeLevel: 0
-    damage: 0
-    attackRate: 0
-    areaOfImpact: 0
-    upgradeCost: 0
-    sellCost: 0
-    buildCost: 0
-    type: 0
-    sprite: []
-    sellRate: 
-    damageUpgrades: []
-    attackRateUpgrades: []
-    areaOfImpactUpgrades: []
-    costUpgrades: []
+    upgradeLevel: 1
+    damage: 1
+    attackRate: 1
+    areaOfImpact: 1
+    upgradeCost: 10
+    sellCost: 400
+    buildCost: 10
+    type: 1
+    sprite:
+    - Test
+    - Test
+    - Test
+    sellRate: 280000002a0000002b000000
+    damageUpgrades:
+    - data: 010000000200000003000000040000000500000006000000
+    - data: 010000000200000003000000040000000500000006000000
+    - data: 010000000200000003000000040000000500000006000000
+    attackRateUpgrades:
+    - data: 010000000200000003000000040000000500000006000000
+    - data: 010000000200000003000000040000000500000006000000
+    - data: 010000000200000003000000040000000500000006000000
+    areaOfImpactUpgrades:
+    - data: 010000000200000003000000040000000500000006000000
+    - data: 010000000200000003000000040000000500000006000000
+    - data: 010000000200000003000000040000000500000006000000
+    costUpgrades:
+    - data: 0a0000000100000002000000030000000400000005000000
+    - data: 640000000100000002000000030000000400000005000000
+    - data: c80000000100000002000000030000000400000005000000
 --- !u!120 &4420546234698639466
 LineRenderer:
   serializedVersion: 2

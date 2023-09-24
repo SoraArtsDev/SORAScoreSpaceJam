@@ -18,22 +18,29 @@ namespace Sora.Managers
         LOCKED
     }
 
-    public class MapCell
-    {
-        public ECellStatus status;
-        //public 
-    }
-
     public class MapManager : Singleton<MapManager>
     {
-        public Dictionary<int, MapCell> allTowerCells = new Dictionary<int, MapCell>();
-        public GameObject[] placementSpotHighlights;
+        public GameObject allCells;
+        public Transform[] highlightCells;
+        public Dictionary<Vector3, GameObject> availableCells = new Dictionary<Vector3, GameObject>();
 
-        
+        private void OnEnable()
+        {
+            for(int i = 0; i < highlightCells.Length; ++i)
+            {
+                availableCells.Add(highlightCells[i].position, highlightCells[i].gameObject);
+            }
+        }
 
         public void HighlightAvailblePlacementCells()
         {
+            allCells.SetActive(true);
+        }
 
+        public void UpdateAvailableCells(Transform cell)
+        {
+            availableCells[cell.position].SetActive(false);
+            availableCells.Remove(cell.position);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Sora
 
         public TowerData GetData()
         {
-           return tower.data;
+            return tower.data;
         }
     }
 }
