@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 1423819141904154732}
   - component: {fileID: 7886113285546010336}
   - component: {fileID: 6771433649247709188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Towers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,13 +253,30 @@ MonoBehaviour:
   range: 15
   BulletPrefab: {fileID: 3650927174145506129, guid: db2c323976e7b9d4bb1289568d4af770, type: 3}
   FireRate: 5
-  bUseLaser: 0
   lineRenderer: {fileID: 0}
   RotatePoint: {fileID: 9005282320168354032}
   TurretRotationSpeed: 10
   EnemyTag: Enemy
   FirePoint: {fileID: 4663746170165621741}
   type: 0
+  data:
+    name: 
+    spriteName: 
+    level: 0
+    upgradeLevel: 0
+    damage: 0
+    attackRate: 0
+    areaOfImpact: 0
+    upgradeCost: 0
+    sellCost: 0
+    buildCost: 0
+    type: 0
+    sprite: []
+    sellRate: 
+    damageUpgrades: []
+    attackRateUpgrades: []
+    areaOfImpactUpgrades: []
+    costUpgrades: []
 --- !u!1 &6034114701573170984
 GameObject:
   m_ObjectHideFlags: 0

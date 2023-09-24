@@ -32,6 +32,7 @@ namespace Sora
         // Start is called before the first frame update
         void Start()
         {
+            transform.tag = "Towers";
             bUseLaser = type == TowerType.E_Lazer;
             data = Managers.TowerManager.instance.GetTowerData(type);
             transform.parent.GetComponent<Sora.TowerUIInfo>().SetTower(transform.gameObject); ;
