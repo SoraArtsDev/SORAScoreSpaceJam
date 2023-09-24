@@ -46,6 +46,7 @@ namespace Sora
             rb = GetComponent<Rigidbody>();
             agent = GetComponent<NavMeshAgent>();
             moveClicked = false;
+
         }
 
         void Update()
@@ -57,7 +58,7 @@ namespace Sora
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit) && hit.collider.tag == "Floor")
                 {
                     agent.SetDestination(hit.point);
                 }
@@ -68,7 +69,7 @@ namespace Sora
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit) && hit.collider.tag == "Floor")
                 {
                     agent.SetDestination(hit.point);
                 }

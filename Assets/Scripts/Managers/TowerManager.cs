@@ -9,35 +9,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sora 
+namespace Sora.Managers
 {
-    /// You may delete all of the stuff inside here. 
-    /// Just remember to stick to the formating
-    public class TurretManager : MonoBehaviour
-    {
-        private TextAsset turretFile;
-        public Dictionary<string, TurretData> turrets;
-        void Start()
-        {
-            turretFile = Resources.Load<TextAsset>("turretData");
-            turrets = new Dictionary<string, TurretData>();
 
-            ReadTurretData();
-  
+        public class TowerManager : Singleton<TowerManager>
+        {
+        private TextAsset towerDataFile;
+        public Dictionary<TowerType, TowerData> towersData;
+        private bool isCreated;
+
+        void OnEnable()
+        {
+            isCreated = false;
+            ReadTowerData();
         }
 
-        void ReadTurretData()
+        public void ReadTowerData()
         {
-            Turrets turretsData = JsonUtility.FromJson<Turrets>(turretFile.text);
-            for(int i = 0; i < turretsData.turrets.Length; ++i)
+            if (isCreated)
+                return;
+
+            isCreated = true;
+            towerDataFile = Resources.Load<TextAsset>("towerData");
+            towersData = new Dictionary<TowerType, TowerData>();
+
+            ReadTowerData();
+            Towers data = JsonUtility.FromJson<Towers>(towerDataFile.text);
+            for(int i = 0; i < data.towers.Length; ++i)
             {
-                ApplyUpgrades(ref turretsData.turrets[i]);
-                turrets[turretsData.turrets[i].name] = turretsData.turrets[i];
+                ApplyUpgrades(ref data.towers[i]);
+                towersData[data.towers[i].type] = data.towers[i];
             }
         }
 
 
-        void ApplyUpgrades(ref TurretData data)
+        public void ApplyUpgrades(ref TowerData data)
         {
             data.upgradeCost = data.costUpgrades[data.level].data[data.upgradeLevel];
             data.damage = data.damageUpgrades[data.level].data[data.upgradeLevel];
@@ -53,6 +59,11 @@ namespace Sora
                 data.upgradeLevel = 0;
                 data.level++;
             }
+        }
+
+        public TowerData GetTowerData(TowerType type)
+        {
+            return towersData[type];
         }
     }
 }

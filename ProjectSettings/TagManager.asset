@@ -8,6 +8,8 @@ TagManager:
   - enemyFinder
   - player
   - Cell
+  - Towers
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Walls
   - LevelFloor
   - enemyFinder
-  - 
+  - Towers
   - 
   - 
   - 
