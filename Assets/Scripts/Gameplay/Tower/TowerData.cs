@@ -11,9 +11,9 @@ using UnityEngine;
 //
 
 /*{
-"Turrets": [
+"Towers": [
 {
-  "Name": "Turret",
+  "Name": "Towers",
   "Level":0,
   "Upgrade":0,
   "DefaultDamage":1,
@@ -63,7 +63,7 @@ namespace Sora
     }
 
     [System.Serializable]
-    public class TurretData
+    public class TowersData
     {
         public string name;
         public string spriteName;
@@ -79,13 +79,13 @@ namespace Sora
         public List<int> sellRate;
         public Upgrades[] damageUpgrades;
         public Upgrades[] attackRateUpgrades;
-        public Upgrades[] areaOfImpactUpgrades;
+        public Upgrades[] areaOfImpactUpgrades;//1,42,5,6,7
         public Upgrades[] costUpgrades;
     }
 
     [System.Serializable]
-    public class Turrets
+    public class Towers
     {
-        public TurretData[] turrets;
+        public TowersData[] towers;
     }
 }

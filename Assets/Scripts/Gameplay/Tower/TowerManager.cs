@@ -13,31 +13,31 @@ namespace Sora
 {
     /// You may delete all of the stuff inside here. 
     /// Just remember to stick to the formating
-    public class TurretManager : MonoBehaviour
+    public class TowerManager : MonoBehaviour
     {
-        private TextAsset turretFile;
-        public Dictionary<string, TurretData> turrets;
+        private TextAsset towerDataFile;
+        public Dictionary<string, TowersData> towersData;
         void Start()
         {
-            turretFile = Resources.Load<TextAsset>("turretData");
-            turrets = new Dictionary<string, TurretData>();
+            towerDataFile = Resources.Load<TextAsset>("towerData");
+            towersData = new Dictionary<string, TowersData>();
 
-            ReadTurretData();
+            ReadTowerData();
   
         }
 
-        void ReadTurretData()
+        void ReadTowerData()
         {
-            Turrets turretsData = JsonUtility.FromJson<Turrets>(turretFile.text);
-            for(int i = 0; i < turretsData.turrets.Length; ++i)
+            Towers data = JsonUtility.FromJson<Towers>(towerDataFile.text);
+            for(int i = 0; i < data.towers.Length; ++i)
             {
-                ApplyUpgrades(ref turretsData.turrets[i]);
-                turrets[turretsData.turrets[i].name] = turretsData.turrets[i];
+                ApplyUpgrades(ref data.towers[i]);
+                towersData[data.towers[i].name] = data.towers[i];
             }
         }
 
 
-        void ApplyUpgrades(ref TurretData data)
+        void ApplyUpgrades(ref TowersData data)
         {
             data.upgradeCost = data.costUpgrades[data.level].data[data.upgradeLevel];
             data.damage = data.damageUpgrades[data.level].data[data.upgradeLevel];
