@@ -176,7 +176,7 @@ namespace Sora.Game
                 Utility.SoraClock.instance.StopDelayedMethod(resetMovespeed);
 
             moveSpeed *= speedModifier;
-            Utility.SoraClock.instance.ExecuteWithDelay(this, () => { moveSpeed = initialMovespeed; }, duration);
+            resetMovespeed = Utility.SoraClock.instance.ExecuteWithDelay(this, () => { moveSpeed = initialMovespeed; }, duration);
         }
     }
 }

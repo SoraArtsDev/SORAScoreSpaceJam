@@ -43,7 +43,7 @@ namespace Sora.Managers
             Random.InitState(System.DateTime.Now.Second);
             waveCount = 0;
             autoWaveCD = autoWaveDuration;
-            waveCount = 1;
+            waveCount = 10;
         }
 
         public void StartAutoWaveCountdown()
@@ -115,18 +115,28 @@ namespace Sora.Managers
 
             WaveData wd = new WaveData();
             wd.waveCount = waveCount;
-            wd.enemyTypes = 1;
+            //TODO:: BALANCE
+            wd.enemyTypes = Random.Range(3, Mathf.Max((int)(waveCount * 0.4f), 6));
             wd.entryPoint = new int[wd.enemyTypes];
             wd.enemyCountbyType = new KeyValuePair<EEnemyType, int>[wd.enemyTypes];
 
+            Random.InitState(System.DateTime.Now.Millisecond);
             for (int i = 0; i < wd.enemyTypes; ++i)
-            {
-                Random.InitState(System.DateTime.Now.Second);
+            {                
                 EEnemyType e = (EEnemyType)Random.Range(0, (int)EEnemyType.COUNT);
-                //wd.enemyCountbyType[i] = new KeyValuePair<Game.EEnemyType, int>(e, 10);
-                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(e, 10);
-                wd.entryPoint[i] = Random.Range(0, 3);
+                //TODO:: BALANCE
+                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(e, Random.Range((int)(waveCount * 0.3f), (int)(waveCount * 0.4f)));
                 
+                if(waveCount <= 15)
+                    wd.entryPoint[i] = Random.Range(0, 2);
+                else
+                {
+                    int rand = Random.RandomRange(0, 10);
+                    if (rand > 4)
+                        wd.entryPoint[i] = Random.Range(0, 2);
+                    else
+                        wd.entryPoint[i] = Random.Range(0, 3);
+                }
             }
             startWaveEvent.InvokeEvent(this, wd);
 
