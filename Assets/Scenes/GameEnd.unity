@@ -2612,7 +2612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1873477586}
-  lbUI: {fileID: 0}
+  lbUI: {fileID: 2034309303}
   playerNameInput: {fileID: 561892473}
   playerFinalScore: {fileID: 11400000, guid: 1046cf228ec74e44699c3608a172741b, type: 2}
   leaderboardKey: local

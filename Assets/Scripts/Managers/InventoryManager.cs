@@ -49,7 +49,7 @@ namespace Sora.Managers
             tower.transform.position = new Vector3(40, 12, 30);
             td = towerProperties[index].GetData();
 
-            if (playerTreats.value > td.buildCost)
+            if (playerTreats.value > td.upgradeCost)
             {
                 for (int i = 0; i < towerButtons.Length; ++i)
                 {
