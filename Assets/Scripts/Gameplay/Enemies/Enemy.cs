@@ -40,11 +40,14 @@ namespace Sora.Game
         public float armour;
         public bool isFlying;
         public int treatsDropped;
+        public int scoreProvided;
 
         [Space]
         [SerializeField] private Image healthBar;
+        [SerializeField] private Image armourBar;
         [Space]
         private float maxHealthPoints;
+        private float maxArmour;
         [HideInInspector] public bool attacking;
 
 
@@ -56,15 +59,20 @@ namespace Sora.Game
         public int entryPoint;
         private List<List<Vector3>> waypoints;
 
-        private void OnValidate()
+        private void Awake()
         {
-            maxHealthPoints = healthPoints;            
+            maxHealthPoints = healthPoints;
+            initialMovespeed = moveSpeed;
+            maxArmour = armour;
         }
 
         private void OnEnable()
         {
             healthBar.fillAmount = 1.0f;
-            initialMovespeed = moveSpeed;
+
+            if(armourBar)
+                armourBar.fillAmount = 1.0f;
+            moveSpeed = initialMovespeed;
 
             switch(entryPoint)
             {
@@ -119,19 +127,29 @@ namespace Sora.Game
 
         public void TakeDamage(int damage)
         {
-            healthPoints -= damage;
-            healthBar.fillAmount = healthPoints / maxHealthPoints;
-
-            if (healthPoints <= 0)
+            if (armour > 0)
             {
-                DisableObject();
-                Managers.InventoryManager.instance.AddTreats(treatsDropped);
+                armour -= damage;
+                armourBar.fillAmount = (float) (armour / maxArmour);
             }
+            else
+            {
+                healthPoints -= damage;
+                healthBar.fillAmount = (float) (healthPoints / maxHealthPoints);
+
+                if (healthPoints <= 0)
+                {
+                    Managers.InventoryManager.instance.AddTreats(treatsDropped);
+                    Managers.GameManager.instance.AddScore(scoreProvided);
+                    DisableObject();
+                }
+            }            
         }
 
         private void DisableObject()
         {
             healthPoints = maxHealthPoints;
+            armour = maxArmour;
             waypointIndex = 0;
             gameObject.SetActive(false);
         }
