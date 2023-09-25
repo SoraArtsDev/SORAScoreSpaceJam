@@ -26,6 +26,8 @@ namespace Sora.Managers
         [SerializeField] private BoolVariable selectingTower;
         [SerializeField] private GameObject blockButtonsUI;
 
+        public TowerData td;
+
         private void OnEnable()
         {
             playerTreats.value = initialTreats;
@@ -36,10 +38,7 @@ namespace Sora.Managers
         {
             GameObject tower = Instantiate(towerProperties[index].gameObject);
             tower.transform.position = new Vector3(40, 12, 30);
-            TowerData td = towerProperties[index].GetData();
-            blockButtonsUI.SetActive(true);
-            selectingTower.value = true;
-
+            td = towerProperties[index].GetData();
 
             if (playerTreats.value > td.buildCost)
             {
@@ -52,10 +51,15 @@ namespace Sora.Managers
                     else
                         towerButtons[i].Select();
                 }
-
-                MapManager.instance.HighlightAvailblePlacementCells();
-                selectingTowerEvent.InvokeEvent(this, tower);
             }
+            else
+                return;
+
+            blockButtonsUI.SetActive(true);
+            selectingTower.value = true;
+
+            MapManager.instance.HighlightAvailblePlacementCells();
+            selectingTowerEvent.InvokeEvent(this, tower);
         }
 
         public void ResetInventoryAccess()
