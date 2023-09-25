@@ -131,9 +131,10 @@ MonoBehaviour:
   ballistic: {fileID: 5132280998376183575, guid: 15471fcbae5130c44a56dd59f8cd2e3f, type: 3}
   sceneEnemies: []
   angle: 45
-  gravity: -11
+  gravity: -15
   velocityMult: 2
   minDistance: 40
+  isPlaced: 0
 --- !u!1 &6358036082164852250
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +199,7 @@ Transform:
   m_Children:
   - {fileID: 2891083713172422388}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &2263795557186258411
 MeshFilter:
