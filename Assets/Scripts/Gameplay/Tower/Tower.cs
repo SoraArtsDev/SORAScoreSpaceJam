@@ -159,7 +159,14 @@ namespace Sora
             }
             else if (bUseFlame)
             {
+                if (data.level == 0)
+                    particle1.Stop();
+                else if (data.level == 1)
+                    particle2.Stop();
+                else if (data.level == 2)
+                    particle3.Stop();
 
+                FlameThrower();
             }
             else
             {
@@ -202,6 +209,20 @@ namespace Sora
         }
 
         void Freeze()
+        {
+            if (target == null)
+                return;
+
+            if (data.level == 0)
+                particle1.Play();
+            else if (data.level == 1)
+                particle2.Play();
+            else if (data.level == 2)
+                particle3.Play();
+            target.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
+        }
+
+        void FlameThrower()
         {
             if (target == null)
                 return;
