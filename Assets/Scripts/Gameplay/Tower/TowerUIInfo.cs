@@ -31,7 +31,7 @@ namespace Sora
 
         public TowerData GetData()
         {
-            //tower = GetComponentInChildren<Tower>();
+            tower = GetComponentInChildren<Tower>();
             return tower.data;
         }
     }

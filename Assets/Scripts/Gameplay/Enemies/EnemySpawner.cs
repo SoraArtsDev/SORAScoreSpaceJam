@@ -68,13 +68,15 @@ namespace Sora.Game
 
                 for(int j = 0; j < count; ++j)
                 {
-                    poolData[e].pool[j].GetComponent<Enemy>().entryPoint = wd.entryPoint[i];
-
+                    poolData[e].pool[poolIndices[e]].GetComponent<Enemy>().entryPoint = wd.entryPoint[i];
                     poolData[e].pool[poolIndices[e]].SetActive(true);
                     poolIndices[e] = (poolIndices[e] + 1) % poolData[e].pool.Length;
                     yield return new WaitForSecondsRealtime(spawnInterval);
                 }
             }
+
+            WaveManager.instance.StartAutoWaveCountdown();
+            WaveManager.instance.waveStartButton.interactable = true;
         }
     }
 }
