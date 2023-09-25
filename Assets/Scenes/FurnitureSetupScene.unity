@@ -131,6 +131,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 984436113484118449, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 984436113484118449, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 984436113484118449, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1483175493598658772, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
       propertyPath: m_Speed
       value: 50
@@ -157,15 +169,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6213803032555290858, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6213803032555290858, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6213803032555290858, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6213803032555290858, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
       propertyPath: m_LocalPosition.x
@@ -173,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6213803032555290858, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.8
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: 6213803032555290858, guid: 474fefaca1c2e5a4a9a6de9f6c199797, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2793,6 +2805,30 @@ MonoBehaviour:
   selectingTowerEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
   selectingTower: {fileID: 11400000, guid: 40c0d465eaaf3a446929ea6c03bbfecb, type: 2}
   blockButtonsUI: {fileID: 737411195}
+  Sniper:
+  - {fileID: 1626185847, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: -339595750, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: 1662093511, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  Lazer:
+  - {fileID: -418295165, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: -1321961753, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: 637245644, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  Mortar:
+  - {fileID: -1466039142, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: -2117712003, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: 568118621, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  Freeze:
+  - {fileID: 782322311, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: 1807563333, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: -481533151, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  Turret:
+  - {fileID: -915774566, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: 730895538, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: -487654321, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  Fire:
+  - {fileID: 1846797640, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: -1507935552, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: -1129764300, guid: dcf70469035d5b64abad645bd170020c, type: 3}
 --- !u!1 &281488130
 GameObject:
   m_ObjectHideFlags: 0
