@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1dfd17d24a56de4ca369b5fd4d1ed36, type: 3}
-  m_Name: SO_PlayerHealth
+  m_Script: {fileID: 11500000, guid: 748791f4b4960c545a13dc7a24c24ae3, type: 3}
+  m_Name: SO_GameOverEvent
   m_EditorClassIdentifier: 
-  value: 50
-  resetDefaultValue: 0
