@@ -26,6 +26,15 @@ namespace Sora.Managers
         [SerializeField] private BoolVariable selectingTower;
         [SerializeField] private GameObject blockButtonsUI;
 
+
+        public Sprite[] Sniper;//= { "ALL_MUG_0","ALL_MUG_1","ALL_MUG_2"};
+        public Sprite[] Lazer;//=// { "ALL_MUG_3","ALL_MUG_4","ALL_MUG_5"};
+        public Sprite[] Mortar; //= { "ALL_MUG_6","ALL_MUG_7","ALL_MUG_8"};
+        public Sprite[] Freeze;//= { "ALL_MUG_9","ALL_MUG_10","ALL_MUG_11"};
+        public Sprite[] Turret;// { "ALL_MUG_12","ALL_MUG_13","ALL_MUG_14"};
+        public Sprite[] Fire;//= { "ALL_MUG_15","ALL_MUG_16","ALL_MUG_17"};
+
+
         public TowerData td;
 
         private void OnEnable()

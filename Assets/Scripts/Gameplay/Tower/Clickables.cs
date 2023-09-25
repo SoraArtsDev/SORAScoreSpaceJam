@@ -47,7 +47,128 @@ namespace Sora
             lvl3.upgradeBtbtn.gameObject.SetActive(false);
         }
 
-        public void Check(int cost, int level, int upgradeLevel)
+        Sprite GetImage(int level, TowerType type)
+        {
+            switch(type)
+            {
+                case TowerType.E_FlameThrower:
+                    {
+
+                        if (level == 0)
+                        {
+                            return Managers.InventoryManager.instance.Fire[0];
+                        }
+                        else if (level == 1)
+                        {
+                            return Managers.InventoryManager.instance.Fire[1];
+
+                        }
+                        else
+                        {
+                            return Managers.InventoryManager.instance.Fire[2];
+
+                        }
+                    }
+                    break;
+                case TowerType.E_Freeze:
+                    {
+
+                        if (level == 0)
+                        {
+                            return Managers.InventoryManager.instance.Freeze[0];
+                        }
+                        else if (level == 1)
+                        {
+                            return Managers.InventoryManager.instance.Freeze[1];
+
+                        }
+                        else
+                        {
+                            return Managers.InventoryManager.instance.Freeze[2];
+
+                        }
+                    }
+                    break;
+                case TowerType.E_Lazer:
+                    {
+
+                        if (level == 0)
+                        {
+                            return Managers.InventoryManager.instance.Lazer[0];
+                        }
+                        else if (level == 1)
+                        {
+                            return Managers.InventoryManager.instance.Lazer[1];
+
+                        }
+                        else
+                        {
+                            return Managers.InventoryManager.instance.Lazer[2];
+
+                        }
+                    }
+                    break;
+                case TowerType.E_Turret:
+                    {
+
+                        if (level == 0)
+                        {
+                            return Managers.InventoryManager.instance.Turret[0];
+                        }
+                        else if (level == 1)
+                        {
+                            return Managers.InventoryManager.instance.Turret[1];
+
+                        }
+                        else
+                        {
+                            return Managers.InventoryManager.instance.Turret[2];
+
+                        }
+                    }
+                    break;
+                case TowerType.E_Mortar:
+                    {
+
+                        if (level == 0)
+                        {
+                            return Managers.InventoryManager.instance.Mortar[0];
+                        }
+                        else if (level == 1)
+                        {
+                            return Managers.InventoryManager.instance.Mortar[1];
+
+                        }
+                        else
+                        {
+                            return Managers.InventoryManager.instance.Mortar[2];
+
+                        }
+                    }
+                    break;
+                case TowerType.E_Sniper:
+                    {
+
+                        if (level == 0)
+                        {
+                            return Managers.InventoryManager.instance.Sniper[0];
+                        }
+                        else if (level == 1)
+                        {
+                            return Managers.InventoryManager.instance.Sniper[1];
+
+                        }
+                        else
+                        {
+                            return Managers.InventoryManager.instance.Sniper[2];
+
+                        }
+                    }
+                    break;
+            }
+            return null;
+        }
+        public void Check(int cost, int level, int upgradeLevel,TowerType type)
         {
             bool canUpgrade = cost <= Managers.InventoryManager.instance.playerTreats.value;
 
@@ -59,7 +180,7 @@ namespace Sora
                 lvl1.txt.gameObject.SetActive(true);
                 lvl1.txt.text = cost.ToString();
                 lvl1.img.enabled = true;
-
+                lvl1.img.sprite = GetImage(level, type);
 
                 //disable others
                 lvl2.upgradeBtbtn.interactable = false;
@@ -100,6 +221,8 @@ namespace Sora
                 lvl1.txt.text = "Max";
                 lvl1.img.enabled = true;
                 lvl2.img.enabled = true;
+                lvl1.img.sprite = GetImage(0, type);
+                lvl2.img.sprite = GetImage(1, type);
                 //disable others
                 //lvl1.txt.gameObject.SetActive(false);
                 lvl3.txt.gameObject.SetActive(false);
@@ -138,6 +261,9 @@ namespace Sora
                 lvl1.img.enabled = true;
                 lvl2.img.enabled = true;
                 lvl3.img.enabled = true;
+                lvl1.img.sprite = GetImage(0, type);
+                lvl2.img.sprite = GetImage(1, type);
+                lvl3.img.sprite = GetImage(2, type);
                 //lvl1.txt.gameObject.SetActive(false);
                 //lvl2.txt.gameObject.SetActive(false);
 
@@ -163,6 +289,10 @@ namespace Sora
         private Transform upgradeUITransform;
         private TowerUIInfo towerUIInfo;
         private static Clickables selectedClickable;
+
+
+
+
 
         public bool setIsBeingPlaced;
         private void Start()
@@ -213,7 +343,7 @@ namespace Sora
             {
                // Debug.Log("Called selectedClickable for " + towerUIInfo.gameObject.name);
                 int cost = data.costUpgrades[data.level].data[data.upgradeLevel];
-                upgradeUI.Check(cost,data.level, data.upgradeLevel);
+                upgradeUI.Check(cost,data.level, data.upgradeLevel, data.type);
                 upgradeUI.sell.txt.text = data.sellCost.ToString();
 
             }
