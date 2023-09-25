@@ -1642,6 +1642,11 @@ MonoBehaviour:
   - {fileID: 442016072}
   treatsText: {fileID: 508716895}
   towerProperties:
+  - {fileID: 3416457351879827544, guid: d9d6b6462977f514cb705ea981f4321d, type: 3}
+  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
+  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
+  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
+  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
   - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
   selectingTowerEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
   selectingTower: {fileID: 11400000, guid: 40c0d465eaaf3a446929ea6c03bbfecb, type: 2}
