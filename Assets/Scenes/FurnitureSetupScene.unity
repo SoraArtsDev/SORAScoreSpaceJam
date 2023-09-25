@@ -2786,7 +2786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTreats: {fileID: 11400000, guid: c38dc858a41f03f41851da9659b36b02, type: 2}
-  initialTreats: 50
+  initialTreats: 40
   towerButtons:
   - {fileID: 2089212901}
   - {fileID: 1207759697}
@@ -2822,9 +2822,9 @@ MonoBehaviour:
   - {fileID: 1807563333, guid: dcf70469035d5b64abad645bd170020c, type: 3}
   - {fileID: -481533151, guid: dcf70469035d5b64abad645bd170020c, type: 3}
   Turret:
-  - {fileID: -915774566, guid: dcf70469035d5b64abad645bd170020c, type: 3}
-  - {fileID: 730895538, guid: dcf70469035d5b64abad645bd170020c, type: 3}
-  - {fileID: -487654321, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  - {fileID: 21300000, guid: 32b553b1367a955499b1b75742b1dd33, type: 3}
+  - {fileID: 21300000, guid: 1c2fb5663eac41545a2bed4dfdfa668a, type: 3}
+  - {fileID: 21300000, guid: 1fa345484a375b0479364a27ac4e128c, type: 3}
   Fire:
   - {fileID: 1846797640, guid: dcf70469035d5b64abad645bd170020c, type: 3}
   - {fileID: -1507935552, guid: dcf70469035d5b64abad645bd170020c, type: 3}
@@ -19187,7 +19187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -487654321, guid: dcf70469035d5b64abad645bd170020c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32b553b1367a955499b1b75742b1dd33, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
