@@ -129,6 +129,10 @@ MonoBehaviour:
   particle2: {fileID: 0}
   particle3: {fileID: 0}
   ballistic: {fileID: 5132280998376183575, guid: 15471fcbae5130c44a56dd59f8cd2e3f, type: 3}
+  angle: 45
+  gravity: -11
+  velocityMult: 2
+  minDistance: 40
 --- !u!1 &6358036082164852250
 GameObject:
   m_ObjectHideFlags: 0
