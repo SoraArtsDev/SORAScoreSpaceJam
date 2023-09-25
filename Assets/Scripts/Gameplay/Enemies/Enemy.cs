@@ -71,13 +71,16 @@ namespace Sora.Game
 
         private ParticleSystem[] particles;
 
+        private MeshRenderer meshRenderer;
+
         private void Awake()
         {
             maxHealthPoints = healthPoints;
             initialMovespeed = moveSpeed;
             maxArmour = armour;
 
-            particles = new ParticleSystem[4];
+            meshRenderer = GetComponentInChildren<MeshRenderer>();
+            particles = new ParticleSystem[5];
             particles[(int)EParticleType.DEADEYE] = transform.Find("deadEye").GetComponent<ParticleSystem>();
             particles[(int)EParticleType.DEATH] = transform.Find("blood").GetComponent<ParticleSystem>();
             particles[(int)EParticleType.FIRE] = transform.Find("fire").GetComponent<ParticleSystem>();
@@ -145,6 +148,7 @@ namespace Sora.Game
 
         public void TakeDamage(int damage)
         {
+     
             if (armour > 0)
             {
                 armour -= damage;
@@ -159,7 +163,9 @@ namespace Sora.Game
                 {
                     Managers.InventoryManager.instance.AddTreats(treatsDropped);
                     Managers.GameManager.instance.AddScore(scoreProvided);
-                    DisableObject();
+                    particles[(int)EParticleType.DEATH].Play();
+                    meshRenderer.enabled = false;
+                    Utility.SoraClock.instance.ExecuteWithDelay(this, () => { DisableObject(); }, 1.0f);
                 }
             }            
         }
@@ -169,6 +175,7 @@ namespace Sora.Game
             healthPoints = maxHealthPoints;
             armour = maxArmour;
             waypointIndex = 0;
+            meshRenderer.enabled = true;
             gameObject.SetActive(false);
         }
 

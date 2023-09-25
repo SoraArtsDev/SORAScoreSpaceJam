@@ -14,31 +14,42 @@ namespace Sora
     public class BallisticEnemyFinder : MonoBehaviour
     {
         public int damage;
-        public bool selfDestruct = true;
+        public bool dealDamage = true;
         public float areaOfImpact = 10.0f;
+        public float destructionTimer = 1.0f;
 
         public GameObject[] sceneEnemies;
         void Start()
         {
-            selfDestruct  = true;
+            dealDamage = true;
         }
 
         private void Update()
         {
-            foreach (GameObject enemy in sceneEnemies)
+            if (dealDamage)
             {
-                float DistanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-                if (DistanceToEnemy < areaOfImpact)
+                dealDamage = false;
+                foreach (GameObject enemy in sceneEnemies)
                 {
-                    enemy.GetComponent<Sora.Game.Enemy>().TakeDamage(damage);
-                    enemy.GetComponent<Sora.Game.Enemy>().PlayParticleEffect(Game.EParticleType.DEADEYE);
+                    float DistanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                    if (DistanceToEnemy < areaOfImpact)
+                    {
+                        enemy.GetComponent<Sora.Game.Enemy>().TakeDamage(damage);
+                    }
                 }
             }
-            if (selfDestruct)
+            
+            if(destructionTimer<=0)
             {
-                selfDestruct = false;
-                Utility.SoraClock.instance.ExecuteWithDelay(this, () => { Destroy(gameObject); }, 2.0f);
+                DestroySelf();
             }
+            destructionTimer -= Time.deltaTime;
+        }
+
+
+        void DestroySelf()
+        {
+            Destroy(gameObject);
         }
 
         private void OnDrawGizmos()
