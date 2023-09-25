@@ -23,6 +23,7 @@ namespace Sora
         private bool bUseFreeze = false;
         private bool bUseFlame = false;
         private bool bMortar = false;
+        private bool bSniper = false;
         public LineRenderer lineRenderer;
 
         [Header("Setup Fields")]
@@ -54,6 +55,7 @@ namespace Sora
             bUseFreeze = type == TowerType.E_Freeze;
             bUseFlame = type == TowerType.E_FlameThrower;
             bMortar = type == TowerType.E_Mortar;
+            bSniper = type == TowerType.E_Sniper;
 
             minDistance = 0;
             if (bMortar)
@@ -227,7 +229,7 @@ namespace Sora
 
             if (bullet != null)
             {
-                bullet.Seek(target);
+                bullet.Seek(target, data.damage, bSniper);
             }
         }
 

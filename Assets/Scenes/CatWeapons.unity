@@ -1696,11 +1696,11 @@ MonoBehaviour:
   treatsText: {fileID: 508716895}
   towerProperties:
   - {fileID: 3416457351879827544, guid: d9d6b6462977f514cb705ea981f4321d, type: 3}
+  - {fileID: 3512084181402842944, guid: d189e7ca8ac849a4bb2b58de4d3fe04e, type: 3}
+  - {fileID: 4936445833737858802, guid: a4c38908d5f618c4aaf2aded5b235fab, type: 3}
+  - {fileID: 7529256152060297112, guid: a744bfc7682bdf140852fb31d6f4cd20, type: 3}
   - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
-  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
-  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
-  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
-  - {fileID: 8079905876529081870, guid: 8351e415f87373945bc36dd3c92ac0b3, type: 3}
+  - {fileID: 393848763154351795, guid: 6332b2d7cee2dfe48879a63f9e644977, type: 3}
   selectingTowerEvent: {fileID: 11400000, guid: 338b371339781db4eb1695be7f243f06, type: 2}
   selectingTower: {fileID: 11400000, guid: 40c0d465eaaf3a446929ea6c03bbfecb, type: 2}
   blockButtonsUI: {fileID: 737411195}
@@ -1903,15 +1903,11 @@ MonoBehaviour:
     prefabCount: 30
     enemyType: 2
     pool: []
-  - prefab: {fileID: 9175045891660317566, guid: 25fd4b6217f6fd04691483c3033e845d, type: 3}
+  - prefab: {fileID: 7501938307471621508, guid: 25fd4b6217f6fd04691483c3033e845d, type: 3}
     prefabCount: 30
     enemyType: 1
     pool: []
-  - prefab: {fileID: 7248529979964926842, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
-    prefabCount: 30
-    enemyType: 7
-    pool: []
-  - prefab: {fileID: 9022357057696184950, guid: 63fd52c117fef0a42a207df22dde8870, type: 3}
+  - prefab: {fileID: 8349534176436524416, guid: a72474fcbe5aedc48b516380c15aaa3d, type: 3}
     prefabCount: 30
     enemyType: 6
     pool: []
