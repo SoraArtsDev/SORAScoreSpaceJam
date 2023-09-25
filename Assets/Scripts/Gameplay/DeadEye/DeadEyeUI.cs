@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Sora.Game;
+using TMPro;
 
 namespace Sora
 {
@@ -13,16 +15,45 @@ namespace Sora
         public AudioSource AudioSourceObj;
         public AudioClip a_Clip;
         private GameObject[] gameObjects;
+
+        public bool bTimerIsRunning = false;
+        public float timeRemaining = 3.0f;
+        public TMP_Text TimerText;
         // Start is called before the first frame update
         void Start()
         {
-
+            bTimerIsRunning = true;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (bTimerIsRunning)
+            {
+                if (timeRemaining > 0.0f)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    DisplayTime(timeRemaining);
+                    gameObject.GetComponent<Button>().enabled = false;
+                }
+                else
+                {
+                    Debug.Log("Dead Eye Timer out!");
+                    timeRemaining = 0;
+                    gameObject.GetComponent<Button>().enabled = true;
+                    bTimerIsRunning = true;
+                }
+            }
+            
+        }
 
+        void DisplayTime(float a_timeToDisplay)
+        {
+            a_timeToDisplay += 1;
+
+            float minutes = Mathf.FloorToInt(a_timeToDisplay / 60.0f);
+            float seconds = Mathf.FloorToInt(a_timeToDisplay % 60);
+            TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
         public void OnLockTarget()
         {
@@ -46,7 +77,8 @@ namespace Sora
 
             Time.timeScale = 1.0f;
             DeadEyePanel.SetActive(false);
-
+            TargetLockButton.SetActive(true);
+            timeRemaining = 10.0f;
         }
 
         public void DetectAllEnemies()
