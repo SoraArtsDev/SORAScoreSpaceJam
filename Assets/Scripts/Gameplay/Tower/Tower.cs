@@ -146,6 +146,8 @@ namespace Sora
             {
                 target = null;
             }
+
+            Managers.WaveManager.instance.currentEnemies = sceneEnemies;
         }
         // Update is called once per frame
         void Update()

@@ -21,6 +21,7 @@ namespace Sora
         [Header("Movement")]
         public int moveSpeed;
         public int meeleRate;
+        public int mineRate;
         public int damage;
 
         private void OnValidate()
