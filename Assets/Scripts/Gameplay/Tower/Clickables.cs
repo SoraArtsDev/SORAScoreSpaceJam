@@ -73,6 +73,7 @@ namespace Sora
                 else
                 {
                     lvl2.buyBtn.gameObject.SetActive(true);
+                    lvl2.buyBtn.interactable = canUpgrade;
                     lvl2.upgradeBtbtn.interactable = false;
                     lvl2.upgradeBtbtn.gameObject.SetActive(false);
                 }
@@ -102,6 +103,7 @@ namespace Sora
                 else
                 {
                     lvl3.buyBtn.gameObject.SetActive(true);
+                    lvl2.buyBtn.interactable = canUpgrade;
                     lvl3.upgradeBtbtn.interactable = false;
                     lvl3.upgradeBtbtn.gameObject.SetActive(false);
                 }
@@ -165,8 +167,9 @@ namespace Sora
                     selectedClickable = gameObject.GetComponent<Clickables>();
                     clickEvent.Invoke();
                 }
-                else if(hit.collider != null && hit.collider.tag != "Towers" && hit.collider.tag != "UpgradeUI")
+                else if(hit.collider != null && hit.collider.tag != "Towers" && hit.collider.tag != "UpgradeUI" && hit.collider.tag != "Untagged")
                 {
+                    Debug.Log(hit.collider.gameObject.name);
                     upgradeUITransform.gameObject.SetActive(false);
                     selectedClickable = null;
                 }
@@ -217,21 +220,34 @@ namespace Sora
         static void UpgradeClicked()
         {
             Debug.Log("selectedClickable for " + selectedClickable.towerUIInfo.gameObject.name);
-            selectedClickable.towerUIInfo.tower.data =  Managers.TowerManager.instance.ApplyUpgrades(selectedClickable.towerUIInfo.tower.data);
+            Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
             selectedClickable.OnClick();
         }
 
         static void SellClicked()
         {
             Debug.Log("Selling");
-            selectedClickable.towerUIInfo.tower.data = Managers.TowerManager.instance.ApplyUpgrades(selectedClickable.towerUIInfo.tower.data);
+            Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
             selectedClickable.OnClick();
         }
 
         static void BuyClicked()
         {
             Debug.Log("Buying");
+            Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
             //Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
+            if (selectedClickable.towerUIInfo.tower.data.level == 1)
+            {
+                selectedClickable.towerUIInfo.cat1.SetActive(false);
+                selectedClickable.towerUIInfo.cat2.SetActive(true);
+
+            }
+            else if (selectedClickable.towerUIInfo.tower.data.level == 1)
+            {
+                selectedClickable.towerUIInfo.cat2.SetActive(false);
+                selectedClickable.towerUIInfo.cat3.SetActive(true);
+
+            }
             selectedClickable.OnClick();
         }
 

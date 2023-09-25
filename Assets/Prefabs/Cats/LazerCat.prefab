@@ -120,6 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
+  cat1: {fileID: 0}
+  cat2: {fileID: 0}
+  cat3: {fileID: 0}
 --- !u!114 &8889792563414830839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,11 +130,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3254362525821099467}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6220e4373a9f5c04a8076e883c367d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setIsBeingPlaced: 0
 --- !u!1 &4235768050210412709
 GameObject:
   m_ObjectHideFlags: 0
