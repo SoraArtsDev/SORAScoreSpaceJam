@@ -31,7 +31,7 @@ namespace Sora.Managers
         public TMP_Text waveWarningText;
         public int autoWaveDuration;
 
-
+        public GameObject[] currentEnemies;
         [Space]
         public Events.SoraEvent startWaveEvent;
 

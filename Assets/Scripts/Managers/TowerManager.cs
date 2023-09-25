@@ -16,6 +16,7 @@ namespace Sora.Managers
         {
         private TextAsset towerDataFile;
         public Dictionary<TowerType, TowerData> towersData;
+
         private bool isCreated;
 
         void OnEnable()

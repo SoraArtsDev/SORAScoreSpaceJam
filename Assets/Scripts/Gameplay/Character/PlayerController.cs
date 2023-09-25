@@ -35,10 +35,14 @@ namespace Sora
         bool moveClicked;
         bool attackClicked;
         bool canAttack;
+        bool canPlaceMine;
+        float minWaitTimer;
 
         public PlayerState playerState;
 
         public PlayerData playerData;
+        public GameObject mine;
+        private Vector3 clickPosition;
 
         void Start()
         {
@@ -46,6 +50,9 @@ namespace Sora
             rb = GetComponent<Rigidbody>();
             agent = GetComponent<NavMeshAgent>();
             moveClicked = false;
+            canAttack = true;
+            canPlaceMine = false;
+            minWaitTimer = 0.5f;
 
         }
 
@@ -63,7 +70,6 @@ namespace Sora
                     agent.SetDestination(hit.point);
                 }
                 playerState = PlayerState.E_Moving;
-                agent.isStopped = false;
             }
             else if(attackClicked)
             {
@@ -72,9 +78,11 @@ namespace Sora
                 if (Physics.Raycast(ray, out hit) && hit.collider.tag == "Floor")
                 {
                     agent.SetDestination(hit.point);
+                    canPlaceMine = true;
+                    clickPosition = hit.point;
                 }
                 playerState = PlayerState.E_Attacking;
-                agent.isStopped = false;
+
             }
 
             //we cancel out attack and do new action
@@ -86,11 +94,20 @@ namespace Sora
 
             if(HasStopped())
             {
+              
                 //we check what the state was??
                 playerState = playerState == PlayerState.E_Moving ? PlayerState.E_Idle : playerState;
                 Attack();
             }
 
+
+            if(false)
+            {
+                if(minWaitTimer <=0)
+                    PlaceMine();
+
+                minWaitTimer -= Time.deltaTime;
+            }
         }
 
         GameObject ChooseBestEnemyInTheArea()
@@ -115,13 +132,6 @@ namespace Sora
             selectedEnemy.OnAttacked(true);
         }
 
-        void FixedUpdate()
-        {
-            if (moveClicked)
-            {
-
-            }
-        }
         #region Controls
         void Attack()
         {
@@ -138,17 +148,53 @@ namespace Sora
            // Debug.Log("E_Attacking" + selectedEnemy.name);
         }
 
+
+
+        void PlaceMine()
+        {
+            if (!HasStopped() || !canPlaceMine)
+                return;
+
+            GameObject gp = Instantiate(mine);
+            mine.transform.position = clickPosition;
+
+            playerState = PlayerState.E_Reloading;
+            canPlaceMine = false;
+            minWaitTimer = 0.5f;
+            playerState = PlayerState.E_Idle;
+        }
+
         bool CanAttack()
         {
-            return canAttack && selectedEnemy != null && playerState == PlayerState.E_Attacking;
+            return canAttack && playerState == PlayerState.E_Attacking && selectedEnemy != null;
         }
 
         bool HasStopped()
         {
-            return agent.remainingDistance <= 0.1f;
+
+             return agent.velocity.sqrMagnitude <= 0.1f;
+
+            if(canPlaceMine)
+            {
+                if (agent.velocity.sqrMagnitude <= 0.1f)
+                {
+                    agent.isStopped = true;
+                }
+                return agent.isStopped;
+
+            }
+            else
+            {
+
+            }
         }
 
         IEnumerator MeeleWait(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+        }
+
+        IEnumerator PlaceMineWait(float duration)
         {
             yield return new WaitForSeconds(duration);
         }
