@@ -11,6 +11,7 @@ TagManager:
   - Towers
   - Floor
   - UpgradeUI
+  - Ballistic
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - LevelFloor
   - enemyFinder
   - Towers
-  - 
+  - Ballistic
   - 
   - 
   - Lamp

@@ -17,14 +17,20 @@ namespace Sora.Game
         public float fSpeed = 60.0f;
         public int uDamage = 10; 
         public GameObject ImapctEffect;
-        public void Seek(Transform a_target)
+        private bool bIsSniper;
+        public void Seek(Transform a_target, int a_Damage, bool a_Sniper)
         {
             target = a_target;
+            uDamage = a_Damage;
+            bIsSniper = a_Sniper;
         }
         // Start is called before the first frame update
         void Start()
         {
-
+            if(bIsSniper)
+            {
+                fSpeed = 200.0f;
+            }
         }
 
         // Update is called once per frame

@@ -6,17 +6,21 @@ public class Ballistic : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-    private float angle = 5.0f;
+    private float force = 45.0f;
+    private int dmgAmount = 0;
+    public GameObject enemyFinder;
+    public GameObject[] sceneEnemies;
+
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>
-();    }
+       
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb.AddForce(new Vector3(0, force, 0));
     }
 
 
@@ -36,10 +40,30 @@ public class Ballistic : MonoBehaviour
 
     }
 
-    public void FireCannonAtPoint(Vector3 position)
+    public void FireCannonAtPoint(Vector3 position, float angle, float gravity, float velocityMult, int dmg, ref GameObject[] sceneEnemies)
     {
+        rb = GetComponent<Rigidbody>();
+        force = gravity;
         var velocity = ShootBallistic(position, angle);
         rb.transform.position = transform.position;
-        rb.velocity = velocity;
+        rb.velocity = velocity* velocityMult;
+        rb.useGravity = false;
+        dmgAmount = dmg;
+
+        this.sceneEnemies = sceneEnemies;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag != "Floor")
+        {
+            return;
+        }
+
+        GameObject go = Instantiate(enemyFinder);
+        go.transform.position = transform.position;
+        go.GetComponent<Sora.BallisticEnemyFinder>().damage = dmgAmount;
+        go.GetComponent<Sora.BallisticEnemyFinder>().sceneEnemies = this.sceneEnemies;
+        Destroy(gameObject);
     }
 }

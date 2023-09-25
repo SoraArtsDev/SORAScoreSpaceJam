@@ -23,6 +23,7 @@ namespace Sora
         private bool bUseFreeze = false;
         private bool bUseFlame = false;
         private bool bMortar = false;
+        private bool bSniper = false;
         public LineRenderer lineRenderer;
 
         [Header("Setup Fields")]
@@ -39,7 +40,13 @@ namespace Sora
         public ParticleSystem particle3;
         public GameObject ballistic;
 
-        private float angle = 45f;
+
+        public GameObject[] sceneEnemies;
+
+        public float angle = 45f;
+        public float gravity = 45f;
+        public float velocityMult = 4;
+        public float minDistance = 0;
         // Start is called before the first frame update
 
         private void Awake()
@@ -48,7 +55,12 @@ namespace Sora
             bUseFreeze = type == TowerType.E_Freeze;
             bUseFlame = type == TowerType.E_FlameThrower;
             bMortar = type == TowerType.E_Mortar;
-            
+            bSniper = type == TowerType.E_Sniper;
+
+            minDistance = 0;
+            if (bMortar)
+                minDistance = 25.0f;
+
             data = new TowerData(Managers.TowerManager.instance.GetTowerData(type));
             //Debug.Log("UPgradeLevel"+data.upgradeLevel);
             var cat1 = transform.Find("RotatePoint").Find("Cat").Find("Level1").gameObject;
@@ -92,7 +104,7 @@ namespace Sora
         {
             targets.Clear();
 
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag(EnemyTag);
+            sceneEnemies = GameObject.FindGameObjectsWithTag(EnemyTag);
             float ShortestDistance = Mathf.Infinity;
             GameObject NearestEnemy = null;
             /*  foreach (GameObject enemy in enemies)
@@ -115,10 +127,10 @@ namespace Sora
             }*/
 
 
-            foreach (GameObject enemy in enemies)
+            foreach (GameObject enemy in sceneEnemies)
             {
                 float DistanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-                if (DistanceToEnemy < data.areaOfImpact)
+                if (DistanceToEnemy <= data.areaOfImpact && DistanceToEnemy>=minDistance)
                 {
                     targets.Add(DistanceToEnemy, enemy.transform);
                     ShortestDistance = DistanceToEnemy;
@@ -164,6 +176,7 @@ namespace Sora
                 {
                     Attack();
                     FireCountdown = data.attackRate;
+                    Debug.Log(FireCountdown + "FireCountdown");
                 }
 
                 FireCountdown -= Time.deltaTime;
@@ -216,7 +229,7 @@ namespace Sora
 
             if (bullet != null)
             {
-                bullet.Seek(target);
+                bullet.Seek(target, data.damage, bSniper);
             }
         }
 
@@ -281,7 +294,7 @@ namespace Sora
         {
             GameObject go = Instantiate(ballistic);
             go.transform.position = FirePoint.position;
-            go.GetComponent<Ballistic>().FireCannonAtPoint(target.position);
+            go.GetComponent<Ballistic>().FireCannonAtPoint(target.position, angle, gravity, velocityMult,data.damage, ref sceneEnemies);
         }
     }
 }
