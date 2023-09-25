@@ -427,6 +427,10 @@ PrefabInstance:
       value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 6338689900548575690, guid: 101e504938dc3564a91ea4a54b05672b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338689900548575690, guid: 101e504938dc3564a91ea4a54b05672b, type: 3}
       propertyPath: m_TagString
       value: Towers
       objectReference: {fileID: 0}
