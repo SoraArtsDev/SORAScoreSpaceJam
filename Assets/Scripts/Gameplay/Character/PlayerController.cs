@@ -131,11 +131,11 @@ namespace Sora
             playerState = PlayerState.E_Reloading;
             selectedEnemy.TakeDamage(playerData.damage);
             canAttack = false;
-            Debug.Log("MeeleWait" + selectedEnemy.name);
+           // Debug.Log("MeeleWait" + selectedEnemy.name);
             StartCoroutine("MeeleWait", playerData.meeleRate);
             canAttack = true;
             playerState = PlayerState.E_Attacking;
-            Debug.Log("E_Attacking" + selectedEnemy.name);
+           // Debug.Log("E_Attacking" + selectedEnemy.name);
         }
 
         bool CanAttack()

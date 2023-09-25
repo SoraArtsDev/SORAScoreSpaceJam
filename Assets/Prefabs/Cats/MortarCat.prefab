@@ -86,7 +86,7 @@ MonoBehaviour:
   TurretRotationSpeed: 10
   EnemyTag: Enemy
   FirePoint: {fileID: 1168360143519758234}
-  type: 3
+  type: 4
   data:
     name: LazerCat
     spriteName: Test
@@ -128,6 +128,7 @@ MonoBehaviour:
   particle1: {fileID: 0}
   particle2: {fileID: 0}
   particle3: {fileID: 0}
+  ballistic: {fileID: 5132280998376183575, guid: 15471fcbae5130c44a56dd59f8cd2e3f, type: 3}
 --- !u!1 &6358036082164852250
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,14 @@ namespace Sora.Game
         COUNT
     }
 
+    public enum EParticleType
+    {
+        DEADEYE,
+        DEATH,
+        FIRE,
+        FREEZE
+    }
+
     public enum EEnemyLevel
     {
         LEVEL1,
@@ -52,18 +60,28 @@ namespace Sora.Game
 
         private float initialMovespeed;
         private Utility.DelayedMethod resetMovespeed;
+        private Utility.DelayedMethod resetParticle;
         private Vector3 dir;
         private int waypointListIndex;
         private int waypointIndex;
         public int entryPoint;
         private List<List<Vector3>> waypoints;
 
+
+        private ParticleSystem[] particles;
+
         private void Awake()
         {
             maxHealthPoints = healthPoints;
             initialMovespeed = moveSpeed;
             maxArmour = armour;
-        }
+
+            particles = new ParticleSystem[4];
+            particles[(int)EParticleType.DEADEYE] = transform.Find("deadEye").GetComponent<ParticleSystem>();
+            particles[(int)EParticleType.DEATH] = transform.Find("blood").GetComponent<ParticleSystem>();
+            particles[(int)EParticleType.FIRE] = transform.Find("fire").GetComponent<ParticleSystem>();
+            particles[(int)EParticleType.FREEZE] = transform.Find("freeze").GetComponent<ParticleSystem>();
+    }
 
         private void OnEnable()
         {
@@ -176,7 +194,36 @@ namespace Sora.Game
                 Utility.SoraClock.instance.StopDelayedMethod(resetMovespeed);
 
             moveSpeed *= speedModifier;
-            resetMovespeed = Utility.SoraClock.instance.ExecuteWithDelay(this, () => { moveSpeed = initialMovespeed; }, duration);
+            resetMovespeed = Utility.SoraClock.instance.ExecuteWithDelay(this, () => { moveSpeed = initialMovespeed;}, duration);
+        }
+
+
+        public void PlayParticleEffect(EParticleType particleType)
+        {
+            if (particles[(int)particleType].isPlaying)
+                return;
+
+            if (resetParticle != null)
+                Utility.SoraClock.instance.StopDelayedMethod(resetParticle);
+
+            particles[(int)particleType].gameObject.SetActive(true);
+            particles[(int)particleType].Play();
+
+            resetParticle =  Utility.SoraClock.instance.ExecuteWithDelay(this, () => { StopParticle(); }, 2.0f);
+        }
+
+        public void StopParticle()
+        {
+            particles[(int)EParticleType.DEADEYE].Stop();
+            particles[(int)EParticleType.DEATH].Stop();
+            particles[(int)EParticleType.FIRE].Stop();
+            particles[(int)EParticleType.FREEZE].Stop();
+
+
+            particles[(int)EParticleType.DEADEYE].gameObject.SetActive(false);
+            particles[(int)EParticleType.DEATH].gameObject.SetActive(false);
+            particles[(int)EParticleType.FIRE].gameObject.SetActive(false);
+            particles[(int)EParticleType.FREEZE].gameObject.SetActive(false);
         }
     }
 }
