@@ -86,6 +86,7 @@ namespace Sora
         public int upgradeCost;
         public int sellCost;
         public int buildCost;
+        public bool[] maxed;
         public TowerType type;
         public List<string> sprite;
         public List<int> sellRate;
@@ -107,6 +108,8 @@ namespace Sora
             sellCost = data.sellCost;
             buildCost = data.buildCost;
             type = data.type;
+
+            maxed = new bool[3];
 
             sprite = data.sprite;/// new List<string>();
             sellRate = data.sellRate;// new List<int>();

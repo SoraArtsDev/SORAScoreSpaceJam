@@ -42,8 +42,7 @@ namespace Sora.Managers
             }
         }
 
-
-        public TowerData ApplyUpgrades(ref TowerData data)
+        public void ApplyUpgrades(ref TowerData data)
         {
             data.upgradeCost = data.costUpgrades[data.level].data[data.upgradeLevel];
             data.damage = data.damageUpgrades[data.level].data[data.upgradeLevel];
@@ -53,13 +52,14 @@ namespace Sora.Managers
             data.sellCost = (int)(data.sellRate[data.level]*.01*data.buildCost);
             data.spriteName = data.sprite[data.level];
             data.upgradeLevel++;//we set to next upgrade because that's what we want to show and check against and then apply
-            if(data.upgradeLevel>=5)
+            if(data.upgradeLevel>5)
             {
+                data.maxed[data.level] = true;
                 //max upgrade set to next level;
                 data.upgradeLevel = 0;
                 data.level++;
+                data.level = data.level >2 ? 2 : data.level;
             }
-            return data;
         }
 
         public TowerData GetTowerData(TowerType type)

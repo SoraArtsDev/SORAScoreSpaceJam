@@ -35,9 +35,20 @@ namespace Sora
             sell = new ButtonUI();
         }
 
+        public void MaxedOut()
+        {
+            lvl1.txt.text = "Max";
+            lvl2.txt.text = "Max";
+            lvl3.txt.text = "Max";
+
+            lvl1.upgradeBtbtn.gameObject.SetActive(false);
+            lvl2.upgradeBtbtn.gameObject.SetActive(false);
+            lvl3.upgradeBtbtn.gameObject.SetActive(false);
+        }
+
         public void Check(int cost, int level, int upgradeLevel)
         {
-            bool canUpgrade = cost <= 250;// Managers.InventoryManager.instance.playerTreats.value;
+            bool canUpgrade = cost <= Managers.InventoryManager.instance.playerTreats.value;
 
             if(level==0)
             {
@@ -81,9 +92,9 @@ namespace Sora
                 lvl2.txt.gameObject.SetActive(true);
                 lvl2.txt.text = cost.ToString();
 
-
+                lvl1.txt.text = "Max";
                 //disable others
-                lvl1.txt.gameObject.SetActive(false);
+                //lvl1.txt.gameObject.SetActive(false);
                 lvl3.txt.gameObject.SetActive(false);
 
                 lvl3.buyBtn.gameObject.SetActive(false);
@@ -113,13 +124,19 @@ namespace Sora
 
 
                 //disable others
-                lvl1.txt.gameObject.SetActive(false);
-                lvl2.txt.gameObject.SetActive(false);
+                lvl1.txt.text = "Max";
+                lvl2.txt.text = "Max";
+                //lvl1.txt.gameObject.SetActive(false);
+                //lvl2.txt.gameObject.SetActive(false);
 
                 lvl2.buyBtn.gameObject.SetActive(false);
 
                 lvl1.upgradeBtbtn.gameObject.SetActive(false);
                 lvl2.upgradeBtbtn.gameObject.SetActive(false);
+            }
+            else
+            {
+                //show maxed up stats
             }
         }
     }
@@ -178,12 +195,22 @@ namespace Sora
 
         void OnClick()
         {
-            Debug.Log("Called selectedClickable for " + towerUIInfo.gameObject.name);
             upgradeUITransform.gameObject.SetActive(true);
             var data = towerUIInfo.GetData();
-            int cost = data.costUpgrades[data.level].data[data.upgradeLevel];
-            upgradeUI.Check(cost,data.level, data.upgradeLevel);
-            upgradeUI.sell.txt.text = towerUIInfo.gameObject.name;// data.sellCost.ToString();
+            if (!data.maxed[data.level])
+            {
+                Debug.Log("Called selectedClickable for " + towerUIInfo.gameObject.name);
+                int cost = data.costUpgrades[data.level].data[data.upgradeLevel];
+                upgradeUI.Check(cost,data.level, data.upgradeLevel);
+                upgradeUI.sell.txt.text = towerUIInfo.gameObject.name;// data.sellCost.ToString();
+
+            }
+            else
+            {
+                Debug.Log("Max");
+                upgradeUI.MaxedOut();
+                //show maxed stats
+            }
         }
 
         void GeUIReference()
@@ -220,6 +247,7 @@ namespace Sora
         static void UpgradeClicked()
         {
             Debug.Log("selectedClickable for " + selectedClickable.towerUIInfo.gameObject.name);
+            Managers.InventoryManager.instance.playerTreats.value -= selectedClickable.towerUIInfo.tower.data.upgradeCost;
             Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
             selectedClickable.OnClick();
         }
@@ -227,13 +255,16 @@ namespace Sora
         static void SellClicked()
         {
             Debug.Log("Selling");
-            Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
-            selectedClickable.OnClick();
+            Managers.InventoryManager.instance.playerTreats.value += selectedClickable.towerUIInfo.tower.data.sellCost;
+            //selectedClickable.OnClick();
+            selectedClickable.upgradeUITransform.gameObject.SetActive(false);
+            Destroy(selectedClickable.towerUIInfo.gameObject);
         }
 
         static void BuyClicked()
         {
             Debug.Log("Buying");
+            Managers.InventoryManager.instance.playerTreats.value -= selectedClickable.towerUIInfo.tower.data.upgradeCost;
             Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
             //Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
             if (selectedClickable.towerUIInfo.tower.data.level == 1)
@@ -242,7 +273,7 @@ namespace Sora
                 selectedClickable.towerUIInfo.cat2.SetActive(true);
 
             }
-            else if (selectedClickable.towerUIInfo.tower.data.level == 1)
+            else if (selectedClickable.towerUIInfo.tower.data.level == 2)
             {
                 selectedClickable.towerUIInfo.cat2.SetActive(false);
                 selectedClickable.towerUIInfo.cat3.SetActive(true);
