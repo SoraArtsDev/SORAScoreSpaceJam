@@ -197,12 +197,12 @@ namespace Sora.Managers
                     e = EEnemyType.MOUSE;
                 else
                     e = EEnemyType.HEDGEHOG;
-                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(e, 4);
+                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(e, 2);
                 wd.entryPoint[i] = 0;
             }
             startWaveEvent.InvokeEvent(this, wd);
 
-            yield return new WaitForSecondsRealtime(8.0f);
+            yield return new WaitForSecondsRealtime(6.0f);
 
 
             for (int i = 0; i < wd.enemyTypes; ++i)
@@ -212,7 +212,7 @@ namespace Sora.Managers
                     e = EEnemyType.MOUSE;
                 else
                     e = EEnemyType.HEDGEHOG;
-                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(e, 3);
+                wd.enemyCountbyType[i] = new KeyValuePair<EEnemyType, int>(e, 2);
                 wd.entryPoint[i] = 1;
             }
             startWaveEvent.InvokeEvent(this, wd);
