@@ -366,9 +366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveCountText: {fileID: 768425767}
-  waveProgressBar: {fileID: 658751824}
+  waveStartButton: {fileID: 0}
+  waveWarningUI: {fileID: 0}
+  waveWarningText: {fileID: 0}
+  autoWaveDuration: 0
   startWaveEvent: {fileID: 11400000, guid: 4ad1f6661e47a2f4398540c919ebb61c, type: 2}
-  enemySpawner: {fileID: 335507875}
 --- !u!1001 &61292684
 PrefabInstance:
   m_ObjectHideFlags: 0

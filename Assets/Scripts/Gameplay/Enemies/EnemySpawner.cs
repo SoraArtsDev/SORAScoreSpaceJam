@@ -65,13 +65,14 @@ namespace Sora.Game
             {
                 EEnemyType e = wd.enemyCountbyType[i].Key;
                 int count = wd.enemyCountbyType[i].Value;
+                Enemy enemy = poolData[e].pool[poolIndices[e]].GetComponent<Enemy>();
 
-                for(int j = 0; j < count; ++j)
+                for (int j = 0; j < count; ++j)
                 {
-                    poolData[e].pool[poolIndices[e]].GetComponent<Enemy>().entryPoint = wd.entryPoint[i];
+                    enemy.entryPoint = wd.entryPoint[i];
                     poolData[e].pool[poolIndices[e]].SetActive(true);
                     poolIndices[e] = (poolIndices[e] + 1) % poolData[e].pool.Length;
-                    yield return new WaitForSecondsRealtime(spawnInterval);
+                    yield return new WaitForSecondsRealtime(enemy.spawnInterval);
                 }
             }
 

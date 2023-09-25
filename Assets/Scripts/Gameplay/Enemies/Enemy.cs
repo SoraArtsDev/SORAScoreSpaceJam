@@ -48,6 +48,7 @@ namespace Sora.Game
         public bool isFlying;
         public int treatsDropped;
         public int scoreProvided;
+        public float spawnInterval;
 
         [Space]
         [SerializeField] private Image healthBar;

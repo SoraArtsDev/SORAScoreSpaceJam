@@ -431,17 +431,13 @@ MonoBehaviour:
   healthPoints: 40
   armour: 20
   isFlying: 0
-  treatsDropped: 0
-  scoreProvided: 0
+  treatsDropped: 8
+  scoreProvided: 80
+  spawnInterval: 3
   healthBar: {fileID: 2103811359776253500}
   armourBar: {fileID: 6450589750896517214}
   attacking: 0
   entryPoint: 0
-  particles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &188166415343093884
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -268,17 +268,13 @@ MonoBehaviour:
   healthPoints: 20
   armour: 0
   isFlying: 0
-  treatsDropped: 0
-  scoreProvided: 0
+  treatsDropped: 5
+  scoreProvided: 50
+  spawnInterval: 1.75
   healthBar: {fileID: 5356853563989463385}
   armourBar: {fileID: 0}
   attacking: 0
   entryPoint: 0
-  particles:
-  - {fileID: 2317396308796516787}
-  - {fileID: 2163227153545670647}
-  - {fileID: 9023809775350486477}
-  - {fileID: 4840432588804107290}
 --- !u!1 &3989159157775173733
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,11 +460,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5212674803331259591, guid: 8e18caeb00733444fbf503740142f128, type: 3}
   m_PrefabInstance: {fileID: 827413108670918879}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &4840432588804107290 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5212674803331259589, guid: 8e18caeb00733444fbf503740142f128, type: 3}
-  m_PrefabInstance: {fileID: 827413108670918879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2103026172173206055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -569,11 +560,6 @@ PrefabInstance:
 --- !u!4 &2317396308796516780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4397334591890123659, guid: b0159ffb3464ec5478e3f6e6ce51d561, type: 3}
-  m_PrefabInstance: {fileID: 2103026172173206055}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2317396308796516787 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4397334591890123668, guid: b0159ffb3464ec5478e3f6e6ce51d561, type: 3}
   m_PrefabInstance: {fileID: 2103026172173206055}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6659151681823911207
@@ -696,11 +682,6 @@ PrefabInstance:
 --- !u!4 &2163227153545670646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4787146697146794705, guid: e9050f838eb01db44b8958e4d8266866, type: 3}
-  m_PrefabInstance: {fileID: 6659151681823911207}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2163227153545670647 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4787146697146794704, guid: e9050f838eb01db44b8958e4d8266866, type: 3}
   m_PrefabInstance: {fileID: 6659151681823911207}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7030056877300840263
@@ -850,11 +831,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bf04c0948a81045b2d9407bb2e65cf, type: 3}
---- !u!198 &9023809775350486477 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2068494000875659914, guid: 52bf04c0948a81045b2d9407bb2e65cf, type: 3}
-  m_PrefabInstance: {fileID: 7030056877300840263}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9023809775350486479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2068494000875659912, guid: 52bf04c0948a81045b2d9407bb2e65cf, type: 3}
