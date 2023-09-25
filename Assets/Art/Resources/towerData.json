@@ -1078,7 +1078,7 @@
       "damageUpgrades": [
         {
           "data": [
-            1,
+            50,
             2,
             3,
             4,
@@ -1110,7 +1110,7 @@
       "attackRateUpgrades": [
         {
           "data": [
-            5,
+            4,
             6,
             6,
             4,
@@ -1142,7 +1142,7 @@
       "areaOfImpactUpgrades": [
         {
           "data": [
-            1,
+            80,
             2,
             3,
             4,
