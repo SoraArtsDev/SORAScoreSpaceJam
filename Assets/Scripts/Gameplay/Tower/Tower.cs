@@ -32,6 +32,10 @@ namespace Sora
         public Transform FirePoint;
         public TowerType type;
         public TowerData data;
+
+        public ParticleSystem particle1;
+        public ParticleSystem particle2;
+        public ParticleSystem particle3;
         // Start is called before the first frame update
 
         private void Awake()
@@ -46,6 +50,27 @@ namespace Sora
             var cat2 = transform.Find("RotatePoint").Find("Cat").Find("Level2").gameObject;
             var cat3 = transform.Find("RotatePoint").Find("Cat").Find("Level3").gameObject;
             transform.parent.GetComponent<Sora.TowerUIInfo>().SetTower(transform.gameObject, cat1, cat2, cat3);//not proud of this but had to do this to save time and not change prefab
+            var particle1Obj = transform.Find("RotatePoint").Find("Particle1");
+            var particle2Obj = transform.Find("RotatePoint").Find("Particle2");
+            var particle3Obj = transform.Find("RotatePoint").Find("Particle3");
+            if(particle1Obj != null)
+            {
+                particle1 = particle1Obj.GetComponent<ParticleSystem>();
+                particle1.gameObject.SetActive(true);
+                particle1.Stop();
+            }
+            if (particle2Obj != null)
+            {
+                particle2 = particle2Obj.GetComponent<ParticleSystem>();
+                particle2.gameObject.SetActive(true);
+                particle2.Stop();
+            }
+            if (particle3Obj != null)
+            {
+                particle3 = particle3Obj.GetComponent<ParticleSystem>();
+                particle3.gameObject.SetActive(true);
+                particle3.Stop();
+            }
 
         }
 
@@ -124,6 +149,12 @@ namespace Sora
             }
             else if (bUseFreeze)
             {
+                if(data.level==0)
+                    particle1.Stop();
+                else if (data.level == 1)
+                    particle2.Stop();
+                else if (data.level == 2)
+                    particle3.Stop();
                 Freeze();
             }
             else if (bUseFlame)
@@ -175,8 +206,12 @@ namespace Sora
             if (target == null)
                 return;
 
-            Debug.Log("effectMultiplier: " + data.effectMultiplier);
-            Debug.Log("effectDuration: " + data.effectDuration);
+            if (data.level == 0)
+                particle1.Play();
+            else if (data.level == 1)
+                particle2.Play();
+            else if (data.level == 2)
+                particle3.Play();
             target.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
         }
     }
