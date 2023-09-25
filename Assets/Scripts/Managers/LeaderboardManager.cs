@@ -17,11 +17,13 @@ namespace Sora.Managers
     public class LeaderboardManager : Singleton<LeaderboardManager>
     {
         public TMP_Text scoreText;
+        public GameObject lbUI;
 
         [Header("Score submission Variables")]
         [SerializeField] private TMP_InputField playerNameInput;
         [SerializeField] private IntVariable playerFinalScore;
         [SerializeField] private string leaderboardKey;
+        
 
         [Header("Leaderboard Variables")]
         [SerializeField] private TMP_Text[] playerNames;
@@ -68,7 +70,7 @@ namespace Sora.Managers
                     currentRank = response.rank;
                     Debug.Log("Lootlocker:: Score submission successful.");
 
-                    Utility.SoraClock.instance.ExecuteWithDelay(this, () => LoadLeaderboards(), 1.5f);
+                    LoadLeaderboards();
                 }
                 else
                 {
@@ -87,14 +89,8 @@ namespace Sora.Managers
             LootLockerSDKManager.GetScoreList(leaderboardKey, 6, 0, (response) =>
             {
                 if (response.success)
-                {
-                    LootLockerLeaderboardMember[] _members = response.items;
-
-                    for(int i = 0; i < _members.Length; ++i)
-                    {
-                        playerNames[i].text = _members[i].player.name;
-                        playerScores[i].text = _members[i].score.ToString();
-                    }
+                {                    
+                    StartCoroutine(LoadScore(response));                    
                 }
                 else
                 {
@@ -106,6 +102,24 @@ namespace Sora.Managers
         public void GoToMainMenu()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
+
+        IEnumerator LoadScore(LootLockerGetScoreListResponse res)
+        {
+            Debug.Log("Calling coroutine");
+            yield return new WaitForSecondsRealtime(1.0f);
+
+            lbUI.SetActive(true);
+            LootLockerLeaderboardMember[] _members = res.items;
+
+            for (int i = 0; i < _members.Length; ++i)
+            {
+                playerNames[i].text = _members[i].player.name;
+                if(playerNames[i].text == "")
+                    playerNames[i].text = _members[i].member_id;
+
+                playerScores[i].text = _members[i].score.ToString();
+            }
         }
     }
 }

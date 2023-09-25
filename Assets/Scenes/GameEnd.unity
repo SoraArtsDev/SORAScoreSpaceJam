@@ -532,18 +532,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2034309303}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1417529124}
         m_TargetAssemblyTypeName: Sora.Managers.LeaderboardManager, Assembly-CSharp
         m_MethodName: SubmitScore
@@ -2624,6 +2612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1873477586}
+  lbUI: {fileID: 0}
   playerNameInput: {fileID: 561892473}
   playerFinalScore: {fileID: 11400000, guid: 1046cf228ec74e44699c3608a172741b, type: 2}
   leaderboardKey: local
