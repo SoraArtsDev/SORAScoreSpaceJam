@@ -15,6 +15,7 @@ namespace Sora
         public AudioSource AudioSourceObj;
         public AudioClip a_Clip;
         private GameObject[] gameObjects;
+        public GameObject DeadEyeFill;
 
         public bool bTimerIsRunning = false;
         public float timeRemaining = 3.0f;
@@ -35,12 +36,14 @@ namespace Sora
                     timeRemaining -= Time.deltaTime;
                     DisplayTime(timeRemaining);
                     gameObject.GetComponent<Button>().enabled = false;
+                    DeadEyeFill.SetActive(false);
                 }
                 else
                 {
                     Debug.Log("Dead Eye Timer out!");
                     timeRemaining = 0;
                     gameObject.GetComponent<Button>().enabled = true;
+                    DeadEyeFill.SetActive(true);
                     bTimerIsRunning = true;
                 }
             }

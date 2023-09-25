@@ -9884,6 +9884,7 @@ MonoBehaviour:
   DeadEyePopUpText: {fileID: 1130672584}
   AudioSourceObj: {fileID: 1101757511}
   a_Clip: {fileID: 8300000, guid: 8d83769ed56bbe04ba95ad67685e7cc0, type: 3}
+  DeadEyeFill: {fileID: 351516645}
   bTimerIsRunning: 0
   timeRemaining: 180
   TimerText: {fileID: 1245493721}
