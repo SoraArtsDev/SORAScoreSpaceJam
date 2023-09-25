@@ -16,6 +16,8 @@ namespace Sora.Managers
 
     public class LeaderboardManager : Singleton<LeaderboardManager>
     {
+        public TMP_Text scoreText;
+
         [Header("Score submission Variables")]
         [SerializeField] private TMP_InputField playerNameInput;
         [SerializeField] private IntVariable playerFinalScore;
@@ -31,6 +33,11 @@ namespace Sora.Managers
         [SerializeField] private TMP_Text currentScore;
 
         private int currentRank;
+
+        private void OnEnable()
+        {
+            scoreText.text = playerFinalScore.value.ToString();
+        }
 
         public bool StartLootlockerGuestSession()
         {

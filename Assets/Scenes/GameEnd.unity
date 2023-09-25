@@ -2623,8 +2623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bca04fa61730b4418c050ea613e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1873477586}
   playerNameInput: {fileID: 561892473}
-  playerFinalScore: {fileID: 11400000, guid: 6afc1158ca5567949ac1e73b9ab4f2b1, type: 2}
+  playerFinalScore: {fileID: 11400000, guid: 1046cf228ec74e44699c3608a172741b, type: 2}
   leaderboardKey: local
   playerNames:
   - {fileID: 223171640964660388}

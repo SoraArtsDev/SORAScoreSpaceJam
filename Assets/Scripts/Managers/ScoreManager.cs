@@ -14,13 +14,8 @@ namespace Sora.Managers
     public class ScoreManager : Singleton<ScoreManager>
     {
         [Header("Variable References")]
-        [SerializeField] private IntVariable playerScore;
-
-        private void OnEnable()
-        {
-
-        }
-
-
+        [SerializeField] public IntVariable playerScore;
+        
+        
     }
 }

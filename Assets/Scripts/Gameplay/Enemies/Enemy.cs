@@ -166,6 +166,8 @@ namespace Sora.Game
                     PlayParticleEffect(EParticleType.DEATH);
                     meshRenderer.enabled = false;
                     Utility.SoraClock.instance.ExecuteWithDelay(this, () => { DisableObject(); }, 1.0f);
+
+                    Managers.ScoreManager.instance.playerScore.value += scoreProvided;
                 }
             }            
         }

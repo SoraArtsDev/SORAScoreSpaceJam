@@ -42,7 +42,7 @@ namespace Sora.Managers
         {
             Random.InitState(System.DateTime.Now.Second);
             autoWaveCD = autoWaveDuration;
-            waveCount = 1;
+            waveCount = 20;
         }
 
         public void StartAutoWaveCountdown()
@@ -68,6 +68,8 @@ namespace Sora.Managers
 
         public void OnWaveStart()
         {
+            Managers.ScoreManager.instance.playerScore.value += 150;
+
             // reset countdown coroutine
             StopAllCoroutines();
             waveWarningUI.SetActive(false);
