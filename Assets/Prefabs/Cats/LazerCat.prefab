@@ -183,10 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cf451ab451af84d8fc26a2ce93f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 20
   towerCost: 40
   BulletPrefab: {fileID: 3650927174145506129, guid: db2c323976e7b9d4bb1289568d4af770, type: 3}
-  FireRate: 1
   lineRenderer: {fileID: 4420546234698639466}
   RotatePoint: {fileID: 1491873132870523084}
   TurretRotationSpeed: 10
@@ -204,6 +202,8 @@ MonoBehaviour:
     upgradeCost: 10
     sellCost: 400
     buildCost: 10
+    effectDuration: 0
+    effectMultiplier: 0
     maxed: 
     type: 1
     sprite:
@@ -227,6 +227,11 @@ MonoBehaviour:
     - data: 0a0000000100000002000000030000000400000005000000
     - data: 640000000100000002000000030000000400000005000000
     - data: c80000000100000002000000030000000400000005000000
+    effectDurationUpgrades: []
+    effectMultiplierUpgrades: []
+  particle1: {fileID: 0}
+  particle2: {fileID: 0}
+  particle3: {fileID: 0}
 --- !u!120 &4420546234698639466
 LineRenderer:
   serializedVersion: 2
