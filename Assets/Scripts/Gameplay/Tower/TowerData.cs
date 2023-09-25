@@ -68,7 +68,13 @@ namespace Sora
     }
 
     [System.Serializable]
-    public class Upgrades
+    public class FloatUpgrades
+    {
+        public List<float> data;
+    }
+
+    [System.Serializable]
+    public class IntUpgrades
     {
         public List<int> data;
     }
@@ -86,13 +92,18 @@ namespace Sora
         public int upgradeCost;
         public int sellCost;
         public int buildCost;
+        public float effectDuration;
+        public float effectMultiplier;
+        public bool[] maxed;
         public TowerType type;
         public List<string> sprite;
         public List<int> sellRate;
-        public Upgrades[] damageUpgrades;
-        public Upgrades[] attackRateUpgrades;
-        public Upgrades[] areaOfImpactUpgrades;//1,42,5,6,7
-        public Upgrades[] costUpgrades;
+        public IntUpgrades[] damageUpgrades;
+        public IntUpgrades[] attackRateUpgrades;
+        public IntUpgrades[] areaOfImpactUpgrades;//1,42,5,6,7
+        public IntUpgrades[] costUpgrades;
+        public FloatUpgrades[] effectDurationUpgrades;
+        public FloatUpgrades[] effectMultiplierUpgrades;
 
         public TowerData(TowerData data)
         {
@@ -107,6 +118,10 @@ namespace Sora
             sellCost = data.sellCost;
             buildCost = data.buildCost;
             type = data.type;
+            effectDuration = data.effectDuration;
+            effectMultiplier = data.effectMultiplier;
+
+            maxed = new bool[3];
 
             sprite = data.sprite;/// new List<string>();
             sellRate = data.sellRate;// new List<int>();
@@ -115,6 +130,8 @@ namespace Sora
             attackRateUpgrades = data.attackRateUpgrades;// new Upgrades[3];
             areaOfImpactUpgrades = data.areaOfImpactUpgrades;//; new Upgrades[3];
             costUpgrades = data.costUpgrades;// Upgrades[3];
+            effectDurationUpgrades = data.effectDurationUpgrades;// Upgrades[3];
+            effectMultiplierUpgrades = data.effectMultiplierUpgrades;// Upgrades[3];
 
         }
     }
