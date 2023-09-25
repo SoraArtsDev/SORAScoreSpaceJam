@@ -93,6 +93,30 @@ namespace Sora
         public Upgrades[] attackRateUpgrades;
         public Upgrades[] areaOfImpactUpgrades;//1,42,5,6,7
         public Upgrades[] costUpgrades;
+
+        public TowerData(TowerData data)
+        {
+            name = data.name;
+            spriteName = data.spriteName;
+            level = data.level;
+            upgradeLevel = data.upgradeLevel;
+            damage = data.damage;
+            attackRate = data.attackRate;
+            areaOfImpact = data.areaOfImpact;
+            upgradeCost = data.upgradeCost;
+            sellCost = data.sellCost;
+            buildCost = data.buildCost;
+            type = data.type;
+
+            sprite = data.sprite;/// new List<string>();
+            sellRate = data.sellRate;// new List<int>();
+
+            damageUpgrades = data.damageUpgrades;// new Upgrades[3];
+            attackRateUpgrades = data.attackRateUpgrades;// new Upgrades[3];
+            areaOfImpactUpgrades = data.areaOfImpactUpgrades;//; new Upgrades[3];
+            costUpgrades = data.costUpgrades;// Upgrades[3];
+
+        }
     }
 
     [System.Serializable]

@@ -26,6 +26,8 @@ namespace Sora.Game
 
             }
 
+            MapManager.instance.currentTower.GetComponent<Clickables>().enabled = true;
+            MapManager.instance.currentTower.GetComponent<Clickables>().JustPlacedTower(); 
             MapManager.instance.currentTower = null;
             InventoryManager.instance.ResetInventoryAccess();
 

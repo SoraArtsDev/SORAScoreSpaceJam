@@ -31,13 +31,22 @@ namespace Sora
         public TowerType type;
         public TowerData data;
         // Start is called before the first frame update
-        
+
+        private void Awake()
+        {
+            bUseLaser = type == TowerType.E_Lazer;
+            data = new TowerData(Managers.TowerManager.instance.GetTowerData(type));
+            Debug.Log("UPgradeLevel"+data.upgradeLevel);
+            var cat1 = transform.Find("RotatePoint").Find("Cat").Find("Level1").gameObject;
+            var cat2 = transform.Find("RotatePoint").Find("Cat").Find("Level2").gameObject;
+            var cat3 = transform.Find("RotatePoint").Find("Cat").Find("Level3").gameObject;
+            transform.parent.GetComponent<Sora.TowerUIInfo>().SetTower(transform.gameObject, cat1, cat2, cat3);//not proud of this but had to do this to save time and not change prefab
+
+        }
+
         void Start()
         {
             transform.tag = "Towers";
-            bUseLaser = type == TowerType.E_Lazer;
-            data = Managers.TowerManager.instance.GetTowerData(type);
-            //transform.parent.GetComponent<Sora.TowerUIInfo>().SetTower(transform.gameObject); ;
             InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
             //FirePoint = gameObject.transform.GetChild(0).transform.GetChild(1).transform;
         }

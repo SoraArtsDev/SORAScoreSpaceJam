@@ -14,14 +14,24 @@ namespace Sora
     public class TowerUIInfo : MonoBehaviour
     {
         public Tower tower;
-        public void SetTower(GameObject obj)
+        public GameObject cat1;
+        public GameObject cat2;
+        public GameObject cat3;
+        public static int totalTowers;
+
+        public void SetTower(GameObject obj, GameObject cat1, GameObject cat2, GameObject cat3)
         {
-            //tower = obj.GetComponent<Tower>();
+            totalTowers++;
+            gameObject.name = gameObject.name + "" + totalTowers;
+            tower = obj.GetComponent<Tower>();
+            this.cat1 = cat1;
+            this.cat2 = cat2;
+            this.cat3 = cat3;
         }
 
         public TowerData GetData()
         {
-            tower = GetComponentInChildren<Tower>();
+            //tower = GetComponentInChildren<Tower>();
             return tower.data;
         }
     }

@@ -10,6 +10,7 @@ TagManager:
   - Cell
   - Towers
   - Floor
+  - UpgradeUI
   layers:
   - Default
   - TransparentFX

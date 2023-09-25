@@ -37,13 +37,13 @@ namespace Sora.Managers
             Towers data = JsonUtility.FromJson<Towers>(towerDataFile.text);
             for(int i = 0; i < data.towers.Length; ++i)
             {
-                ApplyUpgrades(ref data.towers[i]);
-                towersData[data.towers[i].type] = data.towers[i];
+                ///data.towers[i] = ApplyUpgrades(data.towers[i]);
+                towersData[data.towers[i].type] = ApplyUpgrades(data.towers[i]);
             }
         }
 
 
-        public void ApplyUpgrades(ref TowerData data)
+        public TowerData ApplyUpgrades(TowerData data)
         {
             data.upgradeCost = data.costUpgrades[data.level].data[data.upgradeLevel];
             data.damage = data.damageUpgrades[data.level].data[data.upgradeLevel];
@@ -59,6 +59,7 @@ namespace Sora.Managers
                 data.upgradeLevel = 0;
                 data.level++;
             }
+            return data;
         }
 
         public TowerData GetTowerData(TowerType type)

@@ -15,7 +15,8 @@ namespace Sora
 {
     public class ButtonUI
     {
-        public Button btn;
+        public Button upgradeBtbtn;
+        public Button buyBtn;
         public TMPro.TextMeshProUGUI txt;
     }
    
@@ -34,42 +35,89 @@ namespace Sora
             sell = new ButtonUI();
         }
 
-        public void Check(int cost, int level)
+        public void Check(int cost, int level, int upgradeLevel)
         {
             bool canUpgrade = cost <= 250;// Managers.InventoryManager.instance.playerTreats.value;
 
             if(level==0)
             {
-                lvl1.btn.interactable = canUpgrade;
-                lvl1.txt.gameObject.SetActive(canUpgrade);
+                //set info for lvl1 buttons
+                lvl2.upgradeBtbtn.gameObject.SetActive(true);
+                lvl1.upgradeBtbtn.interactable = canUpgrade;
+                lvl1.txt.gameObject.SetActive(true);
                 lvl1.txt.text = cost.ToString();
 
-                lvl2.btn.interactable = false;
-                lvl3.btn.interactable = false;
+
+                //disable others
+                lvl2.upgradeBtbtn.interactable = false;
+                lvl3.upgradeBtbtn.interactable = false;
+
                 lvl2.txt.gameObject.SetActive(false);
                 lvl3.txt.gameObject.SetActive(false);
+
+                lvl2.buyBtn.gameObject.SetActive(false);
+                lvl3.buyBtn.gameObject.SetActive(false);
+
+                lvl2.upgradeBtbtn.gameObject.SetActive(false);
+                lvl3.upgradeBtbtn.gameObject.SetActive(false);
             }
             else if(level==1)
             {
-                lvl2.btn.interactable = canUpgrade;
-                lvl2.txt.gameObject.SetActive(canUpgrade);
+                //set info for lvl2 buttons
+                if (upgradeLevel>0)
+                {
+                    lvl2.buyBtn.gameObject.SetActive(false);
+                    lvl2.upgradeBtbtn.gameObject.SetActive(true);
+                    lvl2.upgradeBtbtn.interactable = canUpgrade;
+                }
+                else
+                {
+                    lvl2.buyBtn.gameObject.SetActive(true);
+                    lvl2.upgradeBtbtn.interactable = false;
+                    lvl2.upgradeBtbtn.gameObject.SetActive(false);
+                }
+
+                lvl2.txt.gameObject.SetActive(true);
                 lvl2.txt.text = cost.ToString();
 
-                lvl1.btn.interactable = false;
-                lvl3.btn.interactable = false;
+
+                //disable others
                 lvl1.txt.gameObject.SetActive(false);
                 lvl3.txt.gameObject.SetActive(false);
+
+                lvl3.buyBtn.gameObject.SetActive(false);
+
+                lvl1.upgradeBtbtn.gameObject.SetActive(false);
+                lvl3.upgradeBtbtn.gameObject.SetActive(false);
             }
             else if(level == 2)
             {
-                lvl3.btn.interactable = canUpgrade;
+                //set info for lvl3 buttons
+                if (upgradeLevel > 0)
+                {
+                    lvl3.buyBtn.gameObject.SetActive(false);
+                    lvl3.upgradeBtbtn.gameObject.SetActive(true);
+                    lvl3.upgradeBtbtn.interactable = canUpgrade;
+                }
+                else
+                {
+                    lvl3.buyBtn.gameObject.SetActive(true);
+                    lvl3.upgradeBtbtn.interactable = false;
+                    lvl3.upgradeBtbtn.gameObject.SetActive(false);
+                }
+
                 lvl3.txt.gameObject.SetActive(canUpgrade);
                 lvl3.txt.text = cost.ToString();
 
-                lvl1.btn.interactable = false;
-                lvl2.btn.interactable = false;
+
+                //disable others
                 lvl1.txt.gameObject.SetActive(false);
                 lvl2.txt.gameObject.SetActive(false);
+
+                lvl2.buyBtn.gameObject.SetActive(false);
+
+                lvl1.upgradeBtbtn.gameObject.SetActive(false);
+                lvl2.upgradeBtbtn.gameObject.SetActive(false);
             }
         }
     }
@@ -79,83 +127,125 @@ namespace Sora
         private UnityEvent clickEvent;
         private Button.ButtonClickedEvent sellButtonEvent;
         private Button.ButtonClickedEvent upgradeButtonEvent;
-        private UpgradeUI ui;
-        private Transform upgradeUI;
+        private Button.ButtonClickedEvent buyButtonEvent;
+        private UpgradeUI upgradeUI;
+        private Transform upgradeUITransform;
         private TowerUIInfo towerUIInfo;
+        private static Clickables selectedClickable;
+
+        public bool setIsBeingPlaced;
         private void Start()
         {
+            selectedClickable = null;
             clickEvent = new UnityEvent();
             upgradeButtonEvent = new Button.ButtonClickedEvent();
             sellButtonEvent = new Button.ButtonClickedEvent();
+            buyButtonEvent = new Button.ButtonClickedEvent();
 
-            ui = new UpgradeUI();
-            clickEvent.AddListener(OnClick);
+            upgradeUI = new UpgradeUI();
+            clickEvent.AddListener(this.OnClick);
             sellButtonEvent.AddListener(SellClicked);
             upgradeButtonEvent.AddListener(UpgradeClicked);
-            towerUIInfo = GetComponent<TowerUIInfo>();
+            buyButtonEvent.AddListener(BuyClicked);
+            towerUIInfo = gameObject.GetComponent<TowerUIInfo>();
+
+            Debug.Log("Stored"+towerUIInfo.gameObject.name);
             GeUIReference();
         }
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !setIsBeingPlaced)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit) && hit.collider.tag == "Towers")
+                if (Physics.Raycast(ray, out hit) && hit.collider.tag == "Towers" && (hit.collider.gameObject == towerUIInfo.cat1 || hit.collider.gameObject == towerUIInfo.cat2 || hit.collider.gameObject == towerUIInfo.cat3))
                 {
+                    Debug.Log(hit.collider.gameObject.name);
+                    selectedClickable = gameObject.GetComponent<Clickables>();
                     clickEvent.Invoke();
+                }
+                else if(hit.collider != null && hit.collider.tag != "Towers" && hit.collider.tag != "UpgradeUI")
+                {
+                    upgradeUITransform.gameObject.SetActive(false);
+                    selectedClickable = null;
                 }
             }
         }
 
         void OnClick()
         {
-            upgradeUI.gameObject.SetActive(true);
+            Debug.Log("Called selectedClickable for " + towerUIInfo.gameObject.name);
+            upgradeUITransform.gameObject.SetActive(true);
             var data = towerUIInfo.GetData();
             int cost = data.costUpgrades[data.level].data[data.upgradeLevel];
-            ui.Check(cost,data.level);
-            ui.sell.txt.text = data.sellCost.ToString();
+            upgradeUI.Check(cost,data.level, data.upgradeLevel);
+            upgradeUI.sell.txt.text = towerUIInfo.gameObject.name;// data.sellCost.ToString();
         }
 
         void GeUIReference()
         {
             var canvas = GameObject.Find("Canvas").gameObject;
-            upgradeUI = canvas.transform.Find("UpgradeUI");
-            Transform lvl1 = upgradeUI.Find("Lvl1");
-            ui.lvl1.btn = lvl1.Find("btn").GetComponent<Button>();
-            ui.lvl1.btn.onClick  = upgradeButtonEvent;
-            ui.lvl1.txt = lvl1.Find("text").GetComponent< TMPro.TextMeshProUGUI>();
+            upgradeUITransform = canvas.transform.Find("UpgradeUI");
+            Transform lvl1 = upgradeUITransform.Find("Lvl1");
+            upgradeUI.lvl1.upgradeBtbtn = lvl1.Find("btn").GetComponent<Button>();
+            upgradeUI.lvl1.upgradeBtbtn.onClick  = upgradeButtonEvent;
+            upgradeUI.lvl1.txt = lvl1.Find("text").GetComponent< TMPro.TextMeshProUGUI>();
 
-            Transform lvl2 = upgradeUI.transform.Find("Lvl2");
-            ui.lvl2.btn = lvl2.Find("btn").GetComponent<Button>();
-            ui.lvl2.btn.onClick  = upgradeButtonEvent;
-            ui.lvl2.txt = lvl2.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
+            Transform lvl2 = upgradeUITransform.transform.Find("Lvl2");
+            upgradeUI.lvl2.upgradeBtbtn = lvl2.Find("btn").GetComponent<Button>();
+            upgradeUI.lvl2.upgradeBtbtn.onClick  = upgradeButtonEvent;
+            upgradeUI.lvl2.buyBtn = lvl2.Find("buyBtn").GetComponent<Button>();
+            upgradeUI.lvl2.buyBtn.onClick  = buyButtonEvent;
+            upgradeUI.lvl2.txt = lvl2.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
 
-            Transform lvl3 = upgradeUI.transform.Find("Lvl3");
-            ui.lvl3.btn = lvl3.Find("btn").GetComponent<Button>();
-            ui.lvl3.btn.onClick  = upgradeButtonEvent;
-            ui.lvl3.txt = lvl3.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
+            Transform lvl3 = upgradeUITransform.transform.Find("Lvl3");
+            upgradeUI.lvl3.upgradeBtbtn = lvl3.Find("btn").GetComponent<Button>();
+            upgradeUI.lvl3.upgradeBtbtn.onClick  = upgradeButtonEvent;
+            upgradeUI.lvl3.buyBtn = lvl3.Find("buyBtn").GetComponent<Button>();
+            upgradeUI.lvl3.buyBtn.onClick = buyButtonEvent;
+            upgradeUI.lvl3.txt = lvl3.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
 
-            Transform sell = upgradeUI.transform.Find("Sell");
-            ui.sell.btn = sell.Find("btn").GetComponent<Button>();
-            ui.sell.btn.onClick  = sellButtonEvent;
-            ui.sell.txt = sell.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
+            Transform sell = upgradeUITransform.transform.Find("Sell");
+            upgradeUI.sell.upgradeBtbtn = sell.Find("btn").GetComponent<Button>();
+            upgradeUI.sell.upgradeBtbtn.onClick  = sellButtonEvent;
+            upgradeUI.sell.txt = sell.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
 
-            upgradeUI.gameObject.SetActive(false);
+            upgradeUITransform.gameObject.SetActive(false);
         }
 
-        void UpgradeClicked()
+        static void UpgradeClicked()
         {
-            Debug.Log("Upgrading");
-            Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
-            OnClick();
+            Debug.Log("selectedClickable for " + selectedClickable.towerUIInfo.gameObject.name);
+            selectedClickable.towerUIInfo.tower.data =  Managers.TowerManager.instance.ApplyUpgrades(selectedClickable.towerUIInfo.tower.data);
+            selectedClickable.OnClick();
         }
 
-        void SellClicked()
+        static void SellClicked()
         {
-            Debug.Log("selling");
-            Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
+            Debug.Log("Selling");
+            selectedClickable.towerUIInfo.tower.data = Managers.TowerManager.instance.ApplyUpgrades(selectedClickable.towerUIInfo.tower.data);
+            selectedClickable.OnClick();
+        }
+
+        static void BuyClicked()
+        {
+            Debug.Log("Buying");
+            //Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
+            selectedClickable.OnClick();
+        }
+
+        public void JustPlacedTower()
+        {
+            setIsBeingPlaced = true;
+            StartCoroutine(EnableClickables());
+        }
+
+        IEnumerator EnableClickables()
+        {
+            //yield on a new YieldInstruction that waits for 5 seconds.
+            yield return new WaitForSeconds(.1f);
+            setIsBeingPlaced = false;
         }
     }
 }
