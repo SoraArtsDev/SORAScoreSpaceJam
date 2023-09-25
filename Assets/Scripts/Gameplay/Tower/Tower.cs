@@ -119,6 +119,7 @@ namespace Sora
                     }
 
                 }
+                StopParticles();
                 return;
             }
                 
@@ -141,6 +142,16 @@ namespace Sora
 
         }
 
+        void StopParticles()
+        {
+            if(bUseFlame || bUseFreeze)
+            {
+                particle1.Stop();
+                particle2.Stop();
+                particle3.Stop();
+            }
+        }
+
         void Attack()
         {
             if (bMortar)
@@ -149,22 +160,16 @@ namespace Sora
             }
             else if (bUseFreeze)
             {
-                if(data.level==0)
-                    particle1.Stop();
-                else if (data.level == 1)
-                    particle2.Stop();
-                else if (data.level == 2)
-                    particle3.Stop();
+                particle1.Stop();
+                particle2.Stop();
+                particle3.Stop();
                 Freeze();
             }
             else if (bUseFlame)
             {
-                if (data.level == 0)
-                    particle1.Stop();
-                else if (data.level == 1)
-                    particle2.Stop();
-                else if (data.level == 2)
-                    particle3.Stop();
+                particle1.Stop();
+                particle2.Stop();
+                particle3.Stop();
 
                 FlameThrower();
             }
