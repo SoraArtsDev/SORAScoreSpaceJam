@@ -20,7 +20,6 @@ namespace Sora.Game
         PIGEON,
         SNAKE,
         HEDGEHOG,
-        HUMAN,
         BEES,
         COUNT
     }
