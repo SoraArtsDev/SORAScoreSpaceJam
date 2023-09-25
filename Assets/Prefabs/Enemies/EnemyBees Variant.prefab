@@ -24,9 +24,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -6265776187016570482, guid: f511b6d84fda87c4d9de23a1ac0d3272, type: 3}
+    - target: {fileID: 5678313142667042468, guid: fe9286ec226788a47ba2ea118a7d6e9f, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678313142667042468, guid: fe9286ec226788a47ba2ea118a7d6e9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 857af1a8903bb964cac143b94b759a23, type: 3}
+    - target: {fileID: 5678313142667042468, guid: fe9286ec226788a47ba2ea118a7d6e9f, type: 3}
+      propertyPath: m_FillMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6269583841030359590, guid: fe9286ec226788a47ba2ea118a7d6e9f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6269583841030359590, guid: fe9286ec226788a47ba2ea118a7d6e9f, type: 3}
       propertyPath: m_LocalPosition.x

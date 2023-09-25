@@ -156,7 +156,9 @@ MonoBehaviour:
   armour: 0
   isFlying: 0
   treatsDropped: 0
+  scoreProvided: 0
   healthBar: {fileID: 4058715449498331017}
+  armourBar: {fileID: 0}
   attacking: 0
   entryPoint: 0
 --- !u!1 &8117424497808131748
@@ -225,11 +227,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 857af1a8903bb964cac143b94b759a23, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
