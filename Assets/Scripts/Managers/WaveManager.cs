@@ -41,9 +41,8 @@ namespace Sora.Managers
         private void OnEnable()
         {
             Random.InitState(System.DateTime.Now.Second);
-            waveCount = 0;
             autoWaveCD = autoWaveDuration;
-            waveCount = 10;
+            waveCount = 1;
         }
 
         public void StartAutoWaveCountdown()

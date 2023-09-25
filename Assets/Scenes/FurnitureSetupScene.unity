@@ -669,7 +669,7 @@ MonoBehaviour:
   waveStartButton: {fileID: 1937856270}
   waveWarningUI: {fileID: 407985882}
   waveWarningText: {fileID: 1898984304}
-  autoWaveDuration: 20
+  autoWaveDuration: 30
   startWaveEvent: {fileID: 11400000, guid: 4ad1f6661e47a2f4398540c919ebb61c, type: 2}
 --- !u!1001 &61292684
 PrefabInstance:
