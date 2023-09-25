@@ -129,6 +129,7 @@ MonoBehaviour:
   particle2: {fileID: 0}
   particle3: {fileID: 0}
   ballistic: {fileID: 5132280998376183575, guid: 15471fcbae5130c44a56dd59f8cd2e3f, type: 3}
+  sceneEnemies: []
   angle: 45
   gravity: -11
   velocityMult: 2
@@ -157,7 +158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6358036082164852250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.438, y: 1.041, z: 0.96}
+  m_LocalPosition: {x: -0.438, y: 1.18, z: 0.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,7 +198,7 @@ Transform:
   m_Children:
   - {fileID: 2891083713172422388}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &2263795557186258411
 MeshFilter:
@@ -250,15 +251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ce93d08a6c73e54d8cd3545ed6982df, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.00914985
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ce93d08a6c73e54d8cd3545ed6982df, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.009149853
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ce93d08a6c73e54d8cd3545ed6982df, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.00914985
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ce93d08a6c73e54d8cd3545ed6982df, type: 3}
       propertyPath: m_LocalPosition.x
