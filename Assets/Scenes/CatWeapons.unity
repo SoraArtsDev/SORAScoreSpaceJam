@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 73c27387217cf8a4cb2cd2efb3c476f4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18061572, g: 0.22611144, b: 0.30710435, a: 1}
+  m_IndirectSpecularColor: {r: 0.66300845, g: 0.67768455, b: 0.7049794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1312,9 +1312,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.97647065, g: 0.909804, b: 0.7411765, a: 1}
+  m_Color: {r: 0.9764706, g: 0.909804, b: 0.7411765, a: 1}
   m_Intensity: 1.6
-  m_Range: 23.6
+  m_Range: 21.76
   m_SpotAngle: 101
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 442016073}
   - component: {fileID: 442016072}
   m_Layer: 5
-  m_Name: Button_5
+  m_Name: SniperButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3953,6 +3953,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3584497630037689987, guid: 822fd7fb2f3fdab42aa20a1178d3f60b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2368853e1052c624299def8a89b96f05, type: 2}
+    - target: {fileID: -3584497630037689987, guid: 822fd7fb2f3fdab42aa20a1178d3f60b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2368853e1052c624299def8a89b96f05, type: 2}
+    - target: {fileID: -1950733119399844177, guid: 822fd7fb2f3fdab42aa20a1178d3f60b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999915
+      objectReference: {fileID: 0}
+    - target: {fileID: -1950733119399844177, guid: 822fd7fb2f3fdab42aa20a1178d3f60b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0041379184
+      objectReference: {fileID: 0}
+    - target: {fileID: -1950733119399844177, guid: 822fd7fb2f3fdab42aa20a1178d3f60b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.474
+      objectReference: {fileID: 0}
+    - target: {fileID: -305091885687274788, guid: 822fd7fb2f3fdab42aa20a1178d3f60b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: da8790ee70c49594cb0911c0f26d2d3b, type: 2}
     - target: {fileID: 919132149155446097, guid: 822fd7fb2f3fdab42aa20a1178d3f60b, type: 3}
       propertyPath: m_Name
       value: Walls_Door
@@ -3987,7 +4011,7 @@ GameObject:
   - component: {fileID: 1014715862}
   - component: {fileID: 1014715861}
   m_Layer: 5
-  m_Name: Button_3
+  m_Name: MortarButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5152,7 +5176,7 @@ GameObject:
   - component: {fileID: 1207759698}
   - component: {fileID: 1207759697}
   m_Layer: 5
-  m_Name: Button_1
+  m_Name: IceRayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6147,14 +6171,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.7122642, g: 0.80609107, b: 1, a: 1}
-  m_Intensity: 1.08
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -6187,7 +6211,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -6205,14 +6229,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647113083}
-  m_LocalRotation: {x: 0.3956622, y: -0.14842272, z: 0.14851806, w: 0.8940719}
-  m_LocalPosition: {x: -3.31, y: 9.19, z: -7.91}
+  m_LocalRotation: {x: 0.47534505, y: -0.099093966, z: -0.33039373, w: 0.80936235}
+  m_LocalPosition: {x: 2.3, y: 31.4, z: -19.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 48.728, y: -12.955, z: 12.976}
+  m_LocalEulerAnglesHint: {x: 44.747, y: -41.921, z: -62.334}
 --- !u!1001 &1663582924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7582,7 +7606,7 @@ GameObject:
   - component: {fileID: 1976438498}
   - component: {fileID: 1976438497}
   m_Layer: 5
-  m_Name: Button_4
+  m_Name: LaserButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7716,7 +7740,7 @@ GameObject:
   - component: {fileID: 1992138274}
   - component: {fileID: 1992138273}
   m_Layer: 5
-  m_Name: Button_2
+  m_Name: FlameThrowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8026,7 +8050,7 @@ GameObject:
   - component: {fileID: 2089212902}
   - component: {fileID: 2089212901}
   m_Layer: 5
-  m_Name: Button
+  m_Name: TurretButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -51,7 +51,7 @@ namespace Sora.Game
         void HitTarget()
         {
             GameObject effectInstance = (GameObject)Instantiate(ImapctEffect, transform.position, transform.rotation);
-            Destroy(effectInstance, 2.0f);
+            Destroy(effectInstance, 0.5f);
 
             //Destroy(target.gameObject);
             target.gameObject.GetComponent<Enemy>().TakeDamage(uDamage);
