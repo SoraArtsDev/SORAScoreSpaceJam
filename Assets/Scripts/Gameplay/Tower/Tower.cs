@@ -291,7 +291,6 @@ namespace Sora
                 particle3.Play();
             foreach (var pair in targets)
             {
-                pair.Value.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
                 pair.Value.GetComponent<Enemy>().PlayParticleEffect(EParticleType.FIRE);
                 pair.Value.GetComponent<Enemy>().TakeDamage(data.damage);
             }
