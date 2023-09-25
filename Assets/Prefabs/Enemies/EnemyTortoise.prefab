@@ -342,11 +342,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
-  healthPoints: 30
+  healthPoints: 50
   armour: 100
   isFlying: 0
-  treatsDropped: 0
-  scoreProvided: 0
+  treatsDropped: 15
+  scoreProvided: 200
+  spawnInterval: 4.2
   healthBar: {fileID: 399546054209098837}
   armourBar: {fileID: 4700734908301677111}
   attacking: 0
