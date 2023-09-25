@@ -62,6 +62,7 @@ namespace Sora.Managers
                 //max upgrade set to next level;
                 data.upgradeLevel = 0;
                 data.level++;
+                data.buildCost = data.upgradeCost;
                 data.level = data.level >2 ? 2 : data.level;
             }
         }
