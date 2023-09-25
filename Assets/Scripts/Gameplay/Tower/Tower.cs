@@ -37,6 +37,9 @@ namespace Sora
         public ParticleSystem particle1;
         public ParticleSystem particle2;
         public ParticleSystem particle3;
+        public GameObject ballistic;
+
+        private float angle = 45f;
         // Start is called before the first frame update
 
         private void Awake()
@@ -160,7 +163,7 @@ namespace Sora
                 if (FireCountdown <= 0.0f)
                 {
                     Attack();
-                    FireCountdown = 1.0f / data.attackRate;
+                    FireCountdown = data.attackRate;
                 }
 
                 FireCountdown -= Time.deltaTime;
@@ -182,20 +185,16 @@ namespace Sora
         {
             if (bMortar)
             {
-
+                ShootBallistic();
             }
             else if (bUseFreeze)
             {
-                particle1.Stop();
-                particle2.Stop();
-                particle3.Stop();
+                StopParticles();
                 Freeze();
             }
             else if (bUseFlame)
             {
-                particle1.Stop();
-                particle2.Stop();
-                particle3.Stop();
+                StopParticles();
 
                 FlameThrower();
             }
@@ -254,6 +253,8 @@ namespace Sora
             foreach (var pair in targets)
             {
                 pair.Value.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
+                pair.Value.GetComponent<Enemy>().PlayParticleEffect(EParticleType.FREEZE);
+                pair.Value.GetComponent<Enemy>().TakeDamage(data.damage);
             }
         }
 
@@ -271,7 +272,16 @@ namespace Sora
             foreach (var pair in targets)
             {
                 pair.Value.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
+                pair.Value.GetComponent<Enemy>().PlayParticleEffect(EParticleType.FIRE);
+                pair.Value.GetComponent<Enemy>().TakeDamage(data.damage);
             }
+        }
+
+        void ShootBallistic()
+        {
+            GameObject go = Instantiate(ballistic);
+            go.transform.position = FirePoint.position;
+            go.GetComponent<Ballistic>().FireCannonAtPoint(target.position);
         }
     }
 }
