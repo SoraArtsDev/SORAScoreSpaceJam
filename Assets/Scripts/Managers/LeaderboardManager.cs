@@ -40,13 +40,13 @@ namespace Sora.Managers
             {
                 if (!response.success)
                 {
-                    Debug.Log("Lootlocker:: Error Starting lootlocker session.");
+                    //Debug.Log("Lootlocker:: Error Starting lootlocker session.");
                     _success = false;
                     return;
                 }
 
                 _success = true;
-                Debug.Log("Lootlocker:: Session started successfully.");
+               /// Debug.Log("Lootlocker:: Session started successfully.");
             });
 
             return _success;

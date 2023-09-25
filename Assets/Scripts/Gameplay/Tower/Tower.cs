@@ -7,6 +7,7 @@ namespace Sora
 {
     public class Tower : MonoBehaviour
     {
+        private SortedList<float,Transform> targets;
         private Transform target;
 
        // [Header("General")]
@@ -44,8 +45,9 @@ namespace Sora
             bUseFreeze = type == TowerType.E_Freeze;
             bUseFlame = type == TowerType.E_FlameThrower;
             bMortar = type == TowerType.E_Mortar;
+            
             data = new TowerData(Managers.TowerManager.instance.GetTowerData(type));
-            Debug.Log("UPgradeLevel"+data.upgradeLevel);
+            //Debug.Log("UPgradeLevel"+data.upgradeLevel);
             var cat1 = transform.Find("RotatePoint").Find("Cat").Find("Level1").gameObject;
             var cat2 = transform.Find("RotatePoint").Find("Cat").Find("Level2").gameObject;
             var cat3 = transform.Find("RotatePoint").Find("Cat").Find("Level3").gameObject;
@@ -76,6 +78,8 @@ namespace Sora
 
         void Start()
         {
+            targets = new SortedList<float, Transform>();
+            target = null;
             transform.tag = "Towers";
             InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
             //FirePoint = gameObject.transform.GetChild(0).transform.GetChild(1).transform;
@@ -83,15 +87,37 @@ namespace Sora
 
         void UpdateTarget()
         {
+            targets.Clear();
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag(EnemyTag);
             float ShortestDistance = Mathf.Infinity;
             GameObject NearestEnemy = null;
-            foreach (GameObject enemy in enemies)
+            /*  foreach (GameObject enemy in enemies)
             {
                 float DistanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
                 if (DistanceToEnemy < ShortestDistance)
                 {
+                    ShortestDistance = DistanceToEnemy;
+                    NearestEnemy = enemy;
+                }
+            }
+
+            if (NearestEnemy != null && ShortestDistance <= data.areaOfImpact)
+            {
+                target = NearestEnemy.transform;
+            }
+            else
+            {
+                target = null;
+            }*/
+
+
+            foreach (GameObject enemy in enemies)
+            {
+                float DistanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                if (DistanceToEnemy < data.areaOfImpact)
+                {
+                    targets.Add(DistanceToEnemy, enemy.transform);
                     ShortestDistance = DistanceToEnemy;
                     NearestEnemy = enemy;
                 }
@@ -224,7 +250,11 @@ namespace Sora
                 particle2.Play();
             else if (data.level == 2)
                 particle3.Play();
-            target.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
+
+            foreach (var pair in targets)
+            {
+                pair.Value.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
+            }
         }
 
         void FlameThrower()
@@ -238,7 +268,10 @@ namespace Sora
                 particle2.Play();
             else if (data.level == 2)
                 particle3.Play();
-            target.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
+            foreach (var pair in targets)
+            {
+                pair.Value.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
+            }
         }
     }
 }
