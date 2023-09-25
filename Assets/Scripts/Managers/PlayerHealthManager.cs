@@ -36,7 +36,7 @@ namespace Sora.Managers
             UpdateHealthBar();
             healthBarAnimator.Play("punch", 0);
 
-            if(playerHealth == 0)
+            if(playerHealth <= 0)
             {
                 gameOverEvent.InvokeEvent();
             }
