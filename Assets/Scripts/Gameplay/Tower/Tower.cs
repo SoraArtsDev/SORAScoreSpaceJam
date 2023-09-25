@@ -9,17 +9,19 @@ namespace Sora
     {
         private Transform target;
 
-        [Header("General")]
-        public float range = 15.0f;
+       // [Header("General")]
+        //public float range = 15.0f;
         public int towerCost;
 
         [Header("Use Bullets")]
         public GameObject BulletPrefab;
-        public float FireRate = 1.0f;
+       // public float FireRate = 1.0f;
         private float FireCountdown = 0.0f;
 
-        [Header("Use Laser")]
         private bool bUseLaser = false;
+        private bool bUseFreeze = false;
+        private bool bUseFlame = false;
+        private bool bMortar = false;
         public LineRenderer lineRenderer;
 
         [Header("Setup Fields")]
@@ -35,6 +37,9 @@ namespace Sora
         private void Awake()
         {
             bUseLaser = type == TowerType.E_Lazer;
+            bUseFreeze = type == TowerType.E_Freeze;
+            bUseFlame = type == TowerType.E_FlameThrower;
+            bMortar = type == TowerType.E_Mortar;
             data = new TowerData(Managers.TowerManager.instance.GetTowerData(type));
             Debug.Log("UPgradeLevel"+data.upgradeLevel);
             var cat1 = transform.Find("RotatePoint").Find("Cat").Find("Level1").gameObject;
@@ -53,6 +58,7 @@ namespace Sora
 
         void UpdateTarget()
         {
+
             GameObject[] enemies = GameObject.FindGameObjectsWithTag(EnemyTag);
             float ShortestDistance = Mathf.Infinity;
             GameObject NearestEnemy = null;
@@ -66,7 +72,7 @@ namespace Sora
                 }
             }
 
-            if (NearestEnemy != null && ShortestDistance <= range)
+            if (NearestEnemy != null && ShortestDistance <= data.areaOfImpact)
             {
                 target = NearestEnemy.transform;
             }
@@ -101,18 +107,38 @@ namespace Sora
             {
                 if (FireCountdown <= 0.0f)
                 {
-                    Shoot();
-                    FireCountdown = 1.0f / FireRate;
+                    Attack();
+                    FireCountdown = 1.0f / data.attackRate;
                 }
 
                 FireCountdown -= Time.deltaTime;
             }
+
         }
 
+        void Attack()
+        {
+            if (bMortar)
+            {
+
+            }
+            else if (bUseFreeze)
+            {
+                Freeze();
+            }
+            else if (bUseFlame)
+            {
+
+            }
+            else
+            {
+                Shoot();
+            }
+        }
         void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, range);
+            Gizmos.DrawWireSphere(transform.position, data.areaOfImpact);
         }
 
         void Shoot()
@@ -142,6 +168,16 @@ namespace Sora
             }
             lineRenderer.SetPosition(0, FirePoint.position);
             lineRenderer.SetPosition(1, target.position);
+        }
+
+        void Freeze()
+        {
+            if (target == null)
+                return;
+
+            Debug.Log("effectMultiplier: " + data.effectMultiplier);
+            Debug.Log("effectDuration: " + data.effectDuration);
+            target.GetComponent<Enemy>().AffectMovementSpeed(data.effectMultiplier, data.effectDuration);
         }
     }
 }

@@ -48,6 +48,9 @@ namespace Sora.Managers
             data.damage = data.damageUpgrades[data.level].data[data.upgradeLevel];
             data.attackRate = data.attackRateUpgrades[data.level].data[data.upgradeLevel];
             data.areaOfImpact = data.areaOfImpactUpgrades[data.level].data[data.upgradeLevel];
+            data.effectDuration = data.effectDurationUpgrades[data.level].data[data.upgradeLevel];
+            data.effectMultiplier = data.effectMultiplierUpgrades[data.level].data[data.upgradeLevel];
+
             data.buildCost += data.upgradeCost;
             data.sellCost = (int)(data.sellRate[data.level]*.01*data.buildCost);
             data.spriteName = data.sprite[data.level];
