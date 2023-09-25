@@ -18,6 +18,7 @@ namespace Sora
         public Button upgradeBtbtn;
         public Button buyBtn;
         public TMPro.TextMeshProUGUI txt;
+        public Image img;
     }
    
     public class UpgradeUI
@@ -57,6 +58,7 @@ namespace Sora
                 lvl1.upgradeBtbtn.interactable = canUpgrade;
                 lvl1.txt.gameObject.SetActive(true);
                 lvl1.txt.text = cost.ToString();
+                lvl1.img.enabled = true;
 
 
                 //disable others
@@ -71,6 +73,9 @@ namespace Sora
 
                 lvl2.upgradeBtbtn.gameObject.SetActive(false);
                 lvl3.upgradeBtbtn.gameObject.SetActive(false);
+
+                lvl2.img.enabled = false;
+                lvl3.img.enabled = false;
             }
             else if(level==1)
             {
@@ -93,6 +98,8 @@ namespace Sora
                 lvl2.txt.text = cost.ToString();
 
                 lvl1.txt.text = "Max";
+                lvl1.img.enabled = true;
+                lvl2.img.enabled = true;
                 //disable others
                 //lvl1.txt.gameObject.SetActive(false);
                 lvl3.txt.gameObject.SetActive(false);
@@ -101,6 +108,7 @@ namespace Sora
 
                 lvl1.upgradeBtbtn.gameObject.SetActive(false);
                 lvl3.upgradeBtbtn.gameObject.SetActive(false);
+                lvl3.img.enabled = false;
             }
             else if(level == 2)
             {
@@ -126,6 +134,10 @@ namespace Sora
                 //disable others
                 lvl1.txt.text = "Max";
                 lvl2.txt.text = "Max";
+
+                lvl1.img.enabled = true;
+                lvl2.img.enabled = true;
+                lvl3.img.enabled = true;
                 //lvl1.txt.gameObject.SetActive(false);
                 //lvl2.txt.gameObject.SetActive(false);
 
@@ -221,13 +233,15 @@ namespace Sora
             upgradeUI.lvl1.upgradeBtbtn = lvl1.Find("btn").GetComponent<Button>();
             upgradeUI.lvl1.upgradeBtbtn.onClick  = upgradeButtonEvent;
             upgradeUI.lvl1.txt = lvl1.Find("text").GetComponent< TMPro.TextMeshProUGUI>();
+            upgradeUI.lvl1.img = lvl1.Find("img").GetComponent<Image>();
 
-            Transform lvl2 = upgradeUITransform.transform.Find("Lvl2");
+           Transform lvl2 = upgradeUITransform.transform.Find("Lvl2");
             upgradeUI.lvl2.upgradeBtbtn = lvl2.Find("btn").GetComponent<Button>();
             upgradeUI.lvl2.upgradeBtbtn.onClick  = upgradeButtonEvent;
             upgradeUI.lvl2.buyBtn = lvl2.Find("buyBtn").GetComponent<Button>();
             upgradeUI.lvl2.buyBtn.onClick  = buyButtonEvent;
             upgradeUI.lvl2.txt = lvl2.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
+            upgradeUI.lvl2.img = lvl2.Find("img").GetComponent<Image>();
 
             Transform lvl3 = upgradeUITransform.transform.Find("Lvl3");
             upgradeUI.lvl3.upgradeBtbtn = lvl3.Find("btn").GetComponent<Button>();
@@ -235,6 +249,7 @@ namespace Sora
             upgradeUI.lvl3.buyBtn = lvl3.Find("buyBtn").GetComponent<Button>();
             upgradeUI.lvl3.buyBtn.onClick = buyButtonEvent;
             upgradeUI.lvl3.txt = lvl3.Find("text").GetComponent<TMPro.TextMeshProUGUI>();
+            upgradeUI.lvl3.img = lvl3.Find("img").GetComponent<Image>();
 
             Transform sell = upgradeUITransform.transform.Find("Sell");
             upgradeUI.sell.upgradeBtbtn = sell.Find("btn").GetComponent<Button>();
