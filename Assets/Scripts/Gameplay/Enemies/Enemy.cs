@@ -163,7 +163,7 @@ namespace Sora.Game
                 {
                     Managers.InventoryManager.instance.AddTreats(treatsDropped);
                     Managers.GameManager.instance.AddScore(scoreProvided);
-                    particles[(int)EParticleType.DEATH].Play();
+                    PlayParticleEffect(EParticleType.DEATH);
                     meshRenderer.enabled = false;
                     Utility.SoraClock.instance.ExecuteWithDelay(this, () => { DisableObject(); }, 1.0f);
                 }
