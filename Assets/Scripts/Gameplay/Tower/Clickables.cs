@@ -391,8 +391,8 @@ namespace Sora
 
         static void UpgradeClicked()
         {
-           // Debug.Log("selectedClickable for " + selectedClickable.towerUIInfo.gameObject.name);
-            Managers.InventoryManager.instance.playerTreats.value -= selectedClickable.towerUIInfo.tower.data.upgradeCost;
+            // Debug.Log("selectedClickable for " + selectedClickable.towerUIInfo.gameObject.name);
+            Managers.InventoryManager.instance.SpendTreats(selectedClickable.towerUIInfo.tower.data.upgradeCost);
             Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
             selectedClickable.OnClick();
         }
@@ -400,7 +400,7 @@ namespace Sora
         static void SellClicked()
         {
             //Debug.Log("Selling");
-            Managers.InventoryManager.instance.playerTreats.value += selectedClickable.towerUIInfo.tower.data.sellCost;
+            Managers.InventoryManager.instance.AddTreats(selectedClickable.towerUIInfo.tower.data.sellCost);
             //selectedClickable.OnClick();
             selectedClickable.upgradeUITransform.gameObject.SetActive(false);
             Destroy(selectedClickable.towerUIInfo.gameObject);
@@ -409,7 +409,7 @@ namespace Sora
         static void BuyClicked()
         {
            // Debug.Log("Buying");
-            Managers.InventoryManager.instance.playerTreats.value -= selectedClickable.towerUIInfo.tower.data.upgradeCost;
+            Managers.InventoryManager.instance.SpendTreats(selectedClickable.towerUIInfo.tower.data.upgradeCost);
             Managers.TowerManager.instance.ApplyUpgrades(ref selectedClickable.towerUIInfo.tower.data);
             //Managers.TowerManager.instance.ApplyUpgrades(ref towerUIInfo.tower.data);
             if (selectedClickable.towerUIInfo.tower.data.level == 1)
@@ -430,6 +430,7 @@ namespace Sora
         public void JustPlacedTower()
         {
             setIsBeingPlaced = true;
+            transform.Find("Tower").GetComponent<Tower>().isPlaced = true;
             StartCoroutine(EnableClickables());
         }
 

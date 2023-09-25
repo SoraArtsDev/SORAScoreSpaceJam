@@ -47,6 +47,8 @@ namespace Sora
         public float gravity = 45f;
         public float velocityMult = 4;
         public float minDistance = 0;
+
+        public bool isPlaced = false;
         // Start is called before the first frame update
 
         private void Awake()
@@ -152,6 +154,9 @@ namespace Sora
         // Update is called once per frame
         void Update()
         {
+            if (!isPlaced)
+                return; 
+
             if (target == null)
             {
                 if (bUseLaser)
