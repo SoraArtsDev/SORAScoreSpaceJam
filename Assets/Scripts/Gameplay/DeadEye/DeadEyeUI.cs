@@ -13,7 +13,6 @@ namespace Sora
         public GameObject TargetLockButton;
         public GameObject DeadEyePopUpText;
         public AudioSource AudioSourceObj;
-        public AudioClip a_Clip;
         private GameObject[] gameObjects;
         public GameObject DeadEyeFill;
 
@@ -61,7 +60,6 @@ namespace Sora
         public void OnLockTarget()
         {
             DeadEyePopUpText.SetActive(true);
-            // AudioSourceObj.PlayOneShot(a_Clip);
 
             AfterDeadEye();
         }
@@ -70,6 +68,8 @@ namespace Sora
         {
             DeadEyePanel.SetActive(true);
             DetectAllEnemies();
+            AudioSourceObj.Play();
+        
             Time.timeScale = 0.2f;
         }
 
